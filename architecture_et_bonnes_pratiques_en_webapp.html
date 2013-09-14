@@ -1,396 +1,705 @@
 <!doctype html>
 <html lang="fr">
-	<head>
-		<meta charset="utf-8">
+  <head>
+    <meta charset="utf-8">
 
-		<title>Architecture et bonnes pratiques en webapp</title>
+    <title>Architecture et bonnes pratiques en webapp</title>
 
-		<meta name="description" content="Architecture et bonnes pratiques en webapp">
-		<meta name="author" content="MAD <code@madsgraphics.com>">
-		<meta name="author" content="Wizad">
+    <meta name="description" content="Architecture et bonnes pratiques en webapp">
+    <meta name="author" content="MAD <code@madsgraphics.com>">
 
-		<link rel="stylesheet" href="/css/reveal.min.css">
-		<link rel="stylesheet" href="/css/theme/default.css" id="theme">
+    <link rel="stylesheet" href="/css/reveal.min.css">
+    <link rel="stylesheet" href="/css/theme/default.css" id="theme">
 
-		<!-- For syntax highlighting -->
-		<link rel="stylesheet" href="/lib/css/zenburn.css">
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="/lib/css/zenburn.css">
 
-		<style type="text/css">
-			.col {
-				width: 50%;
-				float: left;
-			}
-		</style>
+    <style type="text/css">
+      .col {
+        width: 50%;
+        float: left;
+      }
 
-		<!--[if lt IE 9]>
-		<script src="/lib/js/html5shiv.js"></script>
-		<![endif]-->
-	</head>
+      .reveal section img.neutral {
+        background: none;
+        border: none;
+        box-shadow: none;
+      }
+    </style>
 
-	<body>
-		<div class="reveal">
-			<div class="slides">
+    <!--[if lt IE 9]>
+    <script src="/lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
 
-				<section>
-					<h1>Architecture et bonnes pratiques en webapp</h1>
-					<p>Retours d'expériences</p>
-					<p>
-						<small>Wizad / MAD's Graphics</small>
-					</p>
-				</section>
+  <body>
+    <div class="reveal">
+      <div class="slides">
 
-				<section>
-					<section>
-						<h2><img src="./img/the_who.png" alt="The Who"></h2>
-					</section>
-					<section>
-						<div class="col">
-							<img src="./img/mad.jpg" alt="MAD">
-							<h2>MAD</h2>
-							<ul>
-								<li><a href="https://twitter.com/madsgraphics">@madsgraphics</a></li>
-								<li><a href="mailto:code@madsgraphics.com">code@madsgraphics.com</a></li>
-							</ul>
-						</div>
-						<div class="col">
-							<h2>William Pottier</h2>
-							<ul>
-								<li><a href="https://twitter.com/wizad">@wizad</a></li>
-								<li><a href="mailto:developer@william-pottier.fr">developer@william-pottier.fr</a></li>
-								<li>Ancien étudiant de l’Université de Caen</li>
-							</ul>
-						</div>
-					</section>
-					<section>
-						<div class="col">
-							<h2>MAD</h2>
-							<ul>
-								<li>Dev UI</li>
-								<li>JavaScript Ninja</li>
-							</ul>
-						</div>
-						<div class="col">
-							<h2>William Pottier</h2>
-							<ul>
-								<li>Dev back</li>
-								<li>Symfoniste</li>
-							</ul>
-						</div>
-					</section>
-				</section>
+        <section>
+          <h1>Architecture et bonnes pratiques en webapp</h1>
+          <p>Retours d'expériences</p>
+        </section>
 
-				<section>
-					<section>
-						<h2>High-Scalability</h2>
-					</section>
-					<section>
-						<h2>High-traffic</h2>
-					</section>
-					<section>
-						<h2>Rich Client Interfaces</h2>
-					</section>
-					<section>
-						<h2>Modularity</h2>
-					</section>
-					<section>
-						<h2>Real-time interactions</h2>
-					</section>
-				</section>
+        <section>
+          <section>
+            <img src="./img/mad.png" alt="MAD" class="neutral">
+            <h2>MAD</h2>
+            <p><a href="https://twitter.com/madsgraphics">@madsgraphics</a></p>
+            <p><a href="mailto:code@madsgraphics.com">code@madsgraphics.com</a></p>
+          </section>
+          <section>
+            <h2>Dev UI</h2>
+            <h2>JavaScript Ninja</h2>
+          </section>
+          <section>
+            <img src="./img/cleverage.png" alt="MAD" class="neutral">
+            <h2>Clever Age</h2>
+          </section>
+        </section>
 
-				<section>
-					<h1>WEBAPP</h1>
-				</section>
+        <section>
+          <section>
+            <h2>High-Scalability</h2>
 
-				<section>
-					<section>
-						<h2>Web vs App ?</h2>
-					</section>
-					<section>
-						<h2>TodoMVC : le mauvais élève</h2>
-						<img src="./img/todomvc.png" alt="TodoMVC screenshot">
-					</section>
-				</section>
+            <aside class="notes">
+              Quels sont les projets sur lesquels nous intervenons habituellement ?
+            </aside>
+          </section>
+          <section>
+            <h2>High-traffic</h2>
+          </section>
+          <section>
+            <h2>Rich Client Interfaces</h2>
+          </section>
+          <section>
+            <h2>Modularity</h2>
+          </section>
+          <section>
+            <h2>Real-time interactions</h2>
+          </section>
+        </section>
 
-				<section>
-					<section>
-						<h1>Real-life projects</h1>
-					</section>
-					<section>
-						<div class="col">
-							<h2>Site Communautaire</h2>
-							<ul>
-								<li>Chaplin.js</li>
-								<li>Brunch.io</li>
-							</ul>
-							<p>☛ Delicious.com / Moviepilot…</p>
-						</div>
-						<div class="col">
-							<h2>App In-Browser</h2>
-							<ul>
-								<li>Marionette.js</li>
-								<li>Grunt</li>
-							</ul>
-							<p>☛ Airbrake.io / RavenHQ…</p>
-						</div>
-					</section>
-				</section>
+        <section>
+          <h1>WEBAPP</h1>
 
-				<section>
-					<section>
-						<h1>Backbone</h1>
-						<p>socle backend stable</p>
-					</section>
-					<section>
-						<h2>Pourquoi Backbone.js ?</h2>
-						<ul>
-							<li>agnostic</li>
-							<li>léger</li>
-							<li>faible couple de dépendances</li>
-							<li>adapté à la mobilité</li>
-						</ul>
-					</section>
-					<section>
-						<h2>Pourquoi pas seul ?</h2>
-						<ul>
-							<li>trop de choses à réécrire</li>
-							<li>pas de cadre</li>
-							<li>limité à la sync back / events</li>
-						</ul>
-					</section>
-				</section>
+          <aside class="notes">
+            Petit rappel sur Webapps : c'est le sujet central, on se dirige de plus en plus vers ce type d'app
+          </aside>
+        </section>
 
-				<section>
-					<section>
-						<h1>Architecture globale</h1>
-					</section>
-				</section>
+        <section>
+          <section>
+            <h2>Web vs App ?</h2>
 
-				<section>
-					<section>
-						<h1>Zoom : Layouts &amp; UI</h1>
-					</section>
-					<section>
-						<h2>Layout</h2>
-						<div class="col">
-							<h3>Chaplin</h3>
-							<ul>
-								<li>Abstraction de DOM Document dans un Objet Layout</li>
-								<li>Liaison directe depuis les contrôleur</li>
-								<li>Catch App-wide events</li>
-							</ul>
-						</div>
-						<div class="col">
-							<h3>Marionette</h3>
-							<ul>
-								<li></li>
-							</ul>
-						</div>
-					</section>
-					<section>
-						<h2>Views</h2>
-						<div class="col">
-							<h3>Chaplin</h3>
-							<ul>
-								<li>Convention over configuration pour le rendering</li>
-								<li>Memory-safe binding</li>
-								<li>Supporte Regions &amp; Subviews</li>
-							</ul>
-						</div>
-						<div class="col">
-							<h3>Marionette</h3>
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</section>
-					<section>
-						<h2>Collection Views</h2>
-						<div class="col">
-							<h3>Chaplin</h3>
-							<ul>
-								<li>Filtering</li>
-								<li>Throbblers</li>
-								<li>Cache</li>
-								<li>Fallback content</li>
-							</ul>
-						</div>
-						<div class="col">
-							<h3>Marionette</h3>
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</section>
-				</section>
+            <aside class="notes">
+              <ul>
+                <li>Web : consultatif</li>
+                <li>App : interactif</li>
+              </ul>
+            </aside>
+          </section>
+          <section>
+            <h2>TodoMVC : le mauvais élève</h2>
+            <img src="./img/todomvc.png" alt="TodoMVC screenshot">
 
-				<section>
-					<section>
-						<h1>Zoom: #g11n</h1>
-					</section>
-					<section>
-						<h2>Librairies</h2>
-						<ul>
-							<li>Pomo</li>
-							<li>Jed</li>
-							<li>WebL10n</li>
-						</ul>
-					</section>
-				</section>
+            <aside class="notes">
+              Pas de prise en compte du réel : 1 seul contrôleur, 1 vue simple, 1 collection.
+              Bon exemple, mais syndrôme de l'app météo.
+            </aside>
+          </section>
+        </section>
 
-				<section>
-					<section>
-						<h1>Zoom: Modularité</h1>
-					</section>
-					<section>
-						<h2>Require.js</h2>
-						<p>Pattern AMD vs CommonJS</p>
-					</section>
-					<section>
-						<h2>Modules</h2>
-						<div class="col">
-							<h3>Chaplin</h3>
-							<ul>
-								<li>Mediator : Comunication entre modules via Pub/Sub pattern</li>
-								<li>Abstraction des instanciations de contrôleurs dans un Dispatcher</li>
-							</ul>
-						</div>
-						<div class="col">
-							<h3>Marionette</h3>
-							<ul>
-								<li></li>
-							</ul>
-						</div>
-					</section>
-				</section>
+        <section>
+          <section>
+            <h1>Real-life projects</h1>
+          </section>
+          <section>
+            <div class="col">
+              <img src="./img/chaplin.png" alt="Chaplin.js Logo" class="neutral" height="120">
+              <h2>Site Communautaire</h2>
+              <ul>
+                <li>Chaplin.js</li>
+                <li>Brunch.io</li>
+              </ul>
+              <p>☛ Delicious.com / Moviepilot…</p>
+            </div>
+            <div class="col">
+              <img src="./img/marionette.png" alt="Marionette.js Logo" class="neutral" height="100">
+              <h2>App In-Browser</h2>
+              <ul>
+                <li>Marionette.js</li>
+                <li>Grunt</li>
+              </ul>
+              <p>☛ Airbrake.io / RavenHQ…</p>
+            </div>
+          </section>
+        </section>
 
-				<section>
-					<section>
-						<h1>Zoom: Authentification et Session</h1>
-					</section>
-					<section>
-						<h2>Sécurité</h2>
-						<ul>
-							<li></li>
-						</ul>
-					</section>
-					<section>
-						<h2>Droits et rôles</h2>
-						<ul>
-							<li></li>
-						</ul>
-					</section>
-					<section>
-						<h2>CSRF</h2>
-						<ul>
-							<li>prévenir les attaques</li>
-							<li>identifier les clients</li>
-							<li>double token jetable</li>
-						</ul>
-					</section>
-					<section>
-						<h2>Auth intégrée à la Webapp ?</h2>
-						<ul>
-							<li></li>
-						</ul>
-					</section>
-				</section>
+        <section>
+          <section>
+            <img src="./img/backbone.png" alt="Marionette.js Logo" class="neutral" height="100">
+            <h1>Backbone</h1>
+            <p>socle backend stable</p>
+          </section>
+          <section>
+            <h2>Pourquoi Backbone.js ?</h2>
+            <ul>
+              <li>agnostic</li>
+              <li>léger</li>
+              <li>faible couple de dépendances</li>
+              <li>adapté à la mobilité</li>
+            </ul>
 
-				<section>
-					<section>
-						<h1>Zoom : Websocket? Webservices?</h1>
-					</section>
-					<section>
-						<h2>Communication temps-réel</h2>
-						<ul>
-							<li>socket.io</li>
-							<li>rafraichissement des vues via des events custom (push)</li>
-							<li>node.js pour une communication asynchrone vers l’API</li>
-						</ul>
-					</section>
-					<section>
-						<h2>Utilisation des services</h2>
-						<p>couche RESTful + JSON</p>
-					</section>
-				</section>
+            <aside class="notes">
+              Backbone est une brique de base solide, rapide, performante.
+            </aside>
+          </section>
+          <section>
+            <h2>Pourquoi pas seul ?</h2>
+            <ul>
+              <li>trop de choses à réécrire</li>
+              <li>pas de cadre</li>
+              <li>limité à la sync back / events</li>
+            </ul>
+          </section>
 
-				<section>
-					<section>
-						<h1>Zoom: Stratégie de cache</h1>
-					</section>
-					<section>
-						<h2>Côté Node.js</h2>
-						<ul>
-							<li>persistence memcache partagée</li>
-							<li>cluster de workers node.js</li>
-							<li>rafraichissement async des réponses API</li>
-						</ul>
-					</section>
-					<section>
-						<h2>Côté App</h2>
-						<ul>
-							<li>LocalStorage / LocalSession avec Lauwnchair pour la data</li>
-							<li>cache.manifest pour les assets</li>
-						</ul>
-					</section>
-				</section>
+          <aside class="notes">
+            Il n'offre que des fondations. On a besoin d'un framework plus important pour enrober.
+          </aside>
+        </section>
 
-				<section>
-					<section>
-						<h1>Déploiement et usage offline</h1>
-					</section>
-					<section>
-						<h2>Livraison</h2>
-						<ul>
-							<li>Déploiement en recette continue</li>
-							<li>Supervision Jenkins</li>
-							<li>Déploiement Fabric</li>
-							<li>Tag des builds pour livraison en prod</li>
-						</ul>
-					</section>
-					<section>
-						<h2>Persistence des assets</h2>
-						<ul>
-							<li>push vers CDN (Akamai…)</li>
-							<li>invalidation cache.manifest</li>
-						</ul>
-					</section>
-				</section>
+        <section>
+          <section>
+            <h1>Architecture globale</h1>
+          </section>
+          <section data-state="diagram">
+            <div id="paper" style="height:600px;"><!-- raphaeljs part --></div>
+            <a class="fragment" data-state="setBackConnections"><!-- --></a>
+            <a class="fragment" data-state="addClients"><!-- --></a>
+            <a class="fragment" data-state="addBridges"><!-- --></a>
+            <a class="fragment" data-state="setConnections"><!-- --></a>
+            <a class="fragment" data-state="addCache"><!-- --></a>
+            <a class="fragment" data-state="addMoreClients"><!-- --></a>
+            <a class="fragment" data-state="viewPush"><!-- --></a>
+          </section>
+        </section>
 
-				<section>
-					<section>
-						<h1>Bonus : CoffeeScript inside !</h1>
-					</section>
-				</section>
+        <section>
+          <section>
+            <h1>Zoom : Layouts &amp; UI</h1>
+          </section>
+          <section>
+            <h2>Layout</h2>
+            <div class="col">
+              <h3>Chaplin</h3>
+              <ul>
+                <li>Abstraction de DOM Document dans un Objet Layout</li>
+                <li>Liaison directe depuis les contrôleur</li>
+                <li>Catch App-wide events</li>
+              </ul>
+            </div>
+            <div class="col">
+              <h3>Marionette</h3>
+              <ul>
+                <li>Layout par module</li>
+                <li>Nesting</li>
+              </ul>
+            </div>
+          </section>
+          <section>
+            <h2>Views</h2>
+            <div class="col">
+              <h3>Chaplin</h3>
+              <ul>
+                <li>Convention over configuration pour le rendering</li>
+                <li>Memory-safe binding</li>
+                <li>Compositing</li>
+              </ul>
+            </div>
+            <div class="col">
+              <h3>Marionette</h3>
+              <ul>
+                <li>Regions &amp; Subviews</li>
+                <li>Auto-rendering model.views / collection.views</li>
+                <li>Utilise des events custom</li>
+              </ul>
+            </div>
+          </section>
+          <section>
+            <h2>Collection Views</h2>
+            <div class="col">
+              <h3>Chaplin</h3>
+              <ul>
+                <li>Filtering</li>
+                <li>Throbblers</li>
+                <li>Cache</li>
+                <li>Fallback content</li>
+              </ul>
+            </div>
+            <div class="col">
+              <h3>Marionette</h3>
+              <ul>
+                <li>Callbacks &amp; Events</li>
+                <li>Et… euh… humm…</li>
+              </ul>
+            </div>
+          </section>
+        </section>
 
-			</div>
-		</div>
+        <section>
+          <section>
+            <h1>Zoom: #g11n</h1>
+          </section>
+          <section>
+            <h2>Librairies</h2>
+            <ul>
+              <li>Pomo</li>
+              <li>Jed</li>
+              <li>WebL10n</li>
+            </ul>
+          </section>
+        </section>
 
-		<script src="/lib/js/head.min.js"></script>
-		<script src="/js/reveal.min.js"></script>
-		<script>
-			Reveal.initialize({
-				// controls: false,
-				history: true,
+        <section>
+          <section>
+            <h1>Zoom: Modularité</h1>
+          </section>
+          <section>
+            <h2>Require.js</h2>
+            <p>Pattern AMD vs CommonJS</p>
+          </section>
+          <section>
+            <h2>Modules</h2>
+            <div class="col">
+              <h3>Chaplin</h3>
+              <ul>
+                <li>Mediator : Comunication entre modules via Pub/Sub pattern</li>
+                <li>Abstraction des instanciations de contrôleurs dans un Dispatcher</li>
+                <li>Fichier de routes unique</li>
+              </ul>
+            </div>
+            <div class="col">
+              <h3>Marionette</h3>
+              <ul>
+                <li>Chaque module déclare ses routes</li>
+                <li>Contrôleurs…?</li>
+              </ul>
+            </div>
+          </section>
+        </section>
 
-				theme: 'default',
-				transition: 'linear',
-				backgroundTransition: 'slide',
+        <section>
+          <section>
+            <h1>Zoom: Authentification et Session</h1>
+          </section>
+          <section>
+            <h2>Sécurité</h2>
+            <ul>
+              <li>Pas d'accès API direct</li>
+              <li>Authentification forte</li>
+              <li>Côté back uniquement</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Droits et permissions</h2>
+            <ul>
+              <li>Isolation des droits sur la route</li>
+              <li>Utilisation de modèles spécifiques</li>
+              <li>Contrôles back</li>
+            </ul>
+          </section>
+          <section>
+            <h2>CSRF</h2>
+            <ul>
+              <li>prévenir les attaques</li>
+              <li>identifier les clients</li>
+              <li>double token jetable</li>
+            </ul>
 
-				// Optional libraries used to extend on reveal.js
-				dependencies: [
-					// { src: '/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: '/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: '/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					// { src: '/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					// { src: '/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-					{ src: '/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
-				]
-			});
-		</script>
-	</body>
+            <aside class="notes">
+              <p>Cross-Site Request Forgery</p>
+            </aside>
+          </section>
+          <section>
+            <h2>Auth intégrée à la Webapp ?</h2>
+            <ul>
+              <li>Auth côté back</li>
+              <li>Stockage des permissions dans LocalStorage</li>
+              <li>Contrôle des expirations</li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h1>Zoom : Websocket? Webservices?</h1>
+          </section>
+          <section>
+            <h2>Communication temps-réel</h2>
+            <ul>
+              <li>socket.io</li>
+              <li>rafraichissement des vues via des events custom (push)</li>
+              <li>node.js pour une communication asynchrone vers l’API</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Utilisation des services</h2>
+            <p>couche RESTful + JSON</p>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h1>Zoom: Stratégie de cache</h1>
+          </section>
+          <section>
+            <h2>Côté Node.js</h2>
+            <ul>
+              <li>persistence memcache partagée</li>
+              <li>cluster de workers node.js</li>
+              <li>rafraichissement async des réponses API</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Côté App</h2>
+            <ul>
+              <li>LocalStorage / LocalSession avec Lauwnchair pour la data</li>
+              <li>cache.manifest pour les assets</li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h1>Déploiement et usage offline</h1>
+          </section>
+          <section>
+            <h2>Livraison</h2>
+            <ul>
+              <li>Déploiement en recette continue</li>
+              <li>Supervision Jenkins</li>
+              <li>Déploiement Fabric</li>
+              <li>Tag des builds pour livraison en prod</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Persistence des assets</h2>
+            <ul>
+              <li>push vers CDN (Akamai…)</li>
+              <li>invalidation cache.manifest</li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h1>Bonus : CoffeeScript inside !</h1>
+          </section>
+          <section>
+            <h2>Une tasse ?</h2>
+            <ul>
+              <li>JS syntactic sugar</li>
+              <li>Compile vers JS</li>
+              <li>Utilisé dans les deux cas d’app</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Un sucre ?</h2>
+            <ul>
+              <li>Simplicité d’écriture et de documentation</li>
+              <li>Offre une structure Objet plus accessible</li>
+              <li>Facilite le Duck typing</li>
+              <li>Simplifie la gestion des dépendances et des modules</li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h1>This is not the end…</h1>
+          </section>
+          <section>
+            <h2>Erreurs &amp; Ecueils</h2>
+            <ul>
+              <li>Rester modulaire jusque dans les vues</li>
+              <li>Eviter les dépendances au maximum, ou avec un faible couple</li>
+              <li>Documentez convenablement en largement</li>
+              <li>Utilisez les bons outils (compils, tests, etc)</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Etat des lieux</h2>
+            <ul>
+              <li>Jeunesse de JS sous cette forme (et des produits)</li>
+              <li>Tout à découvrir</li>
+              <li>Ce ne sont que des idées/essais/propositions</li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <h1>… just the beginning !</h1>
+        </section>
+
+        <section>
+          <h1>?</h1>
+        </section>
+      </div>
+    </div>
+
+    <script src="/lib/js/head.min.js"></script>
+    <script src="/js/reveal.min.js"></script>
+    <script src="./components/raphael/raphael-min.js"></script>
+    <script>
+      var paper,
+          ICS = [
+            { ico: 'db', x: 50, y: 50, s:2 },
+            { ico: 'srv', x: 300, y: 50, s:3.5 },
+            { ico: 'node', x: 150, y: 300, s: 1.5 },
+            { ico: 'node', x: 450, y: 300, s: 1.5 },
+            { ico: 'cache', x: 300, y: 200, s: 1.5 },
+            { ico: 'mac', x: 150, y: 475, s: 2 },
+            { ico: 'mac', x: 350, y: 450, s: 2 },
+            { ico: 'phone', x: 40, y: 425, s:2 },
+            { ico: 'phone', x: 500, y: 430, s:2 },
+            { ico: 'pad', x: 450, y: 550, s:2 }
+          ],
+          L = {},
+          ICO_STYL = { fill: "#fff", stroke: "#333" },
+          LIN_STYL = { stroke: '#fff', 'stroke-width': 3, 'stroke-linecap': 'round' },
+          ICO = {
+            db : 'M15.499,23.438c-3.846,0-7.708-0.987-9.534-3.117c-0.054,0.236-0.09,0.48-0.09,0.737v3.877c0,3.435,4.988,4.998,9.625,4.998s9.625-1.563,9.625-4.998v-3.877c0-0.258-0.036-0.501-0.09-0.737C23.209,22.451,19.347,23.438,15.499,23.438zM15.499,15.943c-3.846,0-7.708-0.987-9.533-3.117c-0.054,0.236-0.091,0.479-0.091,0.736v3.877c0,3.435,4.988,4.998,9.625,4.998s9.625-1.563,9.625-4.998v-3.877c0-0.257-0.036-0.501-0.09-0.737C23.209,14.956,19.347,15.943,15.499,15.943zM15.5,1.066c-4.637,0-9.625,1.565-9.625,5.001v3.876c0,3.435,4.988,4.998,9.625,4.998s9.625-1.563,9.625-4.998V6.067C25.125,2.632,20.137,1.066,15.5,1.066zM15.5,9.066c-4.211,0-7.625-1.343-7.625-3c0-1.656,3.414-3,7.625-3s7.625,1.344,7.625,3C23.125,7.724,19.711,9.066,15.5,9.066z',
+            srv: 'M15.5,3.029l-10.8,6.235L4.7,21.735L15.5,27.971l10.8-6.235V9.265L15.5,3.029zM15.5,7.029l6.327,3.652L15.5,14.334l-6.326-3.652L15.5,7.029zM24.988,10.599L16,15.789v10.378c0,0.275-0.225,0.5-0.5,0.5s-0.5-0.225-0.5-0.5V15.786l-8.987-5.188c-0.239-0.138-0.321-0.444-0.183-0.683c0.138-0.238,0.444-0.321,0.683-0.183l8.988,5.189l8.988-5.189c0.238-0.138,0.545-0.055,0.684,0.184C25.309,10.155,25.227,10.461,24.988,10.599z',
+            node: 'M14.228,32.093c-0.43,0-0.858-0.112-1.233-0.33L9.067,29.44c-0.586-0.328-0.3-0.444-0.106-0.512c0.782-0.271,0.94-0.334,1.775-0.808c0.087-0.049,0.202-0.03,0.292,0.022l3.017,1.791c0.109,0.061,0.264,0.061,0.364,0l11.761-6.788c0.109-0.062,0.18-0.188,0.18-0.318V9.255c0-0.133-0.07-0.257-0.183-0.324L14.411,2.149c-0.108-0.064-0.253-0.064-0.362,0L2.296,8.933C2.182,8.998,2.109,9.126,2.109,9.255v13.572c0,0.13,0.072,0.253,0.186,0.314l3.222,1.861c1.748,0.874,2.818-0.155,2.818-1.189v-13.4c0-0.189,0.152-0.339,0.342-0.339h1.491c0.186,0,0.341,0.149,0.341,0.339v13.4c0,2.333-1.271,3.671-3.482,3.671c-0.68,0-1.215,0-2.709-0.736l-3.084-1.775C0.472,24.532,0,23.709,0,22.827V9.255C0,8.373,0.472,7.55,1.233,7.112l11.761-6.796c0.744-0.421,1.733-0.421,2.472,0l11.76,6.796c0.762,0.44,1.235,1.262,1.235,2.144v13.572c0,0.882-0.474,1.702-1.235,2.146l-11.76,6.79C15.09,31.981,14.663,32.093,14.228,32.093zM17.86,22.742c-5.146,0-6.225-2.362-6.225-4.344c0-0.188,0.151-0.339,0.34-0.339h1.521c0.17,0,0.311,0.122,0.338,0.288c0.229,1.548,0.914,2.329,4.026,2.329c2.478,0,3.532-0.561,3.532-1.875c0-0.758-0.299-1.32-4.149-1.697c-3.218-0.318-5.208-1.029-5.208-3.603c0-2.373,2-3.788,5.354-3.788c3.768,0,5.632,1.308,5.868,4.113c0.009,0.097-0.025,0.189-0.09,0.262c-0.064,0.067-0.154,0.108-0.249,0.108h-1.526c-0.158,0-0.298-0.112-0.33-0.266c-0.366-1.629-1.257-2.149-3.673-2.149c-2.705,0-3.019,0.942-3.019,1.648c0,0.855,0.371,1.104,4.023,1.588c3.614,0.477,5.331,1.154,5.331,3.694C23.724,21.275,21.587,22.742,17.86,22.742z',
+            cache: 'M4.083,14H14V4.083H4.083V14zM17,4.083V14h9.917V4.083H17zM17,26.917h9.917v-9.918H17V26.917zM4.083,26.917H14v-9.918H4.083V26.917z',
+            mac: 'M28.936,2.099H2.046c-0.506,0-0.919,0.414-0.919,0.92v21.097c0,0.506,0.413,0.919,0.919,0.919h17.062v-0.003h9.828c0.506,0,0.92-0.413,0.92-0.921V3.019C29.854,2.513,29.439,2.099,28.936,2.099zM28.562,20.062c0,0.412-0.338,0.75-0.75,0.75H3.062c-0.413,0-0.75-0.338-0.75-0.75v-16c0-0.413,0.337-0.75,0.75-0.75h24.75c0.412,0,0.75,0.337,0.75,0.75V20.062zM20.518,28.4c-0.033-0.035-0.062-0.055-0.068-0.062l-0.01-0.004l-0.008-0.004c0,0-0.046-0.021-0.119-0.062c-0.108-0.056-0.283-0.144-0.445-0.237c-0.162-0.097-0.32-0.199-0.393-0.271c-0.008-0.014-0.035-0.079-0.058-0.17c-0.083-0.32-0.161-0.95-0.22-1.539h-7.5c-0.023,0.23-0.048,0.467-0.076,0.691c-0.035,0.272-0.073,0.524-0.113,0.716c-0.02,0.096-0.039,0.175-0.059,0.23c-0.009,0.025-0.018,0.05-0.024,0.062c-0.003,0.006-0.005,0.01-0.007,0.013c-0.094,0.096-0.34,0.246-0.553,0.36c-0.107,0.062-0.209,0.11-0.283,0.146c-0.074,0.037-0.119,0.062-0.119,0.062l-0.007,0.004l-0.008,0.004c-0.01,0.009-0.038,0.022-0.07,0.062c-0.031,0.037-0.067,0.103-0.067,0.185c0.002,0.002-0.004,0.037-0.006,0.088c0,0.043,0.007,0.118,0.068,0.185c0.061,0.062,0.143,0.08,0.217,0.08h9.716c0.073,0,0.153-0.021,0.215-0.08c0.062-0.063,0.068-0.142,0.068-0.185c-0.001-0.051-0.008-0.086-0.007-0.088C20.583,28.503,20.548,28.439,20.518,28.4z',
+            pad: 'M25.221,1.417H6.11c-0.865,0-1.566,0.702-1.566,1.566v25.313c0,0.865,0.701,1.565,1.566,1.565h19.111c0.865,0,1.565-0.7,1.565-1.565V2.984C26.787,2.119,26.087,1.417,25.221,1.417zM15.666,29.299c-0.346,0-0.626-0.279-0.626-0.625s0.281-0.627,0.626-0.627c0.346,0,0.627,0.281,0.627,0.627S16.012,29.299,15.666,29.299zM24.376,26.855c0,0.174-0.142,0.312-0.313,0.312H7.27c-0.173,0-0.313-0.142-0.313-0.312V4.3c0-0.173,0.14-0.313,0.313-0.313h16.792c0.172,0,0.312,0.14,0.312,0.313L24.376,26.855L24.376,26.855z',
+            phone: 'M20.755,1H10.62C9.484,1,8.562,1.921,8.562,3.058v24.385c0,1.136,0.921,2.058,2.058,2.058h10.135c1.136,0,2.058-0.922,2.058-2.058V3.058C22.812,1.921,21.891,1,20.755,1zM14.659,3.264h2.057c0.101,0,0.183,0.081,0.183,0.18c0,0.1-0.082,0.18-0.183,0.18h-2.057c-0.1,0-0.181-0.081-0.181-0.18C14.478,3.344,14.559,3.264,14.659,3.264zM13.225,3.058c0.199,0,0.359,0.162,0.359,0.36c0,0.198-0.161,0.36-0.359,0.36c-0.2,0-0.36-0.161-0.36-0.36S13.025,3.058,13.225,3.058zM15.688,28.473c-0.796,0-1.44-0.646-1.44-1.438c0-0.799,0.645-1.439,1.44-1.439s1.44,0.646,1.44,1.439S16.483,28.473,15.688,28.473zM22.041,24.355c0,0.17-0.139,0.309-0.309,0.309H9.642c-0.17,0-0.308-0.139-0.308-0.309V6.042c0-0.17,0.138-0.309,0.308-0.309h12.09c0.17,0,0.309,0.138,0.309,0.309V24.355z'
+          };
+
+      Reveal.initialize({
+        history: true,
+
+        theme: 'default',
+        transition: 'linear',
+        backgroundTransition: 'slide',
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: '/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          // { src: '/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          // { src: '/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          // { src: '/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          // { src: '/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          // { src: '/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+          // { src: '/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
+
+      function pops(id, timeout) {
+        var _item = ICS[id];
+        setTimeout(function (){
+          _item.el.animate({transform:'t'+_item.x+','+_item.y+'s'+_item.s}, 500, 'elastic');
+        }, timeout);
+      }
+
+      function drawLine(start, end, callback) {
+        var timer, counter = 0,
+            draw,
+            backDraw = paper.path('M'+start.x+' '+start.y+'L'+end.x+' '+end.y).hide(),
+            length = backDraw.getTotalLength();
+
+        function d() {
+          if (length <= counter) {
+            backDraw = undefined;
+            clearInterval(timer);
+            if (callback != null) {
+              callback.call();
+            }
+            return draw;
+          }
+
+          var pos = backDraw.getPointAtLength(counter);
+          draw.attr({path: 'M'+start.x+' '+start.y+'L'+pos.x+' '+pos.y}).show();
+          counter++;
+        }
+
+        draw = paper.path('M'+start.x+' '+start.y+'L0 0').attr(LIN_STYL).hide();
+        timer = setInterval(d, 5);
+
+        return draw;
+      }
+
+      function spark(el, color, direction, callback) {
+        var timer, counter,
+            draw,
+            length = el.getTotalLength();
+
+        direction = (direction === 1 || direction == null)? true : false;
+        counter = direction? 0 : length;
+
+        function d() {
+          var o = 1,
+              o_break = 20;
+
+          if ((direction && length <= counter) || (!direction && counter <= 0)) {
+            clearInterval(timer);
+            if (callback != null) {
+              callback.call();
+            }
+            return draw.remove();
+          }
+
+          if (0 <= counter && counter <= o_break) {
+            o = counter / o_break;
+          }
+          if (length - o_break <= counter && counter <= length) {
+            o = (length - counter) / o_break;
+          }
+
+          var pos = el.getPointAtLength(counter);
+          draw.attr({cx: pos.x, cy: pos.y, opacity: o});
+          counter += direction? 1 : -1;
+        }
+
+        draw = paper.circle(el.getPointAtLength(0).x, el.getPointAtLength(0).y, 8, 8).attr({
+          fill: color,
+          opacity: 0,
+          stroke: 'none'
+        });
+        timer = setInterval(d, 5);
+      }
+
+      Reveal.addEventListener('diagram', function() {
+        var el = document.getElementById('paper'),
+            _item;
+
+        el.innerHTML = '';
+
+        paper = new Raphael(el, 600, 600);
+        for ( var _i=0, _len = ICS.length; _i < _len; _i++ ) {
+          _item = ICS[_i];
+          ICS[_i].el = paper.path(ICO[_item.ico]).attr(ICO_STYL).transform('t'+_item.x+','+_item.y+'s0');
+        }
+
+        setTimeout(function() {
+          pops(0, 0);
+          pops(1, 150);
+        }, 800);
+      });
+
+      Reveal.addEventListener('fragmentshown', function(e) {
+        var state = e.fragment.dataset.state;
+
+        switch(state) {
+          case 'setBackConnections':
+            L['api2db'] = drawLine({x: ICS[0].x+40, y: ICS[0].y+20}, {x: ICS[1].x-30, y: ICS[1].y+20});
+            break;
+
+          case 'addClients':
+            pops(5, 0);
+            pops(6, 50);
+            break;
+
+          case 'addBridges':
+            pops(2, 0);
+            pops(3, 50);
+            break;
+
+          case 'setConnections':
+            L['m12n1'] = drawLine({x: ICS[5].x+15 ,y: ICS[5].y-20}, {x: ICS[2].x+15 ,y: ICS[2].y+50});
+            L['m22n2'] = drawLine({x: ICS[6].x+20 ,y: ICS[6].y-20}, {x: ICS[3].x+10 ,y: ICS[3].y+50}, function () {
+              L['n12api'] = drawLine({x: ICS[2].x+15 ,y: ICS[2].y-20}, {x: ICS[1].x+15 ,y: ICS[1].y+70});
+              L['n22api'] = drawLine({x: ICS[3].x+10 ,y: ICS[3].y-20}, {x: ICS[1].x+15 ,y: ICS[1].y+70}, function () {
+                spark(L['m12n1'], '#13daec');
+                spark(L['m22n2'], '#13daec', 1, function () {
+                  spark(L['n12api'], '#13daec');
+                  spark(L['n22api'], '#13daec', 1, function () {
+                    spark(L['api2db'], '#13daec', -1, function () {
+                      spark(L['api2db'], '#f00', 1, function () {
+                        spark(L['n12api'], '#f00', -1);
+                        spark(L['n22api'], '#f00', -1, function () {
+                          spark(L['m12n1'], '#f00', -1);
+                          spark(L['m22n2'], '#f00', -1);
+                        });
+                      });
+                    });
+                  });
+                });
+              });
+            });
+            break;
+
+          case 'addCache':
+            pops(4, 0);
+            L['api2cache'] = drawLine({x: ICS[1].x+15 ,y: ICS[1].y+70}, {x: ICS[4].x+15 ,y: ICS[4].y-15});
+            L['n12cache'] = drawLine({x: ICS[2].x+15 ,y: ICS[2].y-20}, {x: ICS[4].x-15 ,y: ICS[4].y+20});
+            L['n22cache'] = drawLine({x: ICS[3].x+10 ,y: ICS[3].y-20}, {x: ICS[4].x+45 ,y: ICS[4].y+20}, function () {
+              spark(L['m12n1'], '#13daec');
+              spark(L['m22n2'], '#13daec', 1, function () {
+                spark(L['n12api'], '#13daec');
+                spark(L['n22api'], '#13daec', 1, function () {
+                  spark(L['api2cache'], '#13daec', 1, function() {
+                    spark(L['api2cache'], '#ff0', -1, function() {
+                      spark(L['n12api'], '#ff0', -1);
+                      spark(L['n22api'], '#ff0', -1, function() {
+                        spark(L['m12n1'], '#f00', -1);
+                        spark(L['m22n2'], '#f00', -1);
+                      });
+                    });
+                  });
+
+                  spark(L['api2db'], '#13daec', -1, function() {
+                    spark(L['api2db'], '#f00', 1, function() {
+                      spark(L['api2cache'], '#f00');
+                    });
+                  });
+                });
+
+                spark(L['n12cache'], '#13daec');
+                spark(L['n22cache'], '#13daec', 1, function () {
+                  spark(L['n12cache'], '#ff0', -1);
+                  spark(L['n22cache'], '#ff0', -1, function () {
+                    spark(L['m12n1'], '#f00', -1);
+                    spark(L['m22n2'], '#f00', -1);
+                  });
+                });
+              });
+            });
+            break;
+
+          case 'addMoreClients':
+            pops(7, 0);
+            pops(8, 50);
+            pops(9, 100);
+
+            setTimeout(function () {
+              L['f12n1'] = drawLine({x: ICS[7].x+15 ,y: ICS[7].y-25}, {x: ICS[2].x+15 ,y: ICS[2].y+50});
+              L['f22n2'] = drawLine({x: ICS[8].x+15 ,y: ICS[8].y-25}, {x: ICS[3].x+10 ,y: ICS[3].y+50});
+              L['f32n2'] = drawLine({x: ICS[9].x+15 ,y: ICS[9].y-25}, {x: ICS[3].x+10 ,y: ICS[3].y+50});
+            }, 500);
+            break;
+
+          case 'viewPush':
+            function dispatch() {
+              spark(L['m12n1'], '#13daec', -1);
+              spark(L['m22n2'], '#13daec', -1);
+              spark(L['f12n1'], '#13daec', -1);
+              spark(L['f22n2'], '#13daec', -1);
+              spark(L['f32n2'], '#13daec', -1);
+            };
+
+            L['n12n2'] = drawLine({x: ICS[2].x+45 ,y: ICS[2].y+15}, {x: ICS[3].x-20 ,y: ICS[3].y+15}, function () {
+              setTimeout(function() {spark(L['m12n1'], '#f0f', 1, function() {spark(L['n12n2'], '#f0f', 1, dispatch)}); }, 50);
+              setTimeout(function() {spark(L['m22n2'], '#f0f', 1, function() {spark(L['n12n2'], '#f0f', -1, dispatch)}); }, 250);
+              setTimeout(function() {spark(L['f12n1'], '#f0f', 1, function() {spark(L['n12n2'], '#f0f', 1, dispatch)}); }, 120);
+              setTimeout(function() {spark(L['f22n2'], '#f0f', 1, function() {spark(L['n12n2'], '#f0f', -1, dispatch)}); }, 80);
+              setTimeout(function() {spark(L['f32n2'], '#f0f', 1, function() {spark(L['n12n2'], '#f0f', -1, dispatch)}); }, 300);
+            });
+            break;
+        }
+      });
+    </script>
+  </body>
 </html>
