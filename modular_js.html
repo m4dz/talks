@@ -1,0 +1,574 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+
+    <title>Modular JS : Improve your JS perfomances</title>
+
+    <meta name="description" content="Modular JS : Improve your JS perfomances">
+    <meta name="author" content="MAD <code@madsgraphics.com>">
+
+    <link rel="stylesheet" href="./css/reveal.min.css">
+    <link rel="stylesheet" href="./css/theme/madsgraphics.css">
+
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="./lib/css/tomorrow-night-bright.css">
+
+    <style type="text/css">
+    #never {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        font-size: 3.77em;
+        width: 100%;
+        margin-top: -0.5em;
+        -webkit-transform: rotate(-25deg);
+           -moz-transform: rotate(-25deg);
+            -ms-transform: rotate(-25deg);
+             -o-transform: rotate(-25deg);
+                transform: rotate(-25deg);
+        text-shadow: 0 1px 0 #cccccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbbbbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaaaaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25), 0 20px 20px rgba(0, 0, 0, 0.15);
+    }
+    </style>
+
+    <!--[if lt IE 9]>
+    <script src="/lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+        <section>
+          <h1>Modular <span class="hlt">JS</span></h1>
+          <p style="float:right"><small><a href="http://madsgraphics.github.io/prez/modular_js.html" class="normal"><span class="hlt">//</span>madsgraphics.github.io/prez/modular_js.html</a></small></p>
+        </section>
+
+        <section>
+            <h2><span class="lettrine">C</span>onstruisez modulaire</h2>
+            <ul>
+                <li>faible couplage de dépendances</li>
+                <li>facilite la maintenance</li>
+                <li>encourage le code-reuse</li>
+                <li>préserve les chatons</li>
+            </ul>
+        </section>
+
+        <section>
+            <section>
+                <h2><span class="lettrine">P</span>ourquoi<sup>*</sup> un <span class="lettrine">P</span>lugin ?</h2>
+                <p class="legend"><sup>*</sup> quand choisir de créer un plugin jQuery</p>
+            </section>
+
+            <section>
+                <p class="breadcrumb">Pourquoi un plugin ?</p>
+                <h2 class="inst"><span class="hlt">DOM</span><br>ELEMENT<sup>*</sup></h2>
+                <p class="legend"><sup>*</sup> attachez vos plugins</p>
+            </section>
+
+            <section>
+                <p class="breadcrumb">Pourquoi un plugin ?</p>
+                <h2 class="inst"><span class="hlt">M</span>anipulation</h2>
+            </section>
+
+            <section>
+                <p class="breadcrumb">Pourquoi un plugin ?</p>
+                <h2 class="inst"><span class="hlt">G</span>estion<br>d'évènements</h2>
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h2><span class="lettrine">M</span>ini-boilerplate</h2>
+            </section>
+
+            <section>
+                <p class="breadcrumb">Mini-boilerplate</p>
+                <h2 class="inst"><span class="hlt">80</span>%<sup>*</sup> des cas<br><span class="hlt">B</span>asiques</h2>
+                <p class="legend"><sup>*</sup> étude menée auprès d'un échantillon composé de moi-même</p>
+            </section>
+
+            <section>
+                <p class="breadcrumb">Mini-boilerplate</p>
+                <pre><code data-trim contenteditable>
+var inter = function (selecteur) {
+    $(selecteur)
+    .on('change', function() {
+
+        $('.switch').removeClass('on');
+
+        if ($(this).is(':checked')) {
+            var classe = '.' + $(this).attr('id');
+            $(classe).addClass('on');
+        }
+    })
+    .trigger('change');
+};
+
+$(document).ready(function (
+    inter('#foo');
+));
+                </code></pre>
+                <p id="never" class="fragment"><strong>☠ NEVER !</strong></p>
+            </section>
+
+            <section>
+                <p class="breadcrumb">Mini-Boilerplate</p>
+                <h3><span class="hlt">M</span>odule Design Pattern</h3>
+            </section>
+
+            <section data-transition="linear" data-background="#454849" data-background-transition="slide">
+                <p class="breadcrumb">Mini-Boilerplate</p>
+                <pre><code data-trim contenteditable class="javascript">
+(function($, undefined) {
+
+})(jQuery);
+                </code></pre>
+            </section>
+
+            <section>
+                <p class="breadcrumb">Mini-Boilerplate</p>
+                <h3><span class="hlt">I</span>terative style coding</h3>
+            </section>
+
+            <section data-transition="linear" data-background="#454849" data-background-transition="slide">
+                <p class="breadcrumb">Mini-boilerplate</p>
+                <pre><code data-trim contenteditable class="javascript">
+(function($, undefined) {
+
+  $.fn.pluginName = function() {
+
+    // Iterate over jQuery elements
+    return this.each(function() {
+
+      // YOUR PLUGIN LOGICS HERE
+
+    });
+
+  });
+
+})(jQuery);
+                </code></pre>
+            </section>
+
+            <section>
+                <p class="breadcrumb">Mini-Boilerplate</p>
+                <h3><span class="hlt">O</span>ptions support</h3>
+            </section>
+
+            <section data-transition="linear" data-background="#454849" data-background-transition="slide">
+                <p class="breadcrumb">Mini-boilerplate</p>
+                <pre><code data-trim contenteditable class="javascript">
+(function($, undefined) {
+
+  $.fn.pluginName = function(options) {
+    // Default options
+    options = $.extend({
+      property: "value",
+      onEvent: function() {}
+    }, options);
+
+    // Iterate over jQuery elements
+    return this.each(function() {
+
+      // YOUR PLUGIN LOGICS HERE
+
+    });
+
+  });
+
+})(jQuery);
+                </code></pre>
+            </section>
+
+            <section>
+                <p class="breadcrumb">Mini-Boilerplate</p>
+                <h3><span class="hlt">B</span>oilerplates</h3>
+                <p><a href="https://gist.github.com/madsgraphics/5603966"><span class="hlt">//</span>gist.github.com/madsgraphics/5603966</a></p>
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h2><span class="lettrine">G</span>estion des dépendances</h2>
+            </section>
+
+            <section>
+                <p class="breadcrumb">Gestion des dépendances</p>
+                <h2 class="inst"><span class="hlt">D</span>éclarations<br>implicites</h2>
+            </section>
+
+            <section>
+                <p class="breadcrumb">Gestion des dépendances</p>
+                <h2 class="inst"><span class="hlt">S</span>andboxing</h2>
+            </section>
+
+            <section>
+                <p class="breadcrumb">Gestion des dépendances</p>
+                <h2 class="inst"><span class="hlt">R</span>equire.js / <span class="hlt">AMD</span> Pattern</h2>
+            </section>
+
+            <section>
+                <p class="breadcrumb">Gestion des dépendances</p>
+                <p>Inclusion du loader</p>
+                <pre><code data-trim contenteditable class="html">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;!-- data-main attribute tells require.js to load
+             js/main.js after require.js loads. --&gt;
+        &lt;script data-main="js/main" src="js/require.js"&gt;&lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;!-- // --&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+                </code></pre>
+            </section>
+
+            <section>
+                <p class="breadcrumb">Gestion des dépendances</p>
+                <h3><span class="hlt">D</span>éclaration des modules</h3>
+            </section>
+
+            <section data-transition="linear" data-background="#454849" data-background-transition="slide">
+                <p class="breadcrumb">Gestion des dépendances</p>
+                <p>Définition d'un module</p>
+                <pre><code data-trim contenteditable class="javascript">
+define(function () {
+    // YOUR MODULE LOGICS HERE
+});
+                </code></pre>
+            </section>
+
+            <section data-transition="linear" data-background="#454849" data-background-transition="none">
+                <p class="breadcrumb">Gestion des dépendances</p>
+                <p>Déclaration des dépendances</p>
+                <pre><code data-trim contenteditable class="javascript">
+define(
+    [ 'jquery', 'underscore' ],
+    function ($, _, undefined) {
+
+        // $ == jQuery
+        // _ == underscore
+
+        // YOUR MODULE LOGICS HERE
+
+    }
+);
+                </code></pre>
+            </section>
+
+            <section data-transition="linear" data-background="#454849" data-background-transition="none">
+                <p class="breadcrumb">Gestion des dépendances</p>
+                <pre><code data-trim contenteditable class="javascript">
+define(
+    [ 'jquery' ],
+    function ($, undefined) {
+
+        $.fn.pluginName = function(options) {
+          // Default options
+          options = $.extend({
+            property: "value",
+            onEvent: function() {}
+          }, options);
+
+          // Iterate over jQuery elements
+          return this.each(function() {
+
+            // YOUR PLUGIN LOGICS HERE
+
+          });
+        });
+
+    }
+);
+                </code></pre>
+            </section>
+
+            <section data-transition="linear" data-background="#454849" data-background-transition="none">
+                <p class="breadcrumb">Gestion des dépendances</p>
+                <p>Plugins !</p>
+                <pre><code data-trim contenteditable class="javascript">
+define(
+    [
+        'jquery',
+        'hbs!templates/myView',
+        'css!styles/myModule'
+    ],
+    function ($, viewTpl, undefined) {
+
+        // $ == jQuery
+        // viewTpl == the Handlebars template
+
+        // YOUR MODULE LOGICS HERE
+
+    }
+);
+                </code></pre>
+            </section>
+
+            <section>
+                <p class="breadcrumb">Gestion des dépendances</p>
+                <p>Bundling</p>
+                <pre><code data-trim contenteditable class="shell">
+# Bundle with r.js (npm install -g require.js)
+r.js -o name=main out=main-built.js baseUrl=.
+                </code></pre>
+                <p class="legend"><cite>“ Le Web, ça se build ! ”</cite></p>
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h2><span class="lettrine">C</span>aching</h2>
+            </section>
+
+            <section>
+                <p class="breadcrumb">Caching</p>
+                <h2 class="inst"><span class="hlt">A</span>méliorer<br>les <span class="hlt">p</span>erfs</h2>
+            </section>
+
+            <section>
+                <p class="breadcrumb">Caching</p>
+                <h2 class="inst"><span class="hlt">L</span>imiter<br>l'empreinte<br><span class="hlt">m</span>émoire</h2>
+            </section>
+
+            <section data-transition="linear" data-background="#454849" data-background-transition="slide">
+                <p class="breadcrumb">Caching</p>
+                <pre><code data-trim contenteditable class="javascript">
+function bezier(ease, t) {
+
+    // COMPUTE BEZIER CURVE
+    // …
+
+    return {
+        x: _x,
+        y: _y
+    };
+
+}
+                </code></pre>
+            </section>
+
+            <section data-transition="linear" data-background="#454849" data-background-transition="none">
+                <p class="breadcrumb">Caching</p>
+                <pre><code data-trim contenteditable class="javascript">
+function bezier(ease, t) {
+
+    if (ease._cache[t] != null) {
+        /**
+         * Here a local ram cache
+         * But we can use LocalSession || LocalStorage for persistence
+         */
+        return ease._cache[t];
+    }
+
+    // COMPUTE BEZIER CURVE
+    // …
+
+    return ease._cache[t] = {
+        x: _x,
+        y: _y
+    };
+
+}
+                </code></pre>
+            </section>
+
+            <section>
+                <p class="breadcrumb">Caching</p>
+                <h2 class="inst"><span class="hlt">D</span>OM<br>Elements</h2>
+            </section>
+
+            <section data-transition="linear" data-background="#454849" data-background-transition="none">
+                <p class="breadcrumb">Caching</p>
+                <pre><code data-trim contenteditable class="javascript">
+(function ($) {
+
+    var $list = $('ul');
+
+    function updateList($item) {
+        $list.append($item);
+    }
+
+    function getItems() {
+        return $list.find('li');
+    }
+
+})(jQuery);
+                </code></pre>
+            </section>
+
+            <section>
+                <p class="breadcrumb">Caching</p>
+                <h2 class="inst"><span class="hlt">I</span>térations</h2>
+            </section>
+
+            <section data-transition="linear" data-background="#454849" data-background-transition="none">
+                <p class="breadcrumb">Caching</p>
+                <pre><code data-trim contenteditable class="javascript">
+var _i, _len, _ref;
+
+for (_i = 0, _len = list.length; _i < _len; _i++) {
+    _ref = list[_i];
+
+    // YOUR LOOP LOGICS HERE
+}
+                </code></pre>
+            </section>
+
+            <section>
+                <p class="breadcrumb">Caching</p>
+                <h2 class="inst"><span class="hlt">E</span>arly<br>breaks</h2>
+            </section>
+
+            <section data-transition="linear" data-background="#454849" data-background-transition="none">
+                <p class="breadcrumb">Caching</p>
+                <pre><code data-trim contenteditable class="javascript">
+function normalize(list) {
+    if ( list.length === 0 ) { return }
+
+    // ACTIONS ON `list` HERE
+}
+                </code></pre>
+            </section>
+
+            <section>
+                <p class="breadcrumb">Caching</p>
+                <h2 class="inst"><span class="hlt">C</span>ache<br>cleaning</h2>
+            </section>
+
+            <section data-transition="linear" data-background="#454849" data-background-transition="none">
+                <p class="breadcrumb">Caching</p>
+                <pre><code data-trim contenteditable class="javascript">
+var _cache, _cc;
+
+function _clearCache(delay) {
+    if ( _cc != null ) {
+        clearTimeout(_cc);
+    }
+
+    _cc = setTimeout(function () {
+        _cache.length = 0;
+    }, delay);
+}
+                </code></pre>
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h2><span class="lettrine">D</span>élégation d'évènements</h2>
+            </section>
+
+            <section>
+                <p class="breadcrumb">Délégation d'évènements</p>
+                <h2 class="inst"><span class="hlt">T</span>op<br> events</h2>
+            </section>
+
+            <section data-transition="linear" data-background="#454849" data-background-transition="none">
+                <p class="breadcrumb">Délégation d'évènements</p>
+                <pre><code data-trim contenteditable class="javascript">
+(function ($) {
+    $('ul').on('click', 'li', function (e) {
+        var $li = $(this),              // clicked element `li`
+            $ul = $(e.delegateTarget);  // global list container `ul`
+    });
+})(jQuery);
+                </code></pre>
+            </section>
+
+            <section>
+                <p class="breadcrumb">Délégation d'évènements</p>
+                <h2 class="inst"><span class="hlt">P</span>ub/<span class="hlt">S</span>ub<br>Pattern</h2>
+            </section>
+
+            <section data-transition="linear" data-background="#454849" data-background-transition="none">
+                <p class="breadcrumb">Délégation d'évènements</p>
+                <pre><code data-trim contenteditable class="javascript">
+// FOO Plugin
+$.fn.foo = function() {
+    return this.each(function() {
+        $(this).trigger('ready.foo');
+    });
+}
+
+// BAR Plugin
+$.fn.bar = function() {
+    return this.each(function() {
+        $(this).trigger('ready.bar', [ message ]);
+    });
+}
+
+// Main APP
+$(document).on('ready.foo', function(e) { /* Fired by Foo plugin at init */ });
+$(document).on('ready.bar', function(e, message) { /* Fired by Bar plugin at init */ });
+$(document).on('ready', function(e) {
+    /* Fired by plugins at init */
+    var $el = $(e.target);
+});
+                </code></pre>
+            </section>
+        </section>
+
+        <section>
+            <h2><span class="lettrine">Q</span>uestions ?</h2>
+        </section>
+
+        <section class="bgi" data-background="./img/ill/261865727_dfa3b2000c_o.jpg" data-transition="linear" data-background-transition="slide">
+            <h2><span class="lettrine">M</span>erci !</h2>
+            <p><small><a href="http://madsgraphics.github.io/prez/modular_js.html" class="normal"><span class="hlt">//</span>madsgraphics.github.io/prez/modular_js.html</a></small></p>
+        </section>
+
+        <section id="credits">
+            <h2><span class="hlt">C</span>rédits</h2>
+            <dl>
+                <dt>Fonts</dt>
+                <dd>
+                    <ul>
+                        <li><a class="normal" href="http://www.fontsquirrel.com/fonts/bebas-neue"><span class="hlt">B</span>ebas Neue</a><br><span class="creator">By <a class="normal und" href="http://www.dharmatype.com/">Dharma Type</a> // Dharma Type Font License v1.00</span></li>
+                        <li><a class="normal" href="http://www.fontsquirrel.com/fonts/roboto"><span class="hlt">R</span>oboto Bold Condensed</a><br><span class="creator">By Christian Robertson // Apache License v2.00</span></li>
+                        <li><a class="normal" href="http://www.fontsquirrel.com/fonts/DejaVu-Sans"><span class="hlt">D</span>ejaVu Sans Book</a><br><span class="creator">By <a class="normal und" href="http://dejavu-fonts.org/">DejaVu Fonts</a> // DejaVu Fonts License v1.00</span></li>
+                        <li><a class="normal" href="http://www.fontsquirrel.com/fonts/source-code-pro"><span class="hlt">S</span>ource Code Pro</a><br><span class="creator">Copyright 2010, 2012 <a class="normal und" href="http://www.adobe.com/">Adobe Systems Incorporated</a> // SIL Open Font License v1.10</li>
+                    </ul>
+                </dd>
+                <dt>Images</dt>
+                <dd>
+                    <ul>
+                        <li><a class="normal" href="http://www.flickr.com/photos/20561948@N00/261865727/"><span class="hlt">Y</span>ou Killed the Beast, Killer!!!</a><br><span class="creator">By spike55151 // <a class="normal und" href="http://creativecommons.org/licenses/by-nc-sa/2.0/">cc</a></span></li>
+                    </ul>
+                </dd>
+            </dl>
+        </section>
+
+      </div>
+    </div>
+
+    <script src="./lib/js/head.min.js"></script>
+    <script src="./js/reveal.min.js"></script>
+
+    <script>
+      Reveal.initialize({
+        history: true,
+
+        theme: 'default',
+        transition: 'concave',
+        backgroundTransition: 'default',
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: './lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          // { src: '/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          // { src: '/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: './plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          // { src: '/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          // { src: '/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+          // { src: '/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
+    </script>
+
+  </body>
+</html>
