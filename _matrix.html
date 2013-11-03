@@ -1,0 +1,155 @@
+<html>
+<head>
+<title>Matrix-like</title>
+<script language="JavaScript">
+/*
+filter:fliph;
+
+*/
+</script>
+<style>
+body{
+font-size:20pt;
+font-weight:none;
+background-color:#000000;
+color:#000000;
+}
+</style>
+</head>
+<body scroll=no>
+<script language="JavaScript">
+// definition de quelques valeurs
+var cw=document.body.clientWidth
+var ch=document.body.clientHeight
+var nb_cols=Math.floor(cw/16)
+// nb_cols--
+var nb_rows=Math.floor(ch/30)
+nb_rows--
+var dk_colors=new Array("#173317","#215221")
+var normal_color="#40A241"
+var light_color="#A9F0AC"
+var rnd_gly=new Array("a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z",",","/","+","-","*","_","{","%","!",".",";","$","1","2","3","4","5","6","7","8","9","0")
+
+// boucle collones et char+couleurs
+for(n_col=0;n_col<=nb_cols-1;n_col++){
+document.write("<div id=d"+n_col+" style='position:absolute;top:0px;'><tt></div>")
+document.getElementById("d"+n_col).style.width=16
+document.getElementById("d"+n_col).style.left=(n_col*16)
+var nb_chars=Math.floor(Math.random()*(nb_rows))
+document.getElementById("d"+n_col).style.height=(nb_chars+1)*30
+var h_div=parseInt(document.getElementById("d"+n_col).style.height)
+// pour vérifier ajouter à la ligne en dessous //
+document.getElementById("d"+n_col).style.top=-h_div
+document.getElementById("d"+n_col).style.filter="fliph"
+
+
+// mettre des caracteres avec des couleurs
+for(n_char=0;n_char<=nb_chars;n_char++){
+if(n_char<=1){
+document.getElementById("d"+n_col).innerHTML+="<tt><font color='"+dk_colors[n_char]+"'>"+rnd_gly[Math.floor(Math.random()*rnd_gly.length)]+"</font></tt><br>"
+}else if((n_char>1)&&(n_char<nb_chars)){
+document.getElementById("d"+n_col).innerHTML+="<tt><font color='"+normal_color+"'>"+rnd_gly[Math.floor(Math.random()*rnd_gly.length)]+"</font></tt><br>"
+}else{
+document.getElementById("d"+n_col).innerHTML+="<tt><font color='"+light_color+"'>"+rnd_gly[Math.floor(Math.random()*rnd_gly.length)]+"</font></tt>"
+}
+}
+// fin de déf des char_colorés ^
+}
+// fin boucle collones ^
+
+
+var deja_fait_st=new Array()
+var deja_fait_st_index=0
+
+function del_et_restart(numero){
+// del HTML
+document.getElementById("d"+numero).innerHTML="<tt>"
+// resiZe
+var nb_chars=Math.floor(Math.random()*(nb_rows))
+document.getElementById("d"+n_col).style.height=(nb_chars+1)*30
+var h_div=parseInt(document.getElementById("d"+n_col).style.height)
+document.getElementById("d"+n_col).style.top=-h_div
+// re-cholor et text
+for(n_char=0;n_char<=nb_chars;n_char++){
+if(n_char<=1){
+document.getElementById("d"+numero).innerHTML+="<tt><font color='"+dk_colors[n_char]+"'>"+rnd_gly[Math.floor(Math.random()*rnd_gly.length)]+"</font></tt><br>"
+}else if((n_char>1)&&(n_char<nb_chars)){
+document.getElementById("d"+numero).innerHTML+="<tt><font color='"+normal_color+"'>"+rnd_gly[Math.floor(Math.random()*rnd_gly.length)]+"</font></tt><br>"
+}else{
+document.getElementById("d"+numero).innerHTML+="<tt><font color='"+light_color+"'>"+rnd_gly[Math.floor(Math.random()*rnd_gly.length)]+"</font></tt>"
+}
+}
+}
+
+
+
+
+
+bas()
+function bas(){
+for(n_col=0;n_col<=nb_cols-1;n_col++){
+if(parseInt(document.getElementById("d"+n_col).style.top)<=ch){
+document.getElementById("d"+n_col).style.top=parseInt(document.getElementById("d"+n_col).style.top)+30
+}else{
+del_et_restart(n_col)
+}
+}
+window.setTimeout("bas()",50)
+}
+
+
+/* bas_st()
+function bas_st(){
+var current_down=Math.random()*nb_cols
+// recherche
+for(i=0;i<=deja_fait_st.length;i++){
+if (deja_fait_st.slice(i,i+1).substring(current_down)==-1){
+deja_fait_st[deja_fait_st_index]=current_down
+deja_fait_st_index++
+}
+else break
+}
+if(deja_fait_st==nb_cols){
+void(0)
+}else{
+document.getElementById("d"+n_col).style.top+=30
+bas_st()
+}
+}
+
+
+window.alert(nb_cols)
+window.alert(nb_rows)
+window.alert(nb_cols*nb_rows)
+document.write("<nobr>")
+
+for(n_col=0;n_col<=nb_cols-1;n_col++){
+document.write("<div id=d"+n_col+" style='position:absolute;top:0px;'><tt>"+rnd_gly[Math.floor(Math.random()*rnd_gly.length)]+"</div>")
+document.getElementById("d"+n_col).style.width=16
+document.getElementById("d"+n_col).style.left=(n_col*16)
+document.getElementById("d"+n_col).style.top=0
+document.getElementById("d"+n_col).style.height=ch-10
+// document.getElementById("d"+n_col).style.filter="fliph"
+// boucle contenu
+for(i=0;i<nb_rows;i++){
+document.getElementById("d"+n_col).innerHTML+=rnd_gly[Math.floor(Math.random()*rnd_gly.length)]+"<br>"
+}
+document.getElementById("d"+n_col).innerHTML+=rnd_gly[Math.floor(Math.random()*rnd_gly.length)]
+}
+document.write("</nobr>")
+window.setTimeout("down()", 5)
+
+function down(){
+for(n_col=0;n_col<=nb_cols-1;n_col++){
+document.getElementById("d"+n_col).innerHTML=rnd_gly[Math.floor(Math.random()*rnd_gly.length)]+"<br>"+document.getElementById("d"+n_col).innerHTML
+// document.getElementById("d"+n_col).innerHTML=document.getElementById("d"+n_col).innerHTML.substring(0, document.getElementById("d"+n_col).innerHTML.lastIndexOf("<br>"))
+}
+window.setTimeout("down()", 500)
+}
+
+
+
+*/
+</script>
+</body>
+</html>
