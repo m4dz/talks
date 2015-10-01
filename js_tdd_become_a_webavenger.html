@@ -1,0 +1,611 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+
+    <title>JS TDD - Become a WebAvenger</title>
+
+    <meta name="description" content="JS TDD - Become a WebAvenger">
+    <meta name="author" content="MAD <code@madsgraphics.com>">
+
+    <link rel="stylesheet" href="./css/reveal.min.css">
+    <link rel="stylesheet" href="./css/theme/madsgraphics.css">
+
+    <style type="text/css">
+      img.ill {
+        box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.45) !important;
+      }
+
+      .reveal .fail,
+      .reveal .pass {
+        display: inline-block;
+        width: 35px;
+        height: 35px;
+        border-radius: 100%;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.35);
+
+        font-size: 32px;
+        text-align: center;
+        vertical-align: middle;
+        line-height: 40px;
+
+        color: #fff;
+      }
+
+      .fail {
+        background-color: red;
+      }
+
+      .pass {
+        background-color: green;
+      }
+    </style>
+
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="./lib/css/tomorrow.css">
+
+    <!--[if lt IE 9]>
+    <script src="/lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+        <section>
+          <h1><span class="hlt">JS TDD</span><br>Become a WebAvenger</h1>
+          <p style="float:right"><small><a href="http://talks.madsgraphics.com/js_tdd_become_a_webavenger.html" class="normal"><span class="hlt">//</span>talks.madsgraphics.com/js_tdd_become_a_webavenger.html</a></small></p>
+        </section>
+
+        <section id="mad">
+          <div id="stamp">
+            <img src="./img/mad.jpg" alt="MAD" class="stamp">
+            <img src="./img/cleverage.png" alt="MAD" class="stamp fragment" data-fragment-index="2" data-state="clever">
+          </div>
+          <div class="wrapper">
+            <div id="coord">
+              <h2>MAD</h2>
+              <p><a href="https://twitter.com/madsgraphics">@madsgraphics</a></p>
+              <p><a href="mailto:code@madsgraphics.com">code@madsgraphics.com</a></p>
+            </div>
+            <div id="skills" class="fragment" data-fragment-index="1" data-state="skills">
+              <p>Dev UI</p>
+              <p>JavaScript Ninja</p>
+              <p>Code Architect</p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <blockquote><span class="hlt">I</span>f it's not tested, it's not code. It's shit…</blockquote>
+        </section>
+
+        <section>
+          <section class="bgi" data-background="./img/ill/ariane.jpg" data-transition="linear" data-background-transition="slide">
+            <!--
+            photo credit: <a href="http://www.flickr.com/photos/astirn/3652533656/">astirn</a> via <a href="http://photopin.com">photopin</a> <a href="http://creativecommons.org/licenses/by-nc-nd/2.0/">cc</a>
+            -->
+            <h2><span class="lettrine">I</span>l était une fois…</h2>
+            <p><small><a href="http://fr.wikipedia.org/wiki/Bug_(informatique)#Quelques_.C3.A9v.C3.A8nements" class="normal"><span class="hlt">//</span>𝒲</a></small></p>
+          </section>
+
+          <section data-background="./img/ill/motor.jpg" data-transition="linear" data-background-transition="slide">
+            <!--
+            photo credit: <a href="http://www.flickr.com/photos/fdecomite/6443775905/">fdecomite</a> via <a href="http://photopin.com">photopin</a> <a href="http://creativecommons.org/licenses/by/2.0/">cc</a>
+             -->
+          </section>
+
+          <section data-background="./img/ill/ariane_explode.jpg" data-transition="linear" data-background-transition="slide">
+            <!--
+            photo credit: <a href="http://www.flickr.com/photos/mateus27_24-25/8410892930/">MATEUS_27:24&25</a> via <a href="http://photopin.com">photopin</a> <a href="http://creativecommons.org/licenses/by-nc-sa/2.0/">cc</a>
+            -->
+          </section>
+
+          <section>
+            <p class="breadcrumb">Il était une fois…</p>
+            <h2 class="inst"><span class="hlt">T</span>estez !</h2>
+          </section>
+        </section>
+
+        <section>
+          <section class="bgi" data-background="./img/ill/didnt_say_the_magic_word.jpg" data-transition="linear" data-background-transition="slide">
+            <h2><span class="lettrine">P</span>ourquoi ?</h2>
+          </section>
+
+          <section>
+            <p class="breadcrumb">Pourquoi ?</p>
+            <h2 class="inst"><span class="hlt">Q</span>ualité</h2>
+          </section>
+
+          <section>
+            <p class="breadcrumb">Pourquoi ?</p>
+            <h2 class="inst"><span class="hlt">P</span>érénité</h2>
+          </section>
+
+          <section>
+            <p class="breadcrumb">Pourquoi ?</p>
+            <h2 class="inst"><span class="hlt">C</span>onfiance</h2>
+          </section>
+        </section>
+
+        <section>
+          <section class="bgi" data-background="./img/ill/bug.jpg" data-transition="linear" data-background-transition="slide">
+            <h2><span class="lettrine">B</span>ugs</h2>
+          </section>
+
+          <section>
+            <p class="breadcrumb">Bugs</p>
+            <ul>
+              <li>Heisenbug<br><small>(principe d’incertitude de Heisenberg)</small></li>
+              <li>Mandelbug<br><small>(ensembles de Mandelbrot)</small></li>
+              <li>Schrödinbug<br><small>(chat de Schrödinger)</small></li>
+              <li>Bohr bug</li>
+            </ul>
+          </section>
+
+          <section>
+            <p class="breadcrumb">Bugs • Debug</p>
+            <h2 class="inst"><span class="hlt">D</span>ebug</h2>
+          </section>
+
+          <section>
+            <p class="breadcrumb">Bugs • Debug</p>
+            <img class="ill" src="./img/debug_alert-foo.png" width="720" height="476" alt>
+          </section>
+
+          <section>
+            <p class="breadcrumb">Bugs • Debug</p>
+            <img class="ill" src="./img/debug_alert-obj.png" width="720" height="476" alt>
+          </section>
+
+          <section>
+            <p class="breadcrumb">Bugs • Debug</p>
+            <img class="ill" src="./img/debug_console.png" width="720" height="455" alt>
+          </section>
+
+          <section>
+            <p class="breadcrumb">Bugs • Debug</p>
+            <img class="ill" src="./img/debug_webtools.png" width="720" height="476" alt>
+          </section>
+
+          <section>
+            <p class="breadcrumb">Bugs • Debug</p>
+            <h2><span class="hlt">W</span>ebtools</h2>
+            <ul>
+              <li>Breakpoints</li>
+              <li>Observer</li>
+              <li>Profiler</li>
+              <li>Network inspector</li>
+              <li>Pagespeed, Speed Tracer…</li>
+            </ul>
+          </section>
+
+          <section>
+            <p class="breadcrumb">Bugs • Tester</p>
+            <h2 class="inst"><span class="hlt">T</span>ester</h2>
+          </section>
+
+          <section>
+            <p class="breadcrumb">Bugs • Tester</p>
+            <h2><span class="hlt">T</span>ests…</h2>
+            <ul>
+              <li class="fragment roll-in" data-fragment-index="1">unitaires</li>
+              <li class="fragment roll-in" data-fragment-index="2">d'intégration</small></li>
+              <li class="fragment roll-in" data-fragment-index="3">fonctionnels</li>
+            </ul>
+          </section>
+
+          <section>
+            <p class="breadcrumb">Bugs • Tester</p>
+            <h2><span class="hlt">U</span>nitaires</h2>
+            <p>(qUnit, Mocha)</p>
+            <ul>
+              <li>Composant</li>
+              <li>Feature isolée</li>
+            </ul>
+          </section>
+
+          <section>
+            <p class="breadcrumb">Bugs • Tester</p>
+            <pre><code data-trim contenteditable class="javascript">
+var assert = require("assert");
+
+describe('Array', function () {
+
+  describe('#indexOf()', function () {
+
+    it('should return -1 when the value is not present', function () {
+      assert.equal(-1, [1,2,3].indexOf(5));
+      assert.equal(-1, [1,2,3].indexOf(0));
+    });
+
+  });
+});
+            </code></pre>
+          </section>
+
+          <section>
+            <p class="breadcrumb">Bugs • Tester</p>
+            <h2><span class="hlt">I</span>ntégration</h2>
+            <p>(Karma, Casper.js)</p>
+            <ul>
+              <li>Fonctionnalité complète</li>
+              <li>Scripting</li>
+              <li>UI</li>
+            </ul>
+          </section>
+
+          <section>
+            <p class="breadcrumb">Bugs • Tester</p>
+            <pre><code data-trim contenteditable class="javascript">
+var links = [];
+var casper = require('casper').create();
+
+function getLinks() {
+    var links = document.querySelectorAll('h3.r a');
+    return Array.prototype.map.call(links, function(e) {
+        return e.getAttribute('href');
+    });
+}
+
+casper.start('http://google.fr/', function() {
+    this.fill('form[action="/search"]', { q: 'casperjs' }, true);
+});
+
+casper.then(function() {
+    links = this.evaluate(getLinks);
+});
+
+casper.run(function() {
+    this.echo(links.length + ' links found:');
+    this.echo(' - ' + links.join('\n - ')).exit();
+});
+            </code></pre>
+          </section>
+
+          <section>
+            <p class="breadcrumb">Bugs • Tester</p>
+            <h2><span class="hlt">F</span>onctionnel</h2>
+            <p>(Selenium)</p>
+            <ul>
+              <li>Rendus</li>
+              <li>Navigation</li>
+            </ul>
+          </section>
+
+          <section>
+            <p class="breadcrumb">Bugs • Tester</p>
+            <h2><span class="hlt">W</span>eb(apps)<br></h2>
+            <ul>
+              <li>Qualité : Opquast</li>
+              <li>Compatibilité : Browserstack</li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <section class="bgi" data-background="./img/ill/blueprint.jpg" data-transition="linear" data-background-transition="slide">
+            <h2><span class="lettrine">T</span>DD or <span class="lettrine">B</span>DD ?</h2>
+          </section>
+
+          <section>
+            <p class="breadcrumb">TDD or BDD ?</p>
+            <ol>
+              <li>Écrire</li>
+              <li>Test <span class="fail"><!-- --></span></li>
+              <li>Implémenter</li>
+              <li><span class="fail">↑</span> Test <span class="pass">↓</span></li>
+              <li>Refacto</li>
+              <li><span class="fail">↑</span> Test <span class="pass">↓</span></li>
+              <li>Livraison</li>
+            </ol>
+          </section>
+
+          <section>
+            <p class="breadcrumb">TDD or BDD ? • Specs</p>
+            <h2 class="inst"><span class="hlt">S</span>pecs</h2>
+            <p>(Gherkin, Cucumber)</p>
+          </section>
+
+          <section>
+            <p class="breadcrumb">TDD or BDD ? • Specs</p>
+            <pre><code data-trim contenteditable class="gherkin">
+Feature: Some terse yet descriptive text of what is desired
+  Textual description of the business value of this feature
+  Business rules that govern the scope of the feature
+  Any additional information that will make the feature easier to understand
+
+  Scenario: Some determinable business situation
+    Given some precondition
+      And some other precondition
+     When some action by the actor
+      And some other action
+      And yet another action
+     Then some testable outcome is achieved
+      And something else we can check happens too
+            </code></pre>
+          </section>
+
+          <section>
+            <p class="breadcrumb">TDD or BDD ? • Specs</p>
+            <h2><span class="hlt">T</span>estez vos specs</h2>
+            <p>(Capybara, Selenium)</p>
+          </section>
+
+          <section>
+            <p class="breadcrumb">TDD or BDD ? • Automatiser</p>
+            <h2 class="inst"><span class="hlt">A</span>utomatiser</h2>
+          </section>
+
+          <section>
+            <p class="breadcrumb">TDD or BDD ? • Automatiser</p>
+            <h2><span class="hlt">I</span>ntégration continue</h2>
+            <p>(Jenkins, GitlabCI)</p>
+          </section>
+
+          <section>
+            <p class="breadcrumb">TDD or BDD ? • Automatiser</p>
+            <h2><span class="hlt">C</span>limate</h2>
+            <p>(SonarHQ, CodeClimate)</p>
+          </section>
+
+          <section>
+            <p class="breadcrumb">TDD or BDD ? • Automatiser</p>
+            <img src="./img/codeclimate.jpg" alt class="ill">
+          </section>
+
+          <section>
+            <p class="breadcrumb">TDD or BDD ? • Automatiser</p>
+            <h2><span class="hlt">S</span>tress</h2>
+            <p>(Gremlins.js)</p>
+          </section>
+
+          <section>
+            <p class="breadcrumb">TDD or BDD ? • Automatiser</p>
+            <img src="./img/gremlins.gif" alt class="ill">
+          </section>
+        </section>
+
+        <section>
+          <section class="bgi" data-background="./img/ill/code.jpg" data-transition="linear" data-background-transition="slide">
+            <!--
+            photo credit: <a href="http://www.flickr.com/photos/st3f4n/4291462682/">Stéfan</a> via <a href="http://photopin.com">photopin</a> <a href="http://creativecommons.org/licenses/by-nc-sa/2.0/">cc</a>
+            -->
+            <h2><span class="lettrine">C</span>ode !</h2>
+          </section>
+
+          <section>
+            <p class="breadcrumb">Code !</p>
+            <img src="./img/itsatrap.jpg" alt class="ill">
+          </section>
+
+          <section>
+            <p class="breadcrumb">Code • A New Hope</p>
+            <h2 class="inst"><span class="hlt">A</span> New Hope</h2>
+          </section>
+
+          <section>
+            <p class="breadcrumb">Code • A New Hope</p>
+            <h2><span class="hlt">L</span>ayers</h2>
+            <ul>
+              <li class="fragment roll-in" data-fragment-index="1">Présentation / UI</li>
+              <li class="fragment roll-in" data-fragment-index="2">Data / Persistance</li>
+              <li class="fragment roll-in" data-fragment-index="3">Application State</li>
+              <li class="fragment roll-in" data-fragment-index="4">Setup, Glue &amp; Staples</li>
+            </ul>
+          </section>
+
+          <section>
+            <p class="breadcrumb">Code • A New Hope</p>
+            <h2><span class="hlt">K</span>ISS</h2>
+            <ul>
+              <li class="fragment roll-in" data-fragment-index="1">&lt; 10 lignes</li>
+              <li class="fragment roll-in" data-fragment-index="2">Module Pattern (AMD)</li>
+              <li class="fragment roll-in" data-fragment-index="3">Faible exposition</li>
+            </ul>
+          </section>
+
+          <section>
+            <p class="breadcrumb">Code • A New Hope</p>
+            <h2><span class="hlt">C</span>onsructor / <span class="hlt">P</span>rototypes</h2>
+            <pre><code data-trim contenteditable class="javascript">
+var Likes = function (el) {
+  this.el = $(el);
+  return this;
+};
+
+Likes.prototype.add = function (name) {
+  this.el.find('.no-results').remove();
+  $('&lt;li&gt;', { text: name }).appendTo(this.el);
+};
+
+var l = new Likes(ul);
+l.add('Brendan Eich');
+            </code></pre>
+          </section>
+
+          <section>
+            <p class="breadcrumb">Code • Empire Strikes Back</p>
+            <h2 class="inst"><span class="hlt">E</span>mpire Strikes Back</h2>
+          </section>
+
+          <section>
+            <p class="breadcrumb">Code • Empire Strikes Back</p>
+            <h2><span class="hlt">T</span>esting Frameworks</h2>
+            <ul>
+              <li class="fragment roll-in" data-fragment-index="1">qUnit</li>
+              <li class="fragment roll-in" data-fragment-index="2">Mocha</li>
+              <li class="fragment roll-in" data-fragment-index="3">Buster.js</li>
+              <li class="fragment roll-in" data-fragment-index="4">Intern</li>
+            </ul>
+          </section>
+
+          <section>
+            <p class="breadcrumb">Code • Empire Strikes Back</p>
+            <h2><span class="hlt">A</span>ssertion Library</h2>
+            <ul>
+              <li class="fragment roll-in" data-fragment-index="1">Chai</li>
+              <li class="fragment roll-in" data-fragment-index="2">assert.js</li>
+              <li class="fragment roll-in" data-fragment-index="3">Should.js</li>
+              <li class="fragment roll-in" data-fragment-index="4">expectThat</li>
+            </ul>
+          </section>
+
+          <section>
+            <p class="breadcrumb">Code • Empire Strikes Back</p>
+            <h2><span class="hlt">M</span>ocks, Spies, Stubs</h2>
+            <p>Sinon.js</p>
+          </section>
+
+          <section>
+            <p class="breadcrumb">Code • Return Of The Jedi</p>
+            <h2 class="inst"><span class="hlt">R</span>eturn<br>Of The Jedi</h2>
+          </section>
+
+          <section>
+            <p class="breadcrumb">Code • Return Of The Jedi</p>
+            <h2><span class="hlt">T</span>askers</h2>
+            <ul>
+              <li class="fragment roll-in" data-fragment-index="1">Grunt</li>
+              <li class="fragment roll-in" data-fragment-index="2">Gulp</li>
+            </ul>
+          </section>
+
+          <section>
+            <p class="breadcrumb">Code • Return Of The Jedi</p>
+            <h2><span class="hlt">S</span>caffoling</h2>
+            <ul>
+              <li class="fragment roll-in" data-fragment-index="1">Yeoman</li>
+              <li class="fragment roll-in" data-fragment-index="2">Brunch.io</li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <section class="bgi" data-background="./img/ill/plane.jpg" data-transition="linear" data-background-transition="slide">
+            <!--
+            photo credit: <a href="http://www.flickr.com/photos/39463459@N08/8079899974/">HooLengSiong</a> via <a href="http://photopin.com">photopin</a> <a href="http://creativecommons.org/licenses/by-nc-sa/2.0/">cc</a>
+            -->
+            <h2><span class="lettrine">R</span>un !</h2>
+          </section>
+
+          <section>
+            <p class="breadcrumb">Run !</p>
+            <h2 class="inst"><span class="hlt">A</span>pprentissage</h2>
+          </section>
+
+          <section>
+            <p class="breadcrumb">Run !</p>
+            <h2 class="inst"><span class="hlt">R</span>éalisme</h2>
+          </section>
+
+          <section>
+            <p class="breadcrumb">Run !</p>
+            <h2 class="inst"><span class="hlt">C</span>omplexité</h2>
+          </section>
+
+          <section>
+            <p class="breadcrumb">Run !</p>
+            <blockquote><span class="hlt">I</span>mperfect tests, run frequently, are much better than perfect tests that are never written at all.</blockquote><cite>Martin Fowler</cite>
+          </section>
+        </section>
+
+        <section>
+          <section class="bgi" data-background="./img/ill/windgenerator.jpg" data-transition="linear" data-background-transition="slide">
+            <!--
+            photo credit: <a href="http://www.flickr.com/photos/joachim_s_mueller/4476371217/">Joachim S. Müller</a> via <a href="http://photopin.com">photopin</a> <a href="http://creativecommons.org/licenses/by-nc-sa/2.0/">cc</a>
+            -->
+            <h2><span class="lettrine">E</span>t en Prod ?</h2>
+          </section>
+
+          <section>
+            <p class="breadcrumb">Et en Prod ?</p>
+            <h2><span class="hlt">C</span>'est vendu ça ?</h2>
+            <ul>
+              <li class="fragment roll-in" data-fragment-index="1">Tests unitaires</li>
+              <li class="fragment roll-in" data-fragment-index="2">Tests fonctionnels</li>
+            </ul>
+          </section>
+
+          <section>
+            <p class="breadcrumb">Et en Prod ?</p>
+            <h2><span class="hlt">D</span>urex®</h2>
+            <ol>
+              <li class="fragment roll-in" data-fragment-index="1">Workflow</li>
+              <li class="fragment roll-in" data-fragment-index="2">Minimize les Bugs</li>
+              <li class="fragment roll-in" data-fragment-index="3">Debug facilité</li>
+              <li class="fragment roll-in" data-fragment-index="4">Confiance</li>
+              <li class="fragment roll-in" data-fragment-index="5">Qualité de Code</li>
+            </ol>
+          </section>
+        </section>
+
+        <section class="bgi" data-background="./img/ill/ask.jpg" data-transition="linear" data-background-transition="slide">
+            <!--
+            photo credit: <a href="http://www.flickr.com/photos/kalexanderson/6451612113/">Kalexanderson</a> via <a href="http://photopin.com">photopin</a> <a href="http://creativecommons.org/licenses/by-nc-sa/2.0/">cc</a>
+            -->
+            <h2><span class="lettrine">Q</span>uestions ?</h2>
+        </section>
+
+        <section class="bgi" data-background="./img/ill/cat.jpg" data-transition="linear" data-background-transition="slide">
+            <h2><span class="lettrine">M</span>erci !</h2>
+            <p><small><a href="http://talks.madsgraphics.com/js_tdd_become_a_webavenger.html" class="normal"><span class="hlt">//</span>talks.madsgraphics.com/js_tdd_become_a_webavenger.html</a></small></p>
+        </section>
+
+        <section id="credits">
+            <h2><span class="hlt">C</span>rédits</h2>
+            <dl>
+                <dt>Fonts</dt>
+                <dd>
+                    <ul>
+                        <li><a class="normal" href="http://www.fontsquirrel.com/fonts/bebas-neue"><span class="hlt">B</span>ebas Neue</a><br><span class="creator">By <a class="normal und" href="http://www.dharmatype.com/">Dharma Type</a> // Dharma Type Font License v1.00</span></li>
+                        <li><a class="normal" href="http://www.fontsquirrel.com/fonts/roboto"><span class="hlt">R</span>oboto Bold Condensed</a><br><span class="creator">By Christian Robertson // Apache License v2.00</span></li>
+                        <li><a class="normal" href="http://www.fontsquirrel.com/fonts/DejaVu-Sans"><span class="hlt">D</span>ejaVu Sans Book</a><br><span class="creator">By <a class="normal und" href="http://dejavu-fonts.org/">DejaVu Fonts</a> // DejaVu Fonts License v1.00</span></li>
+                        <li><a class="normal" href="http://www.fontsquirrel.com/fonts/source-code-pro"><span class="hlt">S</span>ource Code Pro</a><br><span class="creator">Copyright 2010, 2012 <a class="normal und" href="http://www.adobe.com/">Adobe Systems Incorporated</a> // SIL Open Font License v1.10</li>
+                    </ul>
+                </dd>
+                <dt>Images</dt>
+                <dd>
+                    <ul>
+                        <li><a class="normal" href="http://www.flickr.com/photos/20561948@N00/261865727/"><span class="hlt">Y</span>ou Killed the Beast, Killer!!!</a><br><span class="creator">By spike55151 // <a class="normal und" href="http://creativecommons.org/licenses/by-nc-sa/2.0/">cc</a></span></li>
+                    </ul>
+                </dd>
+            </dl>
+        </section>
+
+      </div>
+    </div>
+
+    <script src="./lib/js/head.min.js"></script>
+    <script src="./js/reveal.min.js"></script>
+
+    <script>
+      Reveal.initialize({
+        history: true,
+
+        theme: 'default',
+        transition: 'concave',
+        backgroundTransition: 'default',
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: './lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: './plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+        ]
+      });
+
+      Reveal.addEventListener('fragmentshown', function(e) {
+        var f = e.fragment;
+
+        switch (f.dataset.state) {
+          case 'skills' : case 'clever':
+            var s = document.getElementById('mad');
+            s.className += (s.className.length > 0 ? ' ' : '') + f.dataset.state;
+            break;
+        }
+      });
+    </script>
+
+  </body>
+</html>

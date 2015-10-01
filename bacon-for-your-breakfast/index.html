@@ -1,0 +1,501 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+
+    <title>Bacon for your breakfast</title>
+
+    <meta name="description" content="Bacon for your breakfast - Cozy Team 07/2015">
+    <meta name="author" content="MAD <code@m4dz.net>">
+
+    <link rel="stylesheet" href="../css/reveal.min.css">
+    <link rel="stylesheet" href="../css/theme/madsgraphics.css">
+
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="../lib/css/tomorrow-night-bright.css">
+
+    <!--[if lt IE 9]>
+    <script src="../lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+        <section>
+          <h1><span class="hlt">B</span>acon for <br>your <br>breakfast</h1>
+          <p style="float:right"><small><a href="http://talks.m4dz.net/bacon-for-your-breakfast/" class="normal"><span class="hlt">//</span>talks.m4dz.net/bacon-for-your-breakfast/</a></small></p>
+        </section>
+
+        <section id="mad">
+          <style type="text/css">
+            .reveal #mad.skills .wrapper {
+              left: 0;
+            }
+
+            .reveal #mad .wrapper {
+              overflow: auto;
+              width: 100%;
+              height: 300px;
+            }
+
+            .reveal #mad .wrapper > div {
+              float: none;
+              position: absolute;
+              width: 100%;
+              top: 0;
+              left: 0;
+            }
+
+            .reveal #mad.skills.clever #skills {
+              opacity: 0;
+            }
+
+            .reveal code {
+              font-size: .8em !important;
+            }
+
+            .reveal pre {
+              background-color: #282828;
+            }
+
+            .reveal li pre {
+              width: 100%;
+            }
+
+            .reveal figcaption {
+              color: #999;
+              font-size: .6em;
+            }
+
+            .reveal table {
+              font-size: 0.5em;
+              font-family: 'Source Sans Pro';
+              line-height: 1.85em;
+            }
+
+            .reveal table caption {
+              font-size: .8em;
+              color: #999;
+            }
+
+            .reveal th {
+              font-weight: bold;
+            }
+
+            .reveal td {
+              border-bottom: 1px solid #999;
+            }
+          </style>
+          <div id="stamp">
+            <img src="../img/mad.jpg" alt="MAD" class="stamp" width="300" height="300">
+            <img src="../img/cozy.svg" alt="MAD" class="stamp fragment" data-fragment-index="2" data-state="clever" width="300" height="300">
+          </div>
+          <div class="wrapper">
+            <div id="coord">
+              <h2>MAD</h2>
+              <p><a href="https://twitter.com/m4d_z">@m4d_z</a></p>
+              <p><a href="mailto:code@m4dz.net">code@m4dz.net</a></p>
+            </div>
+            <div id="skills" class="fragment" data-fragment-index="1" data-state="skills">
+              <p>Dev Ui</p>
+              <p>Quality Defender</p>
+              <p>Ponies Breeder</p>
+            </div>
+            <div id="clever" class="fragment" data-fragment-index="2" data-state="clever">
+              <h2>Cozy</h2>
+              <p><a href="https://cozy.io">//cozy.io</a></p>
+            </div>
+          </div>
+        </section>
+
+
+        <section>
+          <section class="bgi" data-background="#aaa" data-transition="linear" data-background-transition="slide">
+            <!--
+            photo credit:
+            -->
+            <h2><span class="lettrine">I</span>mpératif <br>~<br> <span class="lettrine">F</span>onctionnel</h2>
+          </section>
+
+          <section>
+            <p class="breadcrumb">Impératif ~ Fonctionnel</p>
+            <h2><span class="hlt">I</span>mpératif</h2>
+            <ul>
+              <li>Descriptif / Algorithmique</li>
+              <li>Séquentiel</li>
+              <li>Structures de contrôle</li>
+              <li>Side-effects</li>
+            </ul>
+          </section>
+
+          <section>
+            <p class="breadcrumb">Impératif ~ Fonctionnel</p>
+            <h2><span class="hlt">F</span>onctionel</h2>
+            <ul>
+              <li>Composition</li>
+              <li>Fonctions / Récursivité</li>
+              <li>Stateless</li>
+            </ul>
+          </section>
+
+          <section>
+            <p class="breadcrumb">Impératif ~ Fonctionnel</p>
+            <h2><span class="hlt">F</span>ight!</h2>
+            <table>
+              <caption>source: https://msdn.microsoft.com/en-us/library/bb669144.aspx</caption>
+              <tbody>
+                <tr>
+                  <th>Characteristic</th>
+                  <th>Imperative approach</th>
+                  <th>Functional approach</th>
+                </tr>
+                <tr>
+                  <th>Programmer focus</th>
+                  <td>How to perform tasks (algorithms) and how to track changes in state.</td>
+                  <td>What information is desired and what transformations are required.</td>
+                </tr>
+                <tr>
+                  <th>State changes</th>
+                  <td>Important.</td>
+                  <td>Non-existent.</td>
+                </tr>
+                <tr>
+                  <th>Order of execution</th>
+                  <td>Important.</td>
+                  <td>Low importance.</td>
+                </tr>
+                <tr>
+                  <th>Primary flow control</th>
+                  <td>Loops, conditionals, and function (method) calls.</td>
+                  <td>Function calls, including recursion.</td>
+                </tr>
+                <tr>
+                  <th>Primary manipulation unit</th>
+                  <td>Instances of structures or classes.</td>
+                  <td>Functions as first-class objects and data collections.</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+        </section>
+
+        <section>
+          <section class="bgi" data-background="#aaa" data-transition="linear" data-background-transition="slide">
+            <!--
+            photo credit:
+            -->
+            <h2><span class="lettrine">R</span>éactive</h2>
+          </section>
+
+          <section>
+            <p class="breadcrumb">Réactive</p>
+            <h2><span class="hlt">P</span>rincipes</h2>
+            <ul>
+              <li>Immutabilité</li>
+              <li>Flux de données</li>
+              <li>Composition</li>
+            </ul>
+          </section>
+
+          <section>
+            <p class="breadcrumb">Réactive</p>
+            <figure>
+              <img src="modules1.png" alt="Inter-module communication">
+              <figcaption>source: http://staltz.com/dont-react</figcaption>
+            </figure>
+          </section>
+
+          <section>
+            <p class="breadcrumb">Réactive</p>
+            <figure>
+              <img src="modules2.png" alt="Interactive pattern">
+              <figcaption>source: http://staltz.com/dont-react</figcaption>
+            </figure>
+          </section>
+
+          <section>
+            <p class="breadcrumb">Réactive</p>
+            <figure>
+              <img src="modules3.png" alt="Reactive Pattern">
+              <figcaption>source: http://staltz.com/dont-react</figcaption>
+            </figure>
+          </section>
+
+          <section>
+            <p class="breadcrumb">Réactive</p>
+            <h2><span class="hlt">P</span>atterns <br>Presenter / ViewModel</h2>
+
+          </section>
+        </section>
+
+        <section>
+          <section class="bgi" data-background="#aaa" data-transition="linear" data-background-transition="slide">
+            <!--
+            photo credit:
+            -->
+            <h2><span class="lettrine">F</span>RP</h2>
+          </section>
+
+          <section>
+            <p class="breadcrumb">FRP</p>
+            <h2><span class="hlt">D</span>uo gagnant</h2>
+            <ul>
+              <li>Immutabilité > Stateless</li>
+              <li>Flux de données > Récursivité</li>
+              <li>Composition !</li>
+            </ul>
+          </section>
+
+          <section>
+            <p class="breadcrumb">FRP</p>
+            <h2><span class="hlt">JS</span> libs</h2>
+            <ul>
+              <li>RxJS</li>
+              <li>Bacon</li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <section class="bgi" data-background="#aaa" data-transition="linear" data-background-transition="slide">
+            <!--
+            photo credit:
+            -->
+            <h2><span class="lettrine">B</span>acon</h2>
+          </section>
+
+          <section>
+            <p class="breadcrumb">Bacon</p>
+            <h2><span class="hlt">P</span>rimitives</h2>
+            <ul>
+              <li class="fragment roll-in">Observable</li>
+            </ul>
+          </section>
+
+          <section>
+            <p class="breadcrumb">Bacon</p>
+            <h2><span class="hlt">T</span>ypes</h2>
+            <ul>
+              <li>Stream</li>
+              <li>Property</li>
+              <li>Bus</li>
+            </ul>
+          </section>
+
+          <section>
+            <p class="breadcrumb">Bacon</p>
+            <h2><span class="hlt">S</span>treams</h2>
+            <ul>
+              <li>jQuery : <code>asEventStream</code></li>
+              <li>Callback: <code>fromCallback</code></li>
+              <li>Promise: <code>fromPromise</code></li>
+              <li><code>fromBinder</code></li>
+            </ul>
+          </section>
+
+          <section>
+            <p class="breadcrumb">Bacon</p>
+            <h2><span class="hlt">B</span>us</h2>
+            <ul>
+              <li>Attacher un stream : <code>tchoutchou.plug stream</code></li>
+              <li>Envoyer un event : <code>tchoutchou.push 'run'</code></li>
+            </ul>
+          </section>
+
+          <section>
+            <p class="breadcrumb">Bacon</p>
+            <h2><span class="hlt">P</span>roperties</h2>
+            <ul>
+              <li>Depuis un stream: <code>stream.toProperty()</code></li>
+              <li>Réaction: <code>me.onValue()</code> <br> <code>me.assign($el, 'val')</code></li>
+              <li>Combine <code>me.and you</code> <br> <code>me.or you</code></li>
+              <li>Créer des streams : <code>changes()</code> <br> <code>sampledBy(stream)</code></li>
+            </ul>
+          </section>
+
+          <section>
+            <p class="breadcrumb">Bacon</p>
+            <h2><span class="hlt">O</span>bservable</h2>
+            <ul>
+              <li>Transformer : <code>obs.map (value) -></code>, <code>obs.map '.target.value'</code></li>
+              <li>Filter : <code>obs.filter (value) -></code></li>
+              <li>Agir : <code>obs.onValue</code> <br> <code>obs.doAction '.preventDefault'</code></li>
+              <li>Convertir : <code>obs.flatMap</code> <br> <code>obs.scan(seed, accumulator)</code></li>
+              <li>Debug : <code>obs.log()</code></li>
+            </ul>
+          </section>
+
+          <section>
+            <p class="breadcrumb">Bacon</p>
+            <h2><span class="hlt">L</span>ast Stream/Property value</h2>
+          </section>
+
+          <section>
+            <p class="breadcrumb">Bacon</p>
+            <h2><span class="hlt">C</span>ombine / <span class="hlt">J</span>oin</h2>
+            <ul>
+              <li>Grouper : <pre><code class="coffee">Bacon.combineAsArray(stream, property)</code></pre></li>
+              <li>Assembler : <pre><code class="coffee">Bacon.combineTemplate({id: 1, username: userprop})</code></pre></li>
+              <li>Joindre : <pre><code class="coffee">Bacon.when
+  [stream, event], (_, e) ->,
+  [stream], -></code></pre>
+                <pre><code class="coffee">Bacon.update null,
+  [stream, property], (_, value) ->,
+  [otherstream], (_) ->
+                </code></pre>
+              </li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <section class="bgi" data-background="#aaa" data-transition="linear" data-background-transition="slide">
+            <!--
+            photo credit:
+            -->
+            <h2><span class="lettrine">D</span>ans la vraie vie d'un dev ?</h2>
+          </section>
+
+          <section>
+            <p class="breadcrumb">Dans la vraie vie…</p>
+            <h2><span class="hlt">S</span>tate-machine</h2>
+            <ul>
+              <li>Streams hooks</li>
+              <li>Expose ses propriétés</li>
+              <li>Défini ses logiques internes</li>
+            </ul>
+          </section>
+
+          <section>
+            <p class="breadcrumb">Dans la vraie vie…</p>
+            <h2><span class="hlt">V</span>iews</h2>
+            <ul>
+              <li>Initialise ses streams (users events) > State-machine streams</li>
+              <li>Assigne ses éléments < State-machine properties</li>
+            </ul>
+          </section>
+
+          <section>
+            <p class="breadcrumb">Dans la vraie vie…</p>
+            <pre><code class="coffee">passwordInput   = $pwd.asEventStream 'keyup blur'
+passwordEntered = passwordInput.map (e) -> !! e.target.value
+
+model.submitPassword.plug( $form.asEventStream 'submit'
+  .doAction '.preventDefault'
+  .filter passwordEntered )
+
+passwordEntered
+  .not()
+  .assign $submit, 'attr', 'aria-disabled'</code></pre>
+          </section>
+        </section>
+
+        <section class="bgi" data-background="../img/ill/ask.jpg" data-transition="linear" data-background-transition="slide">
+          <!--
+          photo credit:
+          -->
+          <h2><span class="lettrine">Q</span>uestions ?</h2>
+        </section>
+
+        <section class="bgi" data-background="../img/ill/cat.jpg" data-transition="linear" data-background-transition="slide">
+          <!--
+          photo credit:
+          -->
+          <h2><span class="lettrine">M</span>erci !</h2>
+          <p><small><a href="http://talks.m4dz.net/bacon-for-your-breakfast/" class="normal"><span class="hlt">//</span>talks.m4dz.net/bacon-for-your-breakfast/</a></small></p>
+        </section>
+
+        <section id="credits">
+          <style type="text/css">
+            .reveal #credits {
+              position: relative;
+            }
+
+            .reveal #credits img {
+              margin: 0;
+            }
+
+            .reveal #credits .wrapper {
+              -webkit-transform: translateY(110%);
+              -ms-transform: translateY(110%);
+              transform: translateY(110%);
+
+              -webkit-transition-property: -webkit-transform;
+              -webkit-transition-duration: 2.5s;
+              -webkit-transition-timing-function: linear;
+              transition-property: -webkit-transform -ms-transform transform;
+              transition-duration: 30s;
+              transition-timing-function: linear;
+            }
+
+            .reveal #credits.present .wrapper {
+              -webkit-transform: translateY(-145%);
+              -ms-transform: translateY(-145%);
+              transform: translateY(-145%);
+            }
+          </style>
+          <div class="wrapper">
+          <h2><span class="hlt">C</span>rédits</h2>
+            <dl>
+              <dt>Images</dt>
+              <dd>
+                <ul>
+                  <li><a class="normal" href="http://www.flickr.com/photos/20561948@N00/261865727/"><span class="hlt">Y</span>ou Killed the Beast, Killer!!!</a><br><span class="creator">By spike55151 // <a class="normal und" rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Licence Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a></span></li>
+                </ul>
+              </dd>
+              <dt>Fonts</dt>
+              <dd>
+                <ul>
+                  <li><a class="normal" href="http://www.fontsquirrel.com/fonts/bebas-neue"><span class="hlt">B</span>ebas Neue</a><br><span class="creator">By <a class="normal und" href="http://www.dharmatype.com/">Dharma Type</a> // Dharma Type Font License v1.00</span></li>
+                  <li><a class="normal" href="http://www.fontsquirrel.com/fonts/roboto"><span class="hlt">R</span>oboto Bold Condensed</a><br><span class="creator">By Christian Robertson // Apache License v2.00</span></li>
+                  <li><a class="normal" href="http://www.fontsquirrel.com/fonts/DejaVu-Sans"><span class="hlt">D</span>ejaVu Sans Book</a><br><span class="creator">By <a class="normal und" href="http://dejavu-fonts.org/">DejaVu Fonts</a> // DejaVu Fonts License v1.00</span></li>
+                  <li><a class="normal" href="http://www.fontsquirrel.com/fonts/source-code-pro"><span class="hlt">S</span>ource Code Pro</a><br><span class="creator">Copyright 2010, 2012 <a class="normal und" href="http://www.adobe.com/">Adobe Systems Incorporated</a> // SIL Open Font License v1.10</span></li>
+                </ul>
+              </dd>
+            </dl>
+          </div>
+        </section>
+
+      </div>
+    </div>
+
+    <script src="../lib/js/head.min.js"></script>
+    <script src="../js/reveal.min.js"></script>
+    <script>
+      Reveal.initialize({
+        history: true,
+
+        theme: 'default',
+        transition: 'concave',
+        backgroundTransition: 'default',
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: '../lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+        ]
+      });
+
+      var myselfFragments = function(e) {
+        var f = e.fragment;
+
+        switch (f.dataset.state) {
+          case 'skills' : case 'clever':
+            var s = document.getElementById('mad');
+            if (s.classList.contains(f.dataset.state)) {
+              s.classList.remove(f.dataset.state);
+            } else {
+              s.classList.add(f.dataset.state);
+            }
+            break;
+        }
+      };
+
+      Reveal.addEventListener('fragmentshown', myselfFragments);
+      Reveal.addEventListener('fragmenthidden', myselfFragments);
+    </script>
+
+  </body>
+</html>

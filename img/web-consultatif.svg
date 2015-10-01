@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="624px" height="293px" viewBox="0 0 624 293" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <title>Slice 1</title>
+    <description>Created with Sketch (http://www.bohemiancoding.com/sketch)</description>
+    <defs>
+        <path d="M536.5,130 L230.498366,130" id="path-1"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <text id="" sketch:type="MSTextLayer" font-family="FontAwesome" font-size="72" font-weight="normal" fill="#000000">
+            <tspan x="546" y="169"></tspan>
+        </text>
+        <text id="" sketch:type="MSTextLayer" font-family="FontAwesome" font-size="48" font-weight="normal" fill="#000000">
+            <tspan x="6" y="42"></tspan>
+        </text>
+        <text id="" sketch:type="MSTextLayer" font-family="FontAwesome" font-size="48" font-weight="normal" fill="#000000">
+            <tspan x="1" y="285"></tspan>
+        </text>
+        <text id="" sketch:type="MSTextLayer" font-family="FontAwesome" font-size="72" font-weight="normal" fill="#000000">
+            <tspan x="166" y="169"></tspan>
+        </text>
+        <text id="" sketch:type="MSTextLayer" font-family="FontAwesome" font-size="96" font-weight="normal" fill="#000000">
+            <tspan x="332" y="179"></tspan>
+        </text>
+        <g id="Line">
+            <use stroke="none" fill="#000000" fill-rule="evenodd" sketch:type="MSShapeGroup" xlink:href="#path-1"></use>
+            <use stroke="none" fill="none" xlink:href="#path-1"></use>
+            <use stroke="#000000" stroke-width="4" stroke-linecap="square" stroke-dasharray="10,10,10,10" fill="none" xlink:href="#path-1"></use>
+        </g>
+        <path id="Line-decoration-1" d="M230.500014,130 C234.280014,131.05 237.520014,131.95 241.300014,133 C241.300014,130.9 241.300013,129.1 241.300013,127 C237.520013,128.05 234.280014,128.95 230.500014,130 C230.500014,130 230.500014,130 230.500014,130 Z" fill="#000000"></path>
+        <path d="M233.5,159 L536,159" id="Line" stroke="#000000" stroke-width="4" stroke-linecap="square" fill="#000000" sketch:type="MSShapeGroup"></path>
+        <path id="Line-decoration-1" d="M535.5,159 C531.72,157.95 528.48,157.05 524.7,156 C524.7,158.1 524.7,159.9 524.7,162 C528.48,160.95 531.72,160.05 535.5,159 C535.5,159 535.5,159 535.5,159 Z" stroke="#000000" stroke-width="4" stroke-linecap="square" fill="#000000"></path>
+        <path d="M165,118 L57,48" id="Line" stroke="#4A4A4A" stroke-width="4" stroke-linecap="square" fill="#4A4A4A" sketch:type="MSShapeGroup"></path>
+        <path id="Line-decoration-1" d="M57.5884161,48.3813808 C60.1893243,51.3184163 62.4186742,53.8358754 65.0195823,56.7729109 C66.1617626,55.0106895 67.1407743,53.5002141 68.2829546,51.7379927 C64.5398661,50.5631785 61.3315046,49.556195 57.5884161,48.3813808 C57.5884161,48.3813808 57.5884161,48.3813808 57.5884161,48.3813808 Z" stroke="#4A4A4A" stroke-width="4" stroke-linecap="square" fill="#4A4A4A"></path>
+        <path id="Line-decoration-2" d="M164.328678,117.564884 C160.585589,116.390069 157.377228,115.383086 153.634139,114.208272 C154.776319,112.44605 155.755331,110.935575 156.897511,109.173354 C159.49842,112.110389 161.727769,114.627848 164.328678,117.564884 C164.328678,117.564884 164.328678,117.564884 164.328678,117.564884 Z" stroke="#4A4A4A" stroke-width="4" stroke-linecap="square" fill="#4A4A4A"></path>
+        <path d="M161,175 L59,233" id="Line" stroke="#4A4A4A" stroke-width="4" stroke-linecap="square" fill="#4A4A4A" sketch:type="MSShapeGroup"></path>
+        <path id="Line-decoration-1" d="M59.2930551,232.833361 C63.097989,231.877653 66.3593609,231.058475 70.1642955,230.102767 C69.1262606,228.277258 68.2365164,226.712536 67.1984816,224.887027 C64.4315827,227.668243 62.0599546,230.052144 59.2930551,232.833361 C59.2930551,232.833361 59.2930551,232.833361 59.2930551,232.833361 Z" stroke="#4A4A4A" stroke-width="4" stroke-linecap="square" fill="#4A4A4A"></path>
+        <path id="Line-decoration-2" d="M160.304568,175.395442 C157.537668,178.176659 155.166041,180.560559 152.399141,183.341776 C151.361107,181.516267 150.471362,179.951545 149.433328,178.126036 C153.238262,177.170328 156.499634,176.35115 160.304568,175.395442 C160.304568,175.395442 160.304568,175.395442 160.304568,175.395442 Z" stroke="#4A4A4A" stroke-width="4" stroke-linecap="square" fill="#4A4A4A"></path>
+    </g>
+</svg>
