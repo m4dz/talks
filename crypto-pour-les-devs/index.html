@@ -210,7 +210,7 @@ Ciphertext: LXFOPVEFRNHR
           <ul>
             <li>calcul d'une empreinte identifiant la source</li>
             <li>non-réversible</li>
-            <li class="fragment">MD5 / SHA / BCrypt (blowfish)</li>
+            <li class="fragment"><span class="strike">MD5</span> / <span class="strike">SHA</span> / BCrypt (blowfish)</li>
           </ul>
         </section>
 
@@ -245,7 +245,7 @@ md5(sha1(md5(md5(password) + sha1(password)) + md5(password)))
         <section>
           <h3>On fait :</h3>
           <ol>
-            <li>génération d'un pseudo-aléatoire CSPRNG : le salt</li>
+            <li>génération d'un pseudo-aléatoire <abbr title="Cryptographically secure pseudorandom number generator">CSPRNG</abbr> : le salt</li>
             <li>application une dérivation PBKDF2 (SHA256) / Bcrypt / Scrypt sur <code>[salt+pasword]</code> avec une forte entropie</li>
             <li>stockage du résultat et des paramètres de génération</li>
           </ol>
@@ -268,11 +268,11 @@ md5(sha1(md5(md5(password) + sha1(password)) + md5(password)))
         <section>
           <h3>chiffrement par bloc</h3>
           <ul>
-            <li>DES (Data Encryption Standard)</li>
+            <li class="strike">DES (Data Encryption Standard)</li>
             <li>AES (Advanced Encryption Standard)</li>
             <li class="fragment">
-              Stream Cipher<br>
-              <img src="badass.gif" alt="">
+              Stream Cipher
+              <img class="block" src="badass.gif" alt="">
             </li>
           </ul>
         </section>
@@ -280,7 +280,7 @@ md5(sha1(md5(md5(password) + sha1(password)) + md5(password)))
         <section>
           <h3>padding &amp; random</h3>
           <ul>
-            <li>ECB (Electronic Code Book)</li>
+            <li class="strike">ECB (Electronic Code Book)</li>
             <li>CBC (Cipher Block Chaining)</li>
           </ul>
         </section>
@@ -289,7 +289,7 @@ md5(sha1(md5(md5(password) + sha1(password)) + md5(password)))
           <h3>problème : les machines ne sont pas aléatoires</h3>
           <ul>
             <li>besoin de données imprévisibles</li>
-            <li class="fragment">on n'utilise <b>pas</b> <code>/dev/urandom</code></li>
+            <li class="fragment">méthodes crypto <abbr title="Cryptographically secure pseudorandom number generator">CSPRNG</abbr> (<b>pas</b> <code>/dev/urandom</code>)</li>
             <li class="fragment">IV (Vecteur d'Initialisation)</li>
           </ul>
         </section>
@@ -299,7 +299,7 @@ md5(sha1(md5(md5(password) + sha1(password)) + md5(password)))
         </section>
 
         <section>
-          <h3>Bob et Alice</h3>
+          <h3>Bob et Alice échangent leur clés</h3>
           <img src="letter.gif" alt="">
         </section>
       </section>
@@ -360,7 +360,6 @@ md5(sha1(md5(md5(password) + sha1(password)) + md5(password)))
         <section>
           <h3>les standards</h3>
           <ul>
-            <!-- LINKS -->
             <li><a href="http://www.itu.int/rec/T-REC-X.509/en">X.509</a></li>
             <li><a href="https://www.emc.com/emc-plus/rsa-labs/standards-initiatives/public-key-cryptography-standards.htm">PKCS</a></li>
             <li><a href="https://www.pcisecuritystandards.org/security_standards/)">PCIDSS</a></li>
@@ -379,8 +378,8 @@ md5(sha1(md5(md5(password) + sha1(password)) + md5(password)))
           <h3>le réseau</h3>
           <ul>
             <li>
-              SSL / TLS<br>
-              <img src="learn_ssl_diagram.gif" alt="SSL Diagram">
+              SSL / TLS
+              <img class="block" src="learn_ssl_diagram.gif" alt="SSL Diagram">
             </li>
             <li>Confidentialité persistante</li>
           </ul>
@@ -408,10 +407,12 @@ md5(sha1(md5(md5(password) + sha1(password)) + md5(password)))
         <p class="breadcrumb">La Crypto pour les Devs<br>Webcrypto à la rescousse ?</p>
 
         <section>
+          <h3>Before <small>(reading the spec)</small></h3>
           <img src="flamingo.gif" alt="">
         </section>
 
         <section>
+          <h3>After <small>(reading the spec)</small></h3>
           <img src="stitch-crying.gif" alt="">
         </section>
 
@@ -423,14 +424,13 @@ md5(sha1(md5(md5(password) + sha1(password)) + md5(password)))
           </ul>
         </section>
 
-        <!-- TRANSITION: NOPE FOR APPEARS -->
         <section data-transition="none">
           <code>window.crypto</code>
         </section>
 
         <section data-transition="none">
-          <code>window.crypto.subtle</code><br>
-          <img src="confuse-futurama.gif" alt="">
+          <code>window.crypto.subtle</code>
+          <p><img src="confuse-futurama.gif" alt=""></p>
         </section>
 
         <section data-transition="none">
@@ -438,7 +438,7 @@ md5(sha1(md5(md5(password) + sha1(password)) + md5(password)))
         </section>
 
         <section>
-          <pre><code class="javascript" data-trim contenteditable="">
+          <pre><code class="javascript" data-trim>
 window.crypto.subtle.encrypt(
     {
         name: "RSA-OAEP",
@@ -450,7 +450,7 @@ window.crypto.subtle.encrypt(
         </section>
 
         <section>
-          <pre><code class="javascript" data-trim contenteditable="">
+          <pre><code class="javascript" data-trim>
 window.crypto.subtle.encrypt(/* ... */)
 .then(function(encrypted){
   //returns an ArrayBuffer containing the encrypted data
