@@ -21,10 +21,6 @@
     link.href = window.location.search.match( /print-pdf/gi ) ? '../print/pdf.css' : '../print/paper.css';
     document.getElementsByTagName( 'head' )[0].appendChild( link );
   </script>
-
-  <!--[if lt IE 9]>
-  <script src="../lib/js/html5shiv.js"></script>
-  <![endif]-->
 </head>
 <body>
   <div class="reveal">
@@ -39,7 +35,7 @@
       <section class="who" data-background="../images/backgrounds/white.jpg">
         <p class="breadcrumb">La Crypto pour les Devs</p>
         <section class="cni">
-          <img src="../images/mad-hatter.gif" alt="m4dz">
+          <img data-src="../images/mad-hatter.gif" alt="m4dz">
           <div>
             <h3>m4dz</h3>
             <p><a href="https://twitter.com/m4d_z">@m4d_z</a> | <a href="http://m4dz.net">m4dz.net</a> | <a href="http://m4dz.net/7D969710.asc">7D969710</a></p>
@@ -47,7 +43,7 @@
         </section>
 
         <section class="cni">
-          <img src="../images/cozy-logo-gradient.svg" alt="Cozy.io">
+          <img data-src="../images/cozy-logo-gradient.svg" alt="Cozy.io">
           <div>
             <h3>Cozy Cloud</h3>
             <p><a href="https://cozy.io">cozy.io</a></p>
@@ -78,7 +74,7 @@
         <section class="important" data-background="../images/backgrounds/carmin.jpg">
           <h3>Chiffrer !</h3>
           <p>(ou crypter, troll inside)</p>
-          <img src="deal-with-it.gif" alt="Deal with it2">
+          <img data-src="deal-with-it.gif" alt="Deal with it2">
         </section>
 
         <section>
@@ -103,7 +99,7 @@
 
         <section>
           <h3>chiffrement</h3>
-          <img src="manga-fear.gif" alt="angoisses">
+          <img data-src="manga-fear.gif" alt="angoisses">
         </section>
 
         <section>
@@ -112,7 +108,7 @@
 
         <section>
           <h3>NSA / Prism</h3>
-          <img src="nsa.jpg" alt="NSA">
+          <img data-src="nsa.jpg" alt="NSA">
         </section>
 
         <section>
@@ -126,7 +122,7 @@
 
         <section>
           <h3>objectif: Protéger les informations sensibles</h3>
-          <img src="batman.gif" alt="Batman">
+          <img data-src="batman.gif" alt="Batman">
         </section>
 
         <section>
@@ -141,7 +137,7 @@
 
         <section class="important">
           <h3>Seule la clé est importante</h3>
-          <iframe data-autoplay width="640" height="360" src="https://www.youtube.com/embed/WT8tOpjTPtA?start=12&end=29" frameborder="0" allowfullscreen></iframe>
+          <iframe data-autoplay width="640" height="360" data-src="https://www.youtube.com/embed/WT8tOpjTPtA?start=12&end=29" frameborder="0" allowfullscreen></iframe>
           <p>(l'algo on s'en fout)</p>
         </section>
       </section>
@@ -155,17 +151,17 @@
 
         <section>
           <h3>il était une fois…</h3>
-          <img src="alice-rabbit.gif" alt="">
+          <img data-src="alice-rabbit.gif" alt="">
         </section>
 
         <section>
           <h3>le Code César</h3>
-          <img src="juliuscaesar.jpg" alt="">
+          <img data-src="juliuscaesar.jpg" alt="">
         </section>
 
         <section>
           <h3>le chiffre de Vigenère</h3>
-          <img src="vigenere_square_shading.svg" alt="carré de Vigenère">
+          <img data-src="vigenere_square_shading.svg" alt="carré de Vigenère">
           <pre><code data-trim>
 Plaintext:  ATTACKATDAWN
 Key:        LEMONLEMONLE
@@ -180,7 +176,7 @@ Ciphertext: LXFOPVEFRNHR
 
         <section>
           <h3>Enigma</h3>
-          <img src="enigma.jpg" alt="">
+          <img data-src="enigma.jpg" alt="">
         </section>
 
         <section>
@@ -194,7 +190,7 @@ Ciphertext: LXFOPVEFRNHR
 
         <section class="important">
           <h3>La protection des clés est essentielle</h3>
-          <img src="xkcd-security.png" alt="">
+          <img data-src="xkcd-security.png" alt="">
         </section>
       </section>
 
@@ -272,7 +268,7 @@ md5(sha1(md5(md5(password) + sha1(password)) + md5(password)))
             <li>AES (Advanced Encryption Standard)</li>
             <li class="fragment">
               Stream Cipher
-              <img class="block" src="badass.gif" alt="">
+              <img class="block" data-src="badass.gif" alt="">
             </li>
           </ul>
         </section>
@@ -300,7 +296,7 @@ md5(sha1(md5(md5(password) + sha1(password)) + md5(password)))
 
         <section>
           <h3>Bob et Alice échangent leurs clés</h3>
-          <img src="letter.gif" alt="">
+          <img data-src="letter.gif" alt="">
         </section>
       </section>
 
@@ -327,7 +323,7 @@ md5(sha1(md5(md5(password) + sha1(password)) + md5(password)))
             <li>clé publique commune</li>
             <li>secret partagé</li>
           </ul>
-          <img src="Diffie-Hellman_Key_Exchange.jpg" alt="">
+          <img data-src="Diffie-Hellman_Key_Exchange.jpg" alt="">
         </section>
 
         <section>
@@ -379,7 +375,7 @@ md5(sha1(md5(md5(password) + sha1(password)) + md5(password)))
           <ul>
             <li>
               SSL / TLS
-              <img class="block" src="learn_ssl_diagram.gif" alt="SSL Diagram">
+              <img class="block" data-src="learn_ssl_diagram.gif" alt="SSL Diagram">
             </li>
             <li>Confidentialité persistante</li>
           </ul>
@@ -408,12 +404,12 @@ md5(sha1(md5(md5(password) + sha1(password)) + md5(password)))
 
         <section>
           <h3>Before <small>(reading the spec)</small></h3>
-          <img src="flamingo.gif" alt="">
+          <img data-src="flamingo.gif" alt="">
         </section>
 
         <section>
           <h3>After <small>(reading the spec)</small></h3>
-          <img src="stitch-crying.gif" alt="">
+          <img data-src="stitch-crying.gif" alt="">
         </section>
 
         <section>
@@ -430,7 +426,7 @@ md5(sha1(md5(md5(password) + sha1(password)) + md5(password)))
 
         <section data-transition="none">
           <code>window.crypto.subtle</code>
-          <p><img src="confuse-futurama.gif" alt=""></p>
+          <p><img data-src="confuse-futurama.gif" alt=""></p>
         </section>
 
         <section data-transition="none">
@@ -490,7 +486,7 @@ window.crypto.subtle.encrypt(/* ... */)
 
         <section>
           <h3>Ne jouez pas les apprentis sorciers</h3>
-          <img src="harry-never.gif" alt="">
+          <img data-src="harry-never.gif" alt="">
         </section>
 
         <section>
@@ -503,7 +499,7 @@ window.crypto.subtle.encrypt(/* ... */)
 
         <section class="important">
           <h3>On arrête d'avoir peur, et on protège !</h3>
-          <a href="https://www.reddit.com/r/legaladvice/comments/3edf1s/im_a_gay_single_man_from_a_country_where_gaydeath/"><img src="reddit.jpg" alt=""></a>
+          <a href="https://www.reddit.com/r/legaladvice/comments/3edf1s/im_a_gay_single_man_from_a_country_where_gaydeath/"><img data-src="reddit.jpg" alt=""></a>
         </section>
       </section>
 
@@ -546,7 +542,6 @@ window.crypto.subtle.encrypt(/* ... */)
     </div>
   </div>
 
-  <script src="../scripts/vendor.js"></script>
   <script src="../scripts/app.js" onload="require('initialize')"></script>
 </body>
 </html>
