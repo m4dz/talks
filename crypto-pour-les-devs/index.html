@@ -60,6 +60,7 @@
 
         <section>
           <h3>la limite des mots de passe&nbsp;:<br>l'interface CC</h3>
+          <p class="more"><a href="https://blog.lastpass.com/2014/09/the-scary-truth-about-your-passwords-an-analysis-of-the-gmail-leak.html/">The Scary Truth About Your Passwords</a></p>
         </section>
 
         <section>
@@ -285,13 +286,14 @@ md5(sha1(md5(md5(password) + sha1(password)) + md5(password)))
           <h3>problème : les machines ne sont pas aléatoires</h3>
           <ul>
             <li>besoin de données imprévisibles</li>
-            <li class="fragment">méthodes crypto <abbr title="Cryptographically secure pseudorandom number generator">CSPRNG</abbr> (<b>pas</b> <code>/dev/urandom</code>)</li>
-            <li class="fragment">IV (Vecteur d'Initialisation)</li>
+            <li class="fragment">méthodes crypto <abbr title="Cryptographically secure pseudorandom number generator">CSPRNG</abbr><br><small>(<b>pas</b> <a href="http://www.2uo.de/myths-about-urandom/"><code>/dev/urandom</code></a> directement, utilisez les méthodes des libs crypto)</small></li>
+            <li class="fragment">IV (Vecteur d'Initialisation)<br><small>(bytes-block utilisés en initialisation d'un algo de chiffrement pour assurer son caractère unique)</small></li>
           </ul>
         </section>
 
         <section>
           <h3>problème : une clé unique peut être compromise</h3>
+          <p>une clé symétrique doit nécessairement circuler</p>
         </section>
 
         <section>
@@ -374,7 +376,7 @@ md5(sha1(md5(md5(password) + sha1(password)) + md5(password)))
           <h3>le réseau</h3>
           <ul>
             <li>
-              SSL / TLS
+              <span class="strike">SSL</span> / TLS
               <img class="block" data-src="learn_ssl_diagram.gif" alt="SSL Diagram">
             </li>
             <li>Confidentialité persistante</li>
@@ -445,7 +447,7 @@ window.crypto.subtle.encrypt(
           </code></pre>
         </section>
 
-        <section>
+        <section data-transition="none">
           <pre><code class="javascript" data-trim>
 window.crypto.subtle.encrypt(/* ... */)
 .then(function(encrypted){
@@ -467,13 +469,14 @@ window.crypto.subtle.encrypt(/* ... */)
         </section>
 
         <section>
-          <h3>point bonus : comme avec canPlayType</h3>
+          <h3>point bonus : comme avec <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/canPlayType">canPlayType</a></h3>
           <ul>
             <li>RSASSA-PKCS1-v1_5 / RSA-OAEP</li>
             <li>AES-CBC / AES-GCM / AES-KW</li>
             <li>HMAC</li>
             <li>SHA-256 / SHA-384 / SHA-512</li>
           </ul>
+          <p><small>les navigateurs n'implémentent que les algos qu'ils estiment nécessaires</small></p>
         </section>
       </section>
 
@@ -510,8 +513,9 @@ window.crypto.subtle.encrypt(/* ... */)
       <section class="credits" data-background="#2a1f1d">
         <div class="scroll">
           <h2>Merci</h2>
-          <h3>Iconographie :</h3>
+          <h3>Iconographie / Médias :</h3>
           <ul class="images">
+            <li>Algorisme : by <a href="https://www.youtube.com/channel/UCFjaRSCKJix-SfsS_hIn6Hw">Laurent Chemla</a></li>
             <li>Chiffre de Vigenère : <a href="https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher">source wikipedia</a></li>
             <li>Enigma : <a href="http://www.niwarmemorial.org/object-of-the-month/e-is-for-enigma-machine/">source Nothern Ireland War Memorial</a></li>
             <li>XKCD : <a href="https://xkcd.com/538/">Security</a></li>
@@ -524,7 +528,7 @@ window.crypto.subtle.encrypt(/* ... */)
             <li>Labeur : <a href="http://www.whatfontis.com/Overlock-Regular.font">Overlock</a></li>
             <li>Monospace : <a href="http://www.whatfontis.com/Source-Code-Pro.font">Source Code Pro</a></li>
           </ul>
-          <p class="permalink"><a href="http://talks.m4dz.net/crypto-pour-les-devs/">//talks.m4dz.net/crypto-pour-les-devs/</a></p>
+          <p class="permalink"><a href="http://talks.m4dz.net/crypto-pour-les-devs/">//talks.m4dz.net/crypto-pour-les-devs/</a><br><small>disponible sous licence <a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></small></p>
         </div>
       </section>
 
