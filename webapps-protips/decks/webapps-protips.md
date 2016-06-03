@@ -710,6 +710,15 @@ body
 .caption[[m4dz.github.io/aria-tips/](http://m4dz.github.io/aria-tips/)]
 ]
 
+---
+class: bottom-up, middle, center, inverse
+
+![star](./img/icons/linearicons/star-half-white.svg)
+
+# Utilisez des libs accessibles
+
+[git.io/vrj8P](https://git.io/vrj8P)
+
 
 ---
 class: punchline, bottom
@@ -787,13 +796,13 @@ name: thanks
 
 ## Icones :
 
-- [Linear Icons](https://linearicons.com)
+- [Linear Icons](https://linearicons.com) by Perxis https://perxis.com - [CC BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0/)
 
 ## Fontes :
 
-- Titrage : [Sinzano](http://www.myfonts.com/fonts/typodermic/sinzano/regular/)
-- Intertitres & labeur : [Source Sans Pro](https://github.com/adobe-fonts/source-sans-pro)
-- Monospace : [Source Code Pro](https://github.com/adobe-fonts/source-code-pro)
+- Titrage : [Sinzano](http://typodermicfonts.com/sinzano/) by Typodermic http://typodermicfonts.com - [Fontspring webfont EULA](https://www.fontspring.com/licenses_text/lv4e5lv2k2)
+- Intertitres & labeur : [Source Sans Pro](https://github.com/adobe-fonts/source-sans-pro) by Adobe https://github.com/adobe-fonts - [Open Font Licence](https://raw.githubusercontent.com/adobe-fonts/source-sans-pro/master/LICENSE.txt)
+- Monospace : [Source Code Pro](https://github.com/adobe-fonts/source-code-pro) by Adobe https://github.com/adobe-fonts - [Open Font Licence](https://raw.githubusercontent.com/adobe-fonts/source-code-pro/master/LICENSE.txt)
 
 .licence[
 .ref[[talks.m4dz.net/webapps-protips/](http://talks.m4dz.net/webapps-protips/)]
