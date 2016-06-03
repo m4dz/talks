@@ -1,0 +1,155 @@
+// main: index.styl
+
+.breadcrumb
+    position:       absolute
+    top:            1.25em
+    left:           5em
+    text-transform: uppercase
+    font-size:      16px
+    font-weight:    700
+    color:          blue
+
+
+.inverse
+    background-color: blue
+    color:            white
+
+    h1
+    h2
+    h3
+    p
+    a
+    .breadcrumb
+    .remark-slide-number
+        color: white
+
+
+.placeholder
+    background-size: cover
+
+    h1
+        display:       inline-block
+        margin:        0
+        padding:       .3em
+        border:        3px solid white
+        border-radius: 6px
+        font-family:   Sinzano
+        text-shadow:   1px 1px 3px darkgrey, -1px -1px 2px textgrey
+
+
+.plain
+    position:        absolute
+    top:             5em
+    left:            4em
+    right:           4em
+    bottom:          1em
+    display:         flex
+    flex-direction:  column
+    align-items:     center
+    justify-content: space-around
+
+    img
+        height 20em
+
+    img[src$=gif]
+    iframe
+    pre
+        margin:     auto
+        border:     3px solid lightgrey
+        box-shadow: 0 0 30px alpha(darkgrey, .4)
+
+    p
+        margin 0
+
+
+.single
+    h1
+        margin:    0
+        font-size: 75px
+        color:     white
+
+
+.important
+    h1
+        font-family: Sinzano
+
+
+.bottom-up
+    h1
+        margin:         2em 0 0
+        text-transform: uppercase
+        font-size:      20px
+        font-weight:    bold
+
+    p
+        margin:      0
+        font-size:   35px
+        font-weight: 300
+        color:       blue
+
+    img
+        height 10em
+
+
+.punchline
+    background-repeat:   no-repeat
+    background-position: right 4em top 1em
+    background-size:     30%
+
+    h1
+        margin:         0
+        text-transform: uppercase
+        font-size:      30px
+        font-weight:    bold
+
+    p
+        margin:      0 0 1em
+        max-width:   70%
+        font-size:   40px
+        font-weight: 300
+
+
+.caption
+    margin:      0 0 .5em
+    font-weight: 300
+    color:       blue
+
+
+.cards
+    ul
+        padding:         0
+        list-style-type: none
+        display:         flex
+        flex-wrap:       wrap
+        align-content:   space-around
+        justify-content: space-around
+
+    li
+        position:       relative
+        margin:         2em 0
+        min-width:      30%
+        flex:           1
+        display:        flex
+        flex-direction: column
+        align-items:    center
+        font-size:      16px
+        font-weight:    bold
+        text-transform: uppercase
+
+        &::before
+            content:          ''
+            display:          block
+            z-index:          0
+            position:         absolute
+            top:              0
+            left:             50%
+            transform:        translateX(-50%)
+            width:            7em
+            height:           7em
+            border-radius:    50%
+            background-color: lightgrey
+
+    img
+        z-index: 1
+        min-width: 4em
+        margin:    1.5em 1em 2.5em

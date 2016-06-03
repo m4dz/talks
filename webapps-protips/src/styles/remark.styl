@@ -1,0 +1,73 @@
+// main: index.styl
+
+.remark-container
+    font-family:      'Source Sans Pro'
+    background-color: black
+    color:            darkgrey
+
+
+.remark-slide-scaler
+    box-sizing:       border-box
+    background-color: white
+    box-shadow:       0 0 30px darken(black, 15)
+
+
+.remark-slide-number
+    font-size:   15px
+    font-weight: bold
+    color:       textgrey
+
+
+.remark-slide-content
+    a
+        color: blue
+
+        &:hover
+            color: orange
+
+    h1
+        margin:      16px 0 1em
+        font-size:   45px
+        font-weight: 300
+        color:       blue
+
+
+    ul
+        font-size:   40px
+        font-weight: 300
+
+
+    li
+        margin: 1em 0
+
+
+    small
+        display: block
+
+
+    pre
+        width: 100%
+
+    code
+        font-family: 'Source Code Pro'
+
+    .remark-inline-code
+        font-size: .9em
+
+
+    blockquote
+        position: relative
+
+        &::before
+            content:     '«'
+            position:    absolute
+            top:         0
+            left:        -.45em
+            display:     block
+            font-size:   6em
+            font-weight: 300
+            line-height: 0.38em
+            color:       blue
+
+        & + p
+            font-size: 20px
