@@ -6,7 +6,7 @@ class: middle
 Des astuces pour des interfaces aux poils soyeux
 
 .ref[
-  [talks.m4dz.net/webapps-protips/](https://talks.m4dz.net/webapps-protips/)
+  [talks.m4dz.net/webapps-protips/](http://talks.m4dz.net/webapps-protips/)
 ]
 
 
@@ -440,9 +440,9 @@ class: cards
 
 # EM : règle d'or du responsive
 
-- ![Crop tool](./img/icons/185051 - crop streamline.svg) On ne touche pas à la base font-size
-- ![Pencil and Rule](./img/icons/185049 - design pencil rule streamline.svg) Spacer verticaux (top, bottom), line-height, font-size : tout EM
-- ![Handle](./img/icons/185059 - handle streamline vector.svg) Spacers horizontaux : relatifs (em, %)
+- ![lock](./img/icons/linearicons/lock.svg) On ne touche pas à la base font-size
+- ![crop](./img/icons/linearicons/crop.svg) Spacer verticaux (top, bottom), line-height, font-size : tout EM
+- ![pencil](./img/icons/linearicons/pencil.svg) Spacers horizontaux : relatifs (em, %)
 
 [lamb.cc/typograph/](http://lamb.cc/typograph/) · [soqr.fr/vertical-rhythm/](http://soqr.fr/vertical-rhythm/)
 
@@ -468,9 +468,9 @@ class: cards
 
 # Organisation
 
-- ![Read book](./img/icons/185072 - book read streamline.svg) Par corpus <small>layouts, fontes, couleurs…</small>
-- ![Application window](./img/icons/185037 - browser streamline window.svg) Par composant <small>drawer, searchbar, listes…</small>
-- ![Stack](./img/icons/185061 - photo pictures streamline.svg) Groupé par domaine
+- ![book](./img/icons/linearicons/book.svg) Par corpus <small>layouts, fontes, couleurs…</small>
+- ![map](./img/icons/linearicons/map.svg) Par composant <small>drawer, searchbar, listes…</small>
+- ![layers](./img/icons/linearicons/layers.svg) Groupé par domaine
 
 
 ---
@@ -784,10 +784,15 @@ name: thanks
 
 # Merci !
 
+
+## Icones :
+
+- [Linear Icons](https://linearicons.com)
+
 ## Fontes :
 
 - Titrage : [Sinzano](http://www.myfonts.com/fonts/typodermic/sinzano/regular/)
-- Labeur : [Source Sans Pro](https://github.com/adobe-fonts/source-sans-pro)
+- Intertitres & labeur : [Source Sans Pro](https://github.com/adobe-fonts/source-sans-pro)
 - Monospace : [Source Code Pro](https://github.com/adobe-fonts/source-code-pro)
 
 .licence[
