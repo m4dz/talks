@@ -5,14 +5,12 @@ class: middle
 
 Des astuces pour des interfaces aux poils soyeux
 
-.ref[
-  [talks.m4dz.net/webapps-protips/](http://talks.m4dz.net/webapps-protips/)
-]
+![:ref]
 
 
 ---
 name: speaker
-class: middle, center
+class: center
 
 ![mad hatter](./img/mad-hatter.gif)
 
@@ -35,13 +33,15 @@ class: middle, center
 
 
 ---
-class: single, important, inverse, middle
+class: single, center, middle, inverse
 
-# Webapp, Webpage, kézako ?, think different !
+# **Webapp, Webpage, kézako ?, think different !**
 
 
 ---
 class: punchline, bottom
+
+![web](./img/icons/linea/basic_world.svg)
 
 > Le Web est, et restera encore longtemps, un métier d'artisan passionné.
 
@@ -51,7 +51,7 @@ _Moi_, Paris Web, 2010 (je crois)
 
 
 ---
-class: placeholder, inverse, middle, center
+class: section
 background-image: url(./img/placeholders/tools.jpg)
 
 # CSS pour les braves
@@ -64,41 +64,49 @@ layout: true
 
 
 ---
-class: single, middle, center, inverse
+class: single, middle, center
 
 # Ne vous limitez pas aux sélecteurs standards
 
 
 ---
+class: middle
+
 # DOM Tree
 
-- Enfants directs : `div > a { }`
-- Adjacents directs : `.bar + . foo { }`
-- Adjacents : `.bar ~ .foo { }`
+- Enfants directs : `div > a {}`
+- Adjacents directs : `.bar + . foo {}`
+- Adjacents : `.bar ~ .foo {}`
 
 ---
+class: middle
+
 # Attributs
 
-- Nom : `[lang] { }`
+- Nom : `[lang] {}`
 - _Hyphen_ : `[lang|=fr] {/* fr-FR */}`
-- Suffixe : `[href$=.pdf] { }`
+- Suffixe : `[href$=.pdf] {}`
 
 ---
+class: middle
+
 # Pseudo-classes
 
-- Premier élément : `p:first-child { }`
-- n-ième élément : `p:nth-child(2n) { }`
-- élément vide : `.wrapper:empty { }`
-- négative : `.foo:not(.bar) { }`
+- Premier élément : `p:first-child {}`
+- n-ième élément : `p:nth-child(2n) {}`
+- élément vide : `.wrapper:empty {}`
+- négative : `.foo:not(.bar) {}`
 
 
 ---
+class: middle
+
 # Pseudo-éléments
 
-- `div::before { }`
-- `div::after { }`
-- `div::placeholder { }`
-- `div::backdrop { }`
+- `div::before {}`
+- `div::after {}`
+- `div::placeholder {}`
+- `div::backdrop {}`
 
 
 ---
@@ -112,11 +120,12 @@ class: bottom-up, middle, center
 
 
 ---
+class: middle
+
 # Gare à la spécificité
 
-.caption[[!important -] [inline -] &lt;ID> - &lt;attr / class / pseudo-class> - &lt;tag>]
+`[!important -] [inline -] <ID>-<attr / class / pseudo-class>-<tag>`
 
-.plain[
 ```css
 div { /* 0-0-1 | 1 */ }
 div > span { /* 0-0-2 | 2 */ }
@@ -124,7 +133,6 @@ div .foo { /* 0-1-1 | 11 */ }
 #bar .foo { /* 1-1-0 | 110 */ }
 div { color: red !important /* 1-0-0-0-1 | 10001 */ }
 ```
-]
 
 
 ---
@@ -137,7 +145,7 @@ class: bottom-up, middle
 
 ---
 layout: false
-class: placeholder, inverse
+class: section, middle
 background-image: url(./img/placeholders/toolbox.jpg)
 
 # HTML5 tags, templates, et layouts
@@ -150,14 +158,15 @@ layout: true
 
 
 ---
-class: inverse, middle
+class: inverse, middle, single
+
 # Utilisez les balises de zones
 
 `<section>`, `<article>`, `<main>`, `<aside>`
 
 
 ---
-class: inverse, middle
+class: inverse, middle, single
 
 # Définissez des espaces
 
@@ -165,7 +174,6 @@ class: inverse, middle
 
 
 ---
-.plain[
 ```html
 <body>
   <div class="app">
@@ -185,11 +193,10 @@ class: inverse, middle
   </div>
 </body>
 ```
-]
 
 
 ---
-class: inverse, middle
+class: inverse, middle, single
 
 # Utilisez des templates
 
@@ -197,6 +204,8 @@ class: inverse, middle
 
 
 ---
+class: middle
+
 # Réutilisez
 
 - Inclusion
@@ -208,12 +217,12 @@ class: inverse, middle
 ---
 class: single, inverse, middle
 
-# Concevez un markup à granularité fine, facilement factorisable et réutilisable
+# **Concevez un markup à granularité fine, facilement factorisable et réutilisable**
 
 
 ---
 layout: false
-class: placeholder, inverse, bottom
+class: section, bottom
 background-image: url(./img/placeholders/one-ring-the-lord-of-the-rings-movie.jpg)
 
 # ARIA, pour les gouverner tous
@@ -261,10 +270,17 @@ Aria offre une palette d'états descriptifs, nécessaires pour exprimer un état
 
 
 ---
+class: middle
+
 - action en cours : `aria-busy`
 - élément invisble : `aria-hidden`
 - élément inactif : `aria-disabled`
 - élément requis : `aria-required`
+
+
+---
+class: middle
+
 - relation avec un contrôle : `aria-controls`
 - description associée : `aria-describedby`
 - conteneur de popup : `aria-haspopup`
@@ -281,7 +297,6 @@ Des rôles qui définissent des zones importantes, structurantes pour les layout
 
 ---
 # Layout template
-.plain[
 ```html
 <body>
   <div role="application">
@@ -306,12 +321,11 @@ Des rôles qui définissent des zones importantes, structurantes pour les layout
   </div>
 </body>
 ```
-]
 
 
 ---
 layout: false
-class: placeholder, inverse, bottom, right
+class: section, bottom, right
 background-image: url(./img/placeholders/moulin-de-craca.jpg)
 
 # Mix'em all!
@@ -324,9 +338,10 @@ layout: true
 
 
 ---
+class: middle
+
 # Layouts
 
-.plain[
 ```css
 /* Application layout */
 body,
@@ -352,13 +367,13 @@ main {
   transform: translateX(80vw);
 }
 ```
-]
 
 
 ---
+class: middle
+
 # States
 
-.plain[
 ```css
 /* Components states */
 [aria-hidden=true] {
@@ -380,13 +395,13 @@ main {
   background: url(data:image/svg+xml,<svg>...</svg>) 50% 50% no-repeat;
 }
 ```
-]
 
 
 ---
+class: middle
+
 # Abusez de Flex pour vos layouts
 
-.plain[
 ```stylus
 [role=application]
     display flex
@@ -406,13 +421,13 @@ main {
         display none
         flex    0
 ```
-]
 
 
 ---
+class: middle
+
 # Abusez de Flex pour vos layouts (responsives)
 
-.plain[
 ```stylus
 [role=application]
     @media(max-width: em(480px))
@@ -432,17 +447,16 @@ main {
           &.full [role=region]:first-of-type
               flex-basis 100% !important
 ```
-]
 
 
 ---
-class: cards
+class: tiles
 
 # EM : règle d'or du responsive
 
-- ![lock](./img/icons/linearicons/lock.svg) On ne touche pas à la base font-size
-- ![crop](./img/icons/linearicons/crop.svg) Spacer verticaux (top, bottom), line-height, font-size : tout EM
-- ![pencil](./img/icons/linearicons/pencil.svg) Spacers horizontaux : relatifs (em, %)
+- ![lock](./img/icons/linea/basic_lock.svg) On ne touche pas à la base font-size
+- ![verical expand](./img/icons/linea/arrows_expand_vertical1.svg) Spacer verticaux (top, bottom), line-height, font-size : tout EM
+- ![horizontal expand](./img/icons/linea/arrows_expand_horizontal1.svg) Spacers horizontaux : relatifs (em, %)
 
 [lamb.cc/typograph/](http://lamb.cc/typograph/) · [soqr.fr/vertical-rhythm/](http://soqr.fr/vertical-rhythm/)
 
@@ -451,7 +465,7 @@ class: cards
 
 ---
 layout: false
-class: placeholder, inverse, middle
+class: section, middle, center
 background-image: url(./img/placeholders/blueprint.jpg)
 
 # Maintenance
@@ -464,19 +478,20 @@ layout: true
 
 
 ---
-class: cards
+class: tiles
 
 # Organisation
 
-- ![book](./img/icons/linearicons/book.svg) Par corpus <small>layouts, fontes, couleurs…</small>
-- ![map](./img/icons/linearicons/map.svg) Par composant <small>drawer, searchbar, listes…</small>
-- ![layers](./img/icons/linearicons/layers.svg) Groupé par domaine
+- ![book](./img/icons/linea/basic_book.svg) Par corpus <small>layouts, fontes, couleurs…</small>
+- ![composants](./img/icons/linea/basic_webpage_multiple.svg) Par composant <small>drawer, searchbar, listes…</small>
+- ![layers](./img/icons/linea/software_layers2.svg) Groupé par domaine
 
 
 ---
+class: middle
+
 # Organisation
 
-.plain[
 ```css
 mycomponent {
   /* positionnement */
@@ -498,13 +513,13 @@ mycomponent {
   font-weight: normal;
 }
 ```
-]
 
 
 ---
+class: middle
+
 # Codebase
 
-.plain[
 ```txt
 styles
   |- base
@@ -519,18 +534,14 @@ styles
   |  |- backgrounds.css
   |  `- foregrounds.css
   |
-  |- components
-  |  |- drawer
-  |  |  |- layouts.css
-  |  |  |- foregrounds.css
-  |  |  |- ui.css
-  |  |  `- index.css
-  |  |
-  |  `- <...>
-  |
-  `- app.css
+  `- components
+     |- drawer
+     |  |- layouts.css
+     |  |- foregrounds.css
+     |  |- ui.css
+     |  `- index.css
+     `- <...>
 ```
-]
 
 
 ---
@@ -546,11 +557,11 @@ class: single, inverse, middle
 
 
 ---
+class: middle
+
 # Nesting
 
-
-.plain[
-.caption[styles/components/drawer/_layouts.styl]
+`styles/components/drawer/_layouts.styl`
 
 ```stylus
 &
@@ -571,14 +582,14 @@ class: single, inverse, middle
     &:hover
         transform scale(1.2)
 ```
-]
 
 
 ---
+class: middle
+
 # Mixin / Functions
 
-.plain[
-.caption[styles/base/helpers/_blocks.styl]
+`styles/base/helpers/_blocks.styl`
 
 ```stylus
 reset()
@@ -594,7 +605,7 @@ vertically-padded(n = 1em)
     padding n 0
 ```
 
-.caption[styles/base/helpers/_tools.styl]
+`styles/base/helpers/_tools.styl`
 
 ```stylus
 base-font-size ?= 16px
@@ -604,28 +615,26 @@ base-font-size ?= 16px
 em(n)
     unit(n / base-font-size, 'em')
 ```
-]
 
 
 ---
+class: middle
+
 # Media-Queries
 
-.plain[
+`styles/app/_layouts.styl`
+
 ```stylus
-/**
- * styles/app/_layouts.styl
- */
 main
     display block
 
     @media-query(min-width: em(769px))
         display flex
 ```
-]
 
 
 ---
-class: inverse, middle
+class: single, inverse, middle
 
 # Confiez la compatibilité aux postprocesseurs
 
@@ -634,7 +643,7 @@ PostCSS + autoprefixer, cssnano, mqpacker, colorguard, calc…
 
 ---
 layout: false
-class: placeholder, inverse, bottom
+class: section, bottom
 background-image: url(./img/placeholders/motor.jpg)
 
 # Webapps ?
@@ -648,7 +657,8 @@ layout: true
 
 ---
 class: punchline, bottom
-background-image: url(./img/resources/minelego4.jpg)
+
+![lego minecraft](./img/resources/minelego4.jpg)
 
 # Faites du déclaratif
 
@@ -656,9 +666,10 @@ Concevez des modules, pour pouvoir les surcharger simplement
 
 
 ---
+class: middle
+
 # Tabpanel
 
-.plain[
 ```pug
 nav(role="tablist")
     ul(role='presentation')
@@ -684,13 +695,13 @@ bindTabs = ->
         $('nav [role=tab]').attr 'aria-selected', false
         $(event.target).attr 'aria-selected', true
 ```
-]
 
 
 ---
+class: middle
+
 # Tooltips
 
-.plain[
 ```pug
 head
     link(rel="stylesheet" href="lib/aria-tips.css")
@@ -707,13 +718,13 @@ body
         | this is the hover description in a tooltip :)
 ```
 
-.caption[[m4dz.github.io/aria-tips/](http://m4dz.github.io/aria-tips/)]
-]
+[m4dz.github.io/aria-tips/](http://m4dz.github.io/aria-tips/)
+
 
 ---
 class: bottom-up, middle, center, inverse
 
-![star half](./img/icons/linearicons/star-half.svg)
+![trafic signs](./img/icons/linea/basic_signs.svg)
 
 # Utilisez des libs accessibles
 
@@ -729,9 +740,10 @@ class: punchline, bottom
 
 
 ---
+class: middle
+
 # CSS Modules
 
-.plain[
 ```css
 .backdrop {}
 .prompt {}
@@ -758,7 +770,6 @@ Component {
 
 }
 ```
-]
 
 ???
 - webpack, browserify, jspm, node, postcss
@@ -782,7 +793,7 @@ class: single, inverse, middle
 
 ---
 layout: false
-class: inverse, placeholder, bottom
+class: section, bottom
 background-image: url('./img/placeholders/collaborate.jpg')
 
 # Questions ?

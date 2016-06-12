@@ -311,6 +311,7 @@ name: thanks
 
 ## Iconographie / Médias :
 
+- [Linear Icons](https://linearicons.com) by Perxis https://perxis.com - [CC BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0/)
 - Algorisme : by [Laurent Chemla](https://www.youtube.com/channel/UCFjaRSCKJix-SfsS_hIn6Hw)
 
 ## Fontes :

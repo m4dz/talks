@@ -6,8 +6,8 @@
 <g>
 	<path d="M56,14H0v44h56V14z M54,16v6H2v-6H54z M2,56V24h52v32H2z"/>
 	<polygon points="10,12 12,12 12,8 62,8 62,49 58,49 58,51 64,51 64,6 10,6 	"/>
-	<rect x="6" y="18" width="4" height="2"/>
-	<rect x="14" y="18" width="4" height="2"/>
-	<rect x="22" y="18" width="4" height="2"/>
+	<rect class="accent" x="6" y="18" width="4" height="2"/>
+	<rect class="accent" x="14" y="18" width="4" height="2"/>
+	<rect class="accent" x="22" y="18" width="4" height="2"/>
 </g>
 </svg>
