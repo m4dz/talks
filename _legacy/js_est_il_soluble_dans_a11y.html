@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+
+    <title>JavaScript est-il soluble dans l'Accessibilité (en comprimés effervescents)</title>
+
+    <meta name="description" content="JavaScript est-il soluble dans l'Accessibilité (en comprimés effervescents) - Accessiday 28/05/2014">
+    <meta name="author" content="MAD <code@madsgraphics.com>">
+
+    <link rel="stylesheet" href="./css/reveal.min.css">
+    <link rel="stylesheet" href="./css/theme/madsgraphics.css">
+
+    <style type="text/css">
+      .reveal h1 {
+        font-size: 2.57em;
+      }
+
+      .reveal #myself .col {
+        width: 50%;
+        float: left;
+      }
+
+      .reveal #myself .wrapper {
+        position: relative;
+        font-size: 0.8em;
+        overflow: hidden;
+        width: 100%;
+        height: 300px;
+      }
+
+      .reveal #myself .wrapper > div {
+        position: absolute;
+        width: 100%;
+        top: 0px;
+        left: 0px;
+      }
+
+      .reveal #myself.skills .coord {
+        display: none;
+      }
+
+      .reveal #myself.clever .col {
+        display: none;
+      }
+
+      .reveal #credits {
+        position: relative;
+      }
+
+      .reveal #credits img {
+        margin: 0;
+      }
+
+      .reveal #credits .wrapper {
+        -webkit-transform: translateY(65%);
+        -ms-transform: translateY(65%);
+        transform: translateY(65%);
+
+        -webkit-transition-property: -webkit-transform;
+        -webkit-transition-duration: 2.5s;
+        -webkit-transition-timing-function: linear;
+        transition-property: -webkit-transform -ms-transform transform;
+        transition-duration: 30s;
+        transition-timing-function: linear;
+      }
+
+      .reveal #credits.present .wrapper {
+        -webkit-transform: translateY(-145%);
+        -ms-transform: translateY(-145%);
+        transform: translateY(-145%);
+      }
+
+      .reveal .who {
+        display: block;
+        position: fixed;
+        left: 39px;
+        bottom: 39px;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        border: 2px solid #fff;
+        box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.35);
+      }
+
+      .reveal .show {
+        display: block;
+      }
+      .reveal .hide {
+        display: none;
+      }
+    </style>
+
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="./lib/css/tomorrow.css">
+
+    <!--[if lt IE 9]>
+    <script src="/lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+        <section>
+          <h1><span class="hlt">JS</span> est-il soluble dans l'<span class="hlt">A11y</span>&nbsp;?<br><small>(en comprimés effervescents)</small></h1>
+          <p style="float:right"><small><a href="http://talks.madsgraphics.com/js_est_il_soluble_dans_a11y.html" class="normal"><span class="hlt">//</span>talks.madsgraphics.com/js_est_il_soluble_dans_a11y.html</a></small></p>
+        </section>
+
+        <section id="myself">
+          <div class="col">
+            <div class="stamp">
+              <img src="./img/mad.jpg" alt="MAD" class="stamp">
+            </div>
+            <div class="wrapper">
+              <div class="coord">
+                <h2>MAD</h2>
+                <p><a href="https://twitter.com/madsgraphics">@madsgraphics</a></p>
+                <p><a href="mailto:code@madsgraphics.com">code@madsgraphics.com</a></p>
+              </div>
+              <div class="skills fragment" data-fragment-index="1" data-state="skills">
+                <p>Dev UI</p>
+                <p>JavaScript Ninja</p>
+                <p>Code Architect</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="stamp">
+              <img src="./img/stef.jpg" alt="MAD" class="stamp">
+            </div>
+            <div class="wrapper">
+              <div class="coord">
+                <h2>Stef</h2>
+                <p><a href="https://twitter.com/notabene">@notabene</a></p>
+                <p><a href="mailto:sdeschamps@clever-age.com">sdeschamps@clever-age.com</a></p>
+              </div>
+              <div class="skills fragment" data-fragment-index="1" data-state="skills">
+                <p>Expert Front</p>
+                <p>Directeur Clever Garden</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="clever fragment" data-fragment-index="2" data-state="clever">
+            <div class="stamp">
+              <img src="./img/cleverage.png" alt="Clever Age" class="stamp">
+            </div>
+            <div class="wrapper">
+              <div>
+                <h2>Clever Age</h2>
+                <p><a href="https://fr.clever-age.com">//fr.clever-age.com</a></p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="stef">
+          <h2><span class="hlt">P</span>reviously&nbsp;:<br><small>«&nbsp;C'est bon, mangez-en !&nbsp;»</small></h2>
+          <img src="./img/rabbit-eating.gif" alt="Rabbit Eating" width="400" height="275" />
+        </section>
+
+        <section>
+          <section class="bgi" data-background="./img/ill/js_a11y/img1.jpg" data-transition="linear" data-background-transition="slide">
+            <h2><span class="lettrine">L</span>égende Urbaine</h2>
+          </section>
+
+          <section class="stef">
+            <p class="breadcrumb">Légende Urbaine</p>
+            <h2><span class="hlt">JS</span> != <span class="hlt">Accessible</span></h2>
+          </section>
+
+          <section class="mad">
+            <p class="breadcrumb">Légende Urbaine</p>
+            <h2><span class="hlt">P</span>roblème<br>de Conception</h2>
+          </section>
+
+          <section class="mad">
+            <p class="breadcrumb">Légende Urbaine</p>
+            <h2><span class="hlt">P</span>roblème<br>d'interface</h2>
+          </section>
+
+          <section class="stef">
+            <p class="breadcrumb">Légende Urbaine</p>
+            <h2><span class="hlt">P</span>ar exemple…</h2>
+            <ol>
+              <li class="fragment roll-in" data-fragment-index="1">Clavier</li>
+              <li class="fragment roll-in" data-fragment-index="2">Tablette</li>
+              <li class="fragment roll-in" data-fragment-index="3">☛ <span class="hlt">M</span>agie !</li>
+            </ol>
+          </section>
+
+          <section class="stef">
+            <p class="breadcrumb">Légende Urbaine</p>
+            <h2><span class="hlt">L</span>'Origine du Mal</h2>
+          </section>
+
+          <section class="stef">
+            <p class="breadcrumb">Légende Urbaine</p>
+            <h2><span class="hlt">P</span>ilotage</h2>
+            <ul>
+              <li class="fragment roll-in" data-fragment-index="1">ça se décide</li>
+              <li class="fragment roll-in" data-fragment-index="2">ça s'apprend</li>
+            </ul>
+          </section>
+
+          <section class="stef">
+            <p class="breadcrumb">Légende Urbaine</p>
+            <h2><span class="hlt">P</span>erception</h2>
+            <ul>
+              <li class="fragment roll-in" data-fragment-index="1">« Ma cible, ce n’est pas les handicapés »</li>
+              <li class="fragment roll-in" data-fragment-index="2">« C’est quoi le surcoût ? »</li>
+            </ul>
+          </section>
+
+          <section class="mad">
+            <p class="breadcrumb">Légende Urbaine</p>
+            <h2><span class="hlt">L</span>a Solution</h2>
+            <blockquote class="fragment">Un client, ça s'<em>é</em>duque <sup>*</sup> !<br><small style="float:right">* mon Luc !</small></blockquote>
+          </section>
+        </section>
+
+        <section>
+          <section class="bgi" data-background="./img/ill/js_a11y/img2.jpg" data-transition="linear" data-background-transition="slide">
+            <h2><span class="lettrine">U</span>n peu d'Histoire</h2>
+          </section>
+
+          <section class="stef">
+            <p class="breadcrumb">Un peu d'Histoire</p>
+            <h2><span class="hlt">10</span> ans déjà&nbsp;:<br>Buffers de lecteurs d'écran</h2>
+          </section>
+
+          <section class="stef">
+            <p class="breadcrumb">Un peu d'Histoire</p>
+            <h2><span class="hlt">A</span>RIA !</h2>
+          </section>
+
+          <section class="stef">
+            <p class="breadcrumb">Un peu d'Histoire</p>
+            <h2><span class="hlt">N</span>otifier</h2>
+            <p>☛ Quelque chose a bougé dans la structure, les <em>AT</em> doivent pouvoir être informées et réagir</p>
+          </section>
+
+          <section class="stef">
+            <p class="breadcrumb">Un peu d'Histoire</p>
+            <h2><span class="hlt">D</span>écrire</h2>
+            <p>☛ Enrichir la structure de données qui n’existent pas en HTML (parce qu’implicites) pour décrire précisément les interfaces riches</p>
+          </section>
+
+          <section class="stef">
+            <p class="breadcrumb">Un peu d'Histoire</p>
+            <h2><span class="hlt">A</span>ujourd'hui&nbsp;:<br>Plus de problèmes de buffers</h2>
+          </section>
+        </section>
+
+        <section>
+          <section class="bgi" data-background="./img/ill/toolbox.jpg" data-transition="linear" data-background-transition="slide">
+            <h2><span class="lettrine">C</span>oncrètement</h2>
+          </section>
+
+          <section class="mad">
+            <p class="breadcrumb">Concrètement</p>
+            <h2><span class="hlt">C</span>ôté navigation</h2>
+          </section>
+
+          <section class="mad">
+            <p class="breadcrumb">Concrètement</p>
+            <h2><span class="hlt">U</span>tiliser les éléments focusables par défaut</h2>
+            <ul>
+              <li class="fragment roll-in" data-fragment-index="1">éléments natifs (links, forms…)</li>
+              <li class="fragment roll-in" data-fragment-index="2">éléments scriptés (tabindex=0 <small>#FTW</small>)</li>
+            </ul>
+          </section>
+
+          <section>
+            <p class="breadcrumb">Concrètement</p>
+            <h2><span class="hlt">C</span>ôté UI</h2>
+          </section>
+
+          <section class="mad">
+            <p class="breadcrumb">Concrètement</p>
+            <h2><span class="hlt">L</span>ayouts<br>☛ ARIA Landmarks</h2>
+            <pre class="html"><code><div role="search">
+  <label for="s">Votre recherche</label>
+  <input type="search" value="" id="s" name="searchstring">
+  <input type="radio" name="searchtype" id="st1" value="pages"><label for="st1">Pages</label>
+  <input type="radio" name="searchtype" id="st2" value="images"><label for="st2">Images</label>
+  <input type="submit" value="Lancer la recherche">
+</div></code></pre>
+          </section>
+
+          <section class="mad">
+            <p class="breadcrumb">Concrètement</p>
+            <h2><span class="hlt">UI</span> dynamiques<br>☛ ARIA Live</h2>
+            <pre class="html"><code><div aria-live="polite">
+  <!-- Contenu mis à jour à intervalles réguliers -->
+</div>
+
+<div aria-live="assertive">
+  <!-- Contenu attendant une action immédiate de l'utilisateur dès qu'il change -->
+</div></code></pre>
+          </section>
+
+          <section class="mad">
+            <p class="breadcrumb">Concrètement</p>
+            <h2><span class="hlt">P</span>résentation<br>☛ ARIA State Change</h2>
+            <pre class="html"><code><ul class="tablist" role="tablist">
+  <li id="tab1" class="tab" aria-controls="panel1" aria-selected="true" role="tab" tabindex="0">Prices</li>
+  <li id="tab2" class="tab" aria-controls="panel2" role="tab" aria-selected="false" tabindex="0">Features </li>
+</ul>
+<div id="panel1" class="panel" aria-labelledby="tab1" role="tabpanel" aria-hidden="false">
+  <h3 tabindex="0">Prices</h3>
+  List of prices
+</div>
+<div id="panel2" class="panel hidden" aria-labelledby="tab2" role="tabpanel" aria-hidden="true">
+  <h3 tabindex="0">Features</h3>
+  List of product features....
+</div>
+<!-- code credit: http://accessibility.athena-ict.com/aria/examples/tabpanel2.shtml --></code></pre>
+          </section>
+
+          <section class="mad">
+            <p class="breadcrumb">Concrètement</p>
+            <h2><span class="hlt">T</span>ooltips<br>☛ ARIA Describedby</h2>
+            <pre class="html"><code><p>
+  <label for="toto" id="l">Votre âge</label>
+  <input type="text" id="t" value="18" aria-labelledby="l t a" aria-describedby="p">
+  <span id="a">ans</span>
+</p>
+
+<p id="p">Votre âge, en années, pas en semaines</p></code></pre>
+          </section>
+        </section>
+
+        <section>
+          <section class="bgi" data-background="./img/ill/js_a11y/img4.jpg" data-transition="linear" data-background-transition="slide">
+            <h2><span class="lettrine">O</span>n vous montre ?</h2>
+          </section>
+
+          <section class="mad">
+            <p class="breadcrumb">On vous montre ?</p>
+            <h2><span class="hlt">T</span>ableau de bord</h2>
+            <small>Haribo, c'est beau la vie :)</small>
+          </section>
+
+          <section class="stef">
+            <p class="breadcrumb">On vous montre ?</p>
+            <h2><span class="hlt">C</span>arrousel Aquitaine</h2>
+            <small>En vrai, ça se passe comme ça</small>
+          </section>
+        </section>
+
+        <section>
+          <section class="bgi" data-background="./img/ill/js_a11y/img5.jpg" data-transition="linear" data-background-transition="slide">
+            <h2><span class="lettrine">L</span>a vérité c'est que…</h2>
+          </section>
+
+          <section class="stef">
+            <p class="breadcrumb">La vérité c'est que…</p>
+            <h2><span class="hlt">A</span>ccessibilité ♡ JS</h2>
+            <blockquote>JavaScript donne les moyens pour enrichir les comportements et les rendre accessibles</blockquote>
+          </section>
+        </section>
+
+        <section class="bgi" data-background="./img/ill/js_a11y/img6.jpg" data-transition="linear" data-background-transition="slide">
+            <h2><span class="lettrine">Q</span>uestions ?</h2>
+        </section>
+
+        <section class="bgi" data-background="./img/ill/cat.jpg" data-transition="linear" data-background-transition="slide">
+          <h2><span class="lettrine">M</span>erci !</h2>
+          <p><small><a href="http://talks.madsgraphics.com/js_est_il_soluble_dans_a11y.html" class="normal"><span class="hlt">//</span>talks.madsgraphics.com/js_est_il_soluble_dans_a11y.html</a></small></p>
+        </section>
+
+        <section id="credits">
+          <div class="wrapper">
+          <h2><span class="hlt">C</span>rédits</h2>
+            <dl>
+              <dt>Images</dt>
+              <dd>
+                <ul>
+                  <li><a href="http://www.flickr.com/photos/bailemoselbimbo/4118184684/" class="normal"><span class="hlt">V</span>igilant a trossos</a><br><span class="creator">By Daniel Rubio // <a class="normal und" rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Licence Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a></span></li>
+                  <li><a href="http://www.flickr.com/photos/aussiegall/12085846755/" class="normal"><span class="hlt">T</span>he Librarian</a><br><span class="creator">By aussiegall // <a class="normal und" rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licence Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by/4.0/80x15.png" /></a></span></li>
+                  <li><a href="http://www.flickr.com/photos/34163332@N06/7263382550/" class="normal"><span class="hlt">T</span>oolbox</a><br><span class="creator">By florianric  // <a class="normal und" rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licence Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by/4.0/80x15.png" /></a></span></li>
+                  <li><a href="http://www.flickr.com/photos/zeissmicro/12283959553/" class="normal"><span class="hlt">S</span>miling Microscope</a><br><span class="creator">By ZEISS Microscopy // <a rel="license" class="normal und" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Licence Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a></span></li>
+                  <li><a href="http://www.flickr.com/photos/legofenris/4290956582/" class="normal"><span class="hlt">N</span>ot the casting?</a><br><span class="creator">By leg0fenris // <a class="normal und" rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Licence Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a></span></li>
+                  <li><a href="http://www.flickr.com/photos/seeminglee/8850477259/" class="normal"><span class="hlt">I</span>chwan Noor (b. 1963): Beetle Sphere, 2013</a><br><span class="creator">By See-ming Lee // <a class="normal und" rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licence Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by/4.0/80x15.png" /></a></span></li>
+                  <li><a class="normal" href="http://www.flickr.com/photos/20561948@N00/261865727/"><span class="hlt">Y</span>ou Killed the Beast, Killer!!!</a><br><span class="creator">By spike55151 // <a class="normal und" rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Licence Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a></span></li>
+                </ul>
+              </dd>
+              <dt>Fonts</dt>
+              <dd>
+                <ul>
+                  <li><a class="normal" href="http://www.fontsquirrel.com/fonts/bebas-neue"><span class="hlt">B</span>ebas Neue</a><br><span class="creator">By <a class="normal und" href="http://www.dharmatype.com/">Dharma Type</a> // Dharma Type Font License v1.00</span></li>
+                  <li><a class="normal" href="http://www.fontsquirrel.com/fonts/roboto"><span class="hlt">R</span>oboto Bold Condensed</a><br><span class="creator">By Christian Robertson // Apache License v2.00</span></li>
+                  <li><a class="normal" href="http://www.fontsquirrel.com/fonts/DejaVu-Sans"><span class="hlt">D</span>ejaVu Sans Book</a><br><span class="creator">By <a class="normal und" href="http://dejavu-fonts.org/">DejaVu Fonts</a> // DejaVu Fonts License v1.00</span></li>
+                  <li><a class="normal" href="http://www.fontsquirrel.com/fonts/source-code-pro"><span class="hlt">S</span>ource Code Pro</a><br><span class="creator">Copyright 2010, 2012 <a class="normal und" href="http://www.adobe.com/">Adobe Systems Incorporated</a> // SIL Open Font License v1.10</span></li>
+                </ul>
+              </dd>
+            </dl>
+          </div>
+        </section>
+      </div>
+
+      <img src="./img/stef_mini.jpg" alt="Là c'est Stef qui parle…" id="stef" class="who hide" width="48" height="48">
+      <img src="./img/mad_mini.jpg" alt="… et là c'est MAD." id="mad" class="who hide" width="48" height="48">
+    </div>
+
+    <script src="./lib/js/head.min.js"></script>
+    <script src="./js/reveal.min.js"></script>
+    <script>
+      Reveal.initialize({
+        history: true,
+
+        theme: 'default',
+        transition: 'concave',
+        backgroundTransition: 'default',
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: './lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: './plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+        ]
+      });
+
+      var myselfFragments = function(e) {
+        var f = e.fragment;
+
+        switch (f.dataset.state) {
+          case 'skills' : case 'clever':
+            var s = document.getElementById('myself');
+            if (s.classList.contains(f.dataset.state)) {
+              s.classList.remove(f.dataset.state);
+            } else {
+              s.classList.add(f.dataset.state);
+            }
+            break;
+        }
+      };
+
+      Reveal.addEventListener('fragmentshown', myselfFragments);
+      Reveal.addEventListener('fragmenthidden', myselfFragments);
+
+      var whos = document.getElementsByClassName('who')
+      Reveal.addEventListener('slidechanged', function (e) {
+        var name;
+
+        for (var _i = 0; _i < whos.length; _i++) {
+          whos[_i].classList.add('hide');
+          whos[_i].classList.remove('show');
+        }
+
+        if (e.currentSlide.classList.contains('stef')) {
+          name = document.getElementById('stef');
+          name.classList.add('show');
+          name.classList.remove('hide');
+        }
+        if (e.currentSlide.classList.contains('mad')) {
+          name = document.getElementById('mad');
+          name.classList.add('show');
+          name.classList.remove('hide');
+        }
+      });
+    </script>
+
+  </body>
+</html>

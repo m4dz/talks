@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <title>m4dz' talks | La Crypto pour les Devs</title>
+  <meta name="description" content="On embarque pour un tour d'horizon de la cryptographie : chiffrement, techniques, outils… Nous regarderons quels outils existent, pourquoi et comment les utiliser. Et parce que le web ne serait pas parfait s'il n'était pas ouvert, nous nous intéresserons aussi bien aux clients « lourds » qu'aux alternatives web.">
+  <meta name="author" content="m4dz <code@m4dz.net>">
+
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+  <link rel="stylesheet" href="../css/m4dz.css" id="theme">
+
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '../print/pdf.css' : '../print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <section class="cover" data-background="../images/backgrounds/orange.jpg">
+        <h1>La Crypto<br>pour les Devs</h1>
+        <p class="permalink"><a href="http://talks.m4dz.net/crypto-pour-les-devs/">//talks.m4dz.net/crypto-pour-les-devs/</a></p>
+        <p class="author">by <a href="http://m4dz.net">m4dz</a></p>
+      </section>
+
+      <section class="who" data-background="../images/backgrounds/white.jpg">
+        <p class="breadcrumb">La Crypto pour les Devs</p>
+        <section class="cni">
+          <img data-src="../images/mad-hatter.gif" alt="m4dz">
+          <div>
+            <h3>m4dz</h3>
+            <p><a href="https://twitter.com/m4d_z">@m4d_z</a> | <a href="http://m4dz.net">m4dz.net</a> | <a href="http://m4dz.net/7D969710.asc">7D969710</a></p>
+          </div>
+        </section>
+
+        <section class="cni">
+          <img data-src="../images/cozy-logo-gradient.svg" alt="Cozy.io">
+          <div>
+            <h3>Cozy Cloud</h3>
+            <p><a href="https://cozy.io">cozy.io</a></p>
+          </div>
+        </section>
+      </section>
+
+      <section data-background="../images/backgrounds/white.jpg">
+        <section class="cover" data-background="../images/backgrounds/red.jpg">
+          <h2>La responsabilité du développeur</h2>
+        </section>
+
+        <p class="breadcrumb">La Crypto pour les Devs<br>La responsabilité du développeur</p>
+
+        <section>
+          <h3>la limite des mots de passe&nbsp;:<br>l'interface CC</h3>
+          <p class="more"><a href="https://blog.lastpass.com/2014/09/the-scary-truth-about-your-passwords-an-analysis-of-the-gmail-leak.html/">The Scary Truth About Your Passwords</a></p>
+        </section>
+
+        <section>
+          <h3>m'en fous, on n'héberge pas de données sensibles…</h3>
+          <code>(╯°□°）╯︵ ┻━┻</code>
+        </section>
+
+        <section>
+          <h3>une seule solution</h3>
+        </section>
+
+        <section class="important" data-background="../images/backgrounds/carmin.jpg">
+          <h3>Chiffrer !</h3>
+          <p>(ou crypter, troll inside)</p>
+          <img data-src="deal-with-it.gif" alt="Deal with it2">
+        </section>
+
+        <section>
+          <ul>
+            <li>guerre de l'information</li>
+            <li>tracking et recroisement</li>
+            <li>identité numérique</li>
+          </ul>
+        </section>
+
+        <section class="important">
+          <h3>Aucune donnée sensible ne devrait circuler ou être stockée en clair</h3>
+        </section>
+      </section>
+
+      <section data-background="../images/backgrounds/white.jpg">
+        <section class="cover" data-background="../images/backgrounds/olive.jpg">
+          <h2>Chiffrer ?</h2>
+        </section>
+
+        <p class="breadcrumb">La Crypto pour les Devs<br>Chiffrer ?</p>
+
+        <section>
+          <h3>chiffrement</h3>
+          <img data-src="manga-fear.gif" alt="angoisses">
+        </section>
+
+        <section>
+          <h3>plus question de reculer</h3>
+        </section>
+
+        <section>
+          <h3>NSA / Prism</h3>
+          <img data-src="nsa.jpg" alt="NSA">
+        </section>
+
+        <section>
+          <h3>la Crypto, ça n'est pas</h3>
+          <ul>
+            <li>l'authentification</li>
+            <li>la sécurité</li>
+            <li>la révocation</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>objectif: Protéger les informations sensibles</h3>
+          <img data-src="batman.gif" alt="Batman">
+        </section>
+
+        <section>
+          <h3>la Crypto, c'est</h3>
+          <ul>
+            <li>Hash</li>
+            <li>Encryption</li>
+            <li>Échange de clés</li>
+            <li>Signature</li>
+          </ul>
+        </section>
+
+        <section class="important">
+          <h3>Seule la clé est importante</h3>
+          <iframe data-autoplay width="640" height="360" data-src="https://www.youtube.com/embed/WT8tOpjTPtA?start=12&end=29" frameborder="0" allowfullscreen></iframe>
+          <p>(l'algo on s'en fout)</p>
+        </section>
+      </section>
+
+      <section data-background="../images/backgrounds/white.jpg">
+        <section class="cover" data-background="../images/backgrounds/brown.jpg">
+          <h2>Cryptographie &amp; Cryptanalyse</h2>
+        </section>
+
+        <p class="breadcrumb">La Crypto pour les Devs<br>Cryptographie &amp; Cryptanalyse</p>
+
+        <section>
+          <h3>il était une fois…</h3>
+          <img data-src="alice-rabbit.gif" alt="">
+        </section>
+
+        <section>
+          <h3>le Code César</h3>
+          <img data-src="juliuscaesar.jpg" alt="">
+        </section>
+
+        <section>
+          <h3>le chiffre de Vigenère</h3>
+          <img data-src="vigenere_square_shading.svg" alt="carré de Vigenère">
+          <pre><code data-trim>
+Plaintext:  ATTACKATDAWN
+Key:        LEMONLEMONLE
+Ciphertext: LXFOPVEFRNHR
+          </code></pre>
+        </section>
+
+        <section>
+          <h3>la faille : les répétitions</h3>
+          <p>L'analyse des fréquences rend caduques toutes protections qui utiliseraient un dénominateur commun.</p>
+        </section>
+
+        <section>
+          <h3>Enigma</h3>
+          <img data-src="enigma.jpg" alt="">
+        </section>
+
+        <section>
+          <h3>le chiffrement numérique</h3>
+        </section>
+
+        <section>
+          <h3>la faille : l'espionnage et l'attaque par force brute</h3>
+          <p>aucun système ne peut être suffisamment robuste pour résister éternellement à une attaque</p>
+        </section>
+
+        <section class="important">
+          <h3>La protection des clés est essentielle</h3>
+          <img data-src="xkcd-security.png" alt="">
+        </section>
+      </section>
+
+      <section data-background="../images/backgrounds/white.jpg">
+        <section class="cover" data-background="../images/backgrounds/carmin.jpg">
+          <h2>Hachage, salage &amp; entropie</h2>
+        </section>
+
+        <p class="breadcrumb">La Crypto pour les Devs<br>Hachage, salage &amp; entropie</p>
+
+        <section>
+          <h3>Hachage</h3>
+          <ul>
+            <li>calcul d'une empreinte identifiant la source</li>
+            <li>non-réversible</li>
+            <li class="fragment"><span class="strike">MD5</span> / <span class="strike">SHA</span> / BCrypt (blowfish)</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Hachage :<br>obfuscation des données 👍</h3>
+        </section>
+
+        <section>
+          <h3>Problème :<br>les rainbow / lookup / reverse-lookup tables</h3>
+        </section>
+
+        <section>
+          <h3>Saler</h3>
+          <ul>
+            <li>ajoute de l'entropie</li>
+            <li>supprime les risques de répétition</li>
+            <li>doit être <b>unique</b> et <b>aléatoire</b></li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>On ne fait pas :</h3>
+          <pre><code data-trim>
+md5(sha1(password))
+md5(md5(salt) + md5(password))
+sha1(sha1(password))
+sha1(str_rot13(password + salt))
+md5(sha1(md5(md5(password) + sha1(password)) + md5(password)))
+          </code></pre>
+        </section>
+
+        <section>
+          <h3>On fait :</h3>
+          <ol>
+            <li>génération d'un pseudo-aléatoire <abbr title="Cryptographically secure pseudorandom number generator">CSPRNG</abbr> : le salt</li>
+            <li>application une dérivation PBKDF2 (SHA256) / Bcrypt / Scrypt sur <code>[salt+pasword]</code> avec une forte entropie</li>
+            <li>stockage du résultat et des paramètres de génération</li>
+          </ol>
+          <p class="more"><a href="https://crackstation.net/hashing-security.htm">Salted Password Hashing - Doing it Right</a></p>
+        </section>
+
+        <section class="important">
+          <h3>Défendez-vous</h3>
+          <p>un hachage sans répétition et en exécution lente limite sa surface d'attaque</p>
+        </section>
+      </section>
+
+      <section data-background="../images/backgrounds/white.jpg">
+        <section class="cover" data-background="../images/backgrounds/shell.jpg">
+          <h2>Symétrique vs Asymétrique</h2>
+        </section>
+
+        <p class="breadcrumb">La Crypto pour les Devs<br>Symétrique vs Asymétrique</p>
+
+        <section>
+          <h3>chiffrement par bloc</h3>
+          <ul>
+            <li class="strike">DES (Data Encryption Standard)</li>
+            <li>AES (Advanced Encryption Standard)</li>
+            <li class="fragment">
+              Stream Cipher
+              <img class="block" data-src="badass.gif" alt="">
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>padding &amp; random</h3>
+          <ul>
+            <li class="strike">ECB (Electronic Code Book)</li>
+            <li>CBC (Cipher Block Chaining)</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>problème : les machines ne sont pas aléatoires</h3>
+          <ul>
+            <li>besoin de données imprévisibles</li>
+            <li class="fragment">méthodes crypto <abbr title="Cryptographically secure pseudorandom number generator">CSPRNG</abbr><br><small>(<b>pas</b> <a href="http://www.2uo.de/myths-about-urandom/"><code>/dev/urandom</code></a> directement, utilisez les méthodes des libs crypto)</small></li>
+            <li class="fragment">IV (Vecteur d'Initialisation)<br><small>(bytes-block utilisés en initialisation d'un algo de chiffrement pour assurer son caractère unique)</small></li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>problème : une clé unique peut être compromise</h3>
+          <p>une clé symétrique doit nécessairement circuler</p>
+        </section>
+
+        <section>
+          <h3>Bob et Alice échangent leurs clés</h3>
+          <img data-src="letter.gif" alt="">
+        </section>
+      </section>
+
+      <section data-background="../images/backgrounds/white.jpg">
+        <section class="cover" data-background="../images/backgrounds/lagoon.jpg">
+          <h2>Clés, certificats, signatures &amp; chiffrement</h2>
+        </section>
+
+        <p class="breadcrumb">La Crypto pour les Devs<br>Clés, certificats, signatures &amp; chiffrement</p>
+
+        <section>
+          <h3>clé symétrique</h3>
+          <ul>
+            <li>clé unique pour toutes les opérations</li>
+            <li>rapide</li>
+            <li>sensible sur la clé</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Diffie-Hellman</h3>
+          <ul>
+            <li>sécurité supplémentaire sur les échanges</li>
+            <li>clé publique commune</li>
+            <li>secret partagé</li>
+          </ul>
+          <img data-src="Diffie-Hellman_Key_Exchange.jpg" alt="">
+        </section>
+
+        <section>
+          <h3>PGP / GnuPG</h3>
+          <ul>
+            <li>clés asymétriques (RSA) sur clé symétrique (IDEA)</li>
+            <li>chiffre (clé publique) et signe (clé privée)</li>
+            <li>utilise l'entropie fournie par l'utilisateur</li>
+            <li class="fragment">la Crypto pour tous</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Signature</h3>
+          <ul>
+            <li>asymétrique inversée</li>
+            <li>pas de sécurisation ; identification</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Certificats</h3>
+          <ul>
+            <li>authentifie un client auprès d'un tiers de confiance</li>
+            <li>assure la révocation</li>
+            <li class="fragment"><a href="https://letsencrypt.org/">Let's Encrypt</a></li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>les standards</h3>
+          <ul>
+            <li><a href="http://www.itu.int/rec/T-REC-X.509/en">X.509</a></li>
+            <li><a href="https://www.emc.com/emc-plus/rsa-labs/standards-initiatives/public-key-cryptography-standards.htm">PKCS</a></li>
+            <li><a href="https://www.pcisecuritystandards.org/security_standards/)">PCIDSS</a></li>
+          </ul>
+        </section>
+      </section>
+
+      <section data-background="../images/backgrounds/white.jpg">
+        <section class="cover" data-background="../images/backgrounds/red.jpg">
+          <h2>Protéger</h2>
+        </section>
+
+        <p class="breadcrumb">La Crypto pour les Devs<br>Protéger</p>
+
+        <section>
+          <h3>le réseau</h3>
+          <ul>
+            <li>
+              <span class="strike">SSL</span> / TLS
+              <img class="block" data-src="learn_ssl_diagram.gif" alt="SSL Diagram">
+            </li>
+            <li>Confidentialité persistante</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>les accès : password hash</h3>
+        </section>
+
+        <section>
+          <h3>les données</h3>
+          <ul>
+            <li>RSA</li>
+            <li>Symétrique encapsulé</li>
+            <li>Boitiers HSM</li>
+          </ul>
+        </section>
+      </section>
+
+      <section data-background="../images/backgrounds/white.jpg">
+        <section class="cover" data-background="../images/backgrounds/orange.jpg">
+          <h2>Webcrypto à la rescousse ?</h2>
+        </section>
+
+        <p class="breadcrumb">La Crypto pour les Devs<br>Webcrypto à la rescousse ?</p>
+
+        <section>
+          <h3>Before <small>(reading the spec)</small></h3>
+          <img data-src="flamingo.gif" alt="">
+        </section>
+
+        <section>
+          <h3>After <small>(reading the spec)</small></h3>
+          <img data-src="stitch-crying.gif" alt="">
+        </section>
+
+        <section>
+          <h3>Current status :</h3>
+          <ul>
+            <li>Working Draft</li>
+            <li>Spec obscure pour les néophytes</li>
+          </ul>
+        </section>
+
+        <section data-transition="none">
+          <code>window.crypto</code>
+        </section>
+
+        <section data-transition="none">
+          <code>window.crypto.subtle</code>
+          <p><img data-src="confuse-futurama.gif" alt=""></p>
+        </section>
+
+        <section data-transition="none">
+          <code>window.crypto.subtle.encrypt</code>
+        </section>
+
+        <section>
+          <pre><code class="javascript" data-trim>
+window.crypto.subtle.encrypt(
+    {
+        name: "RSA-OAEP",
+    },
+    publicKey, //from generateKey or importKey
+    data
+)
+          </code></pre>
+        </section>
+
+        <section data-transition="none">
+          <pre><code class="javascript" data-trim>
+window.crypto.subtle.encrypt(/* ... */)
+.then(function(encrypted){
+  //returns an ArrayBuffer containing the encrypted data
+  console.log(new Uint8Array(encrypted));
+})
+.catch(function(err){
+  console.error(err);
+});
+          </code></pre>
+        </section>
+
+        <section class="important">
+          <h3>WebCrypto API</h3>
+          <ul>
+            <li>n'utilise que des Promises</li>
+            <li>ne traite qu'avec des sources binaires (ArrayBuffers)</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>point bonus : comme avec <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/canPlayType">canPlayType</a></h3>
+          <ul>
+            <li>RSASSA-PKCS1-v1_5 / RSA-OAEP</li>
+            <li>AES-CBC / AES-GCM / AES-KW</li>
+            <li>HMAC</li>
+            <li>SHA-256 / SHA-384 / SHA-512</li>
+          </ul>
+          <p><small>les navigateurs n'implémentent que les algos qu'ils estiment nécessaires</small></p>
+        </section>
+      </section>
+
+      <section data-background="../images/backgrounds/white.jpg">
+        <section class="cover" data-background="../images/backgrounds/olive.jpg">
+          <h2>Alors, on fait quoi ?</h2>
+        </section>
+
+        <p class="breadcrumb">La Crypto pour les Devs<br>Alors, on fait quoi ?</p>
+
+        <section>
+          <h3>Ne jouez pas les apprentis sorciers</h3>
+          <img data-src="harry-never.gif" alt="">
+        </section>
+
+        <section>
+          <h3>n'oubliez jamais que :</h3>
+          <ul>
+            <li>la sécurité est inversement proportionelle à la simplicité d'utilisation</li>
+            <li>toute sécurité a un coût</li>
+          </ul>
+        </section>
+
+        <section class="important">
+          <h3>On arrête d'avoir peur, et on protège !</h3>
+          <a href="https://www.reddit.com/r/legaladvice/comments/3edf1s/im_a_gay_single_man_from_a_country_where_gaydeath/"><img data-src="reddit.jpg" alt=""></a>
+        </section>
+      </section>
+
+      <section class="cover" data-background="../images/backgrounds/shell.jpg">
+          <h2>Questions ?</h2>
+      </section>
+
+      <section class="credits" data-background="#2a1f1d">
+        <div class="scroll">
+          <h2>Merci</h2>
+          <h3>Iconographie / Médias :</h3>
+          <ul class="images">
+            <li>Algorisme : by <a href="https://www.youtube.com/channel/UCFjaRSCKJix-SfsS_hIn6Hw">Laurent Chemla</a></li>
+            <li>Chiffre de Vigenère : <a href="https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher">source wikipedia</a></li>
+            <li>Enigma : <a href="http://www.niwarmemorial.org/object-of-the-month/e-is-for-enigma-machine/">source Nothern Ireland War Memorial</a></li>
+            <li>XKCD : <a href="https://xkcd.com/538/">Security</a></li>
+            <li>Diffie-Hellman Key exchange : <a href="https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange">source wikipedia</a></li>
+            <li>SSL Diagram : <a href="https://www.identrustssl.co.uk/learn.html">source IdenTrust</a></li>
+          </ul>
+          <h3>Fontes :</h3>
+          <ul class="fonts">
+            <li>Titrage : <a href="http://www.myfonts.com/fonts/typodermic/sinzano/regular/">Sinzano</a></li>
+            <li>Labeur : <a href="http://www.whatfontis.com/Overlock-Regular.font">Overlock</a></li>
+            <li>Monospace : <a href="http://www.whatfontis.com/Source-Code-Pro.font">Source Code Pro</a></li>
+          </ul>
+          <p class="permalink"><a href="http://talks.m4dz.net/crypto-pour-les-devs/">//talks.m4dz.net/crypto-pour-les-devs/</a><br><small>disponible sous licence <a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></small></p>
+        </div>
+      </section>
+
+      <section data-background="#2a1f1d">
+        <h2>Ressources</h2>
+        <ul>
+          <li><a href="http://www.amazon.fr/Histoire-codes-secrets-Simon-Singh/dp/2253150975">Histoire des codes secrets</a></li>
+          <li><a href="http://cryptopals.com/">Crypto Challenges</a></li>
+          <li><a href="http://pqcrypto.org/">Post-Quantum Cryptography</a></li>
+          <li><a href="https://github.com/diafygi/webcrypto-examples">Webcrypto examples</a></li>
+          <li><a href="http://pkijs.org/">PKI.js</a> / <a href="http://asn1js.org/">ASN1.js</a></li>
+        </ul>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="../scripts/app.js" onload="require('initialize')"></script>
+</body>
+</html>
