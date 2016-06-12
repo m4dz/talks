@@ -1,0 +1,102 @@
+// main: ../index.styl
+
+// Colours
+h1
+a
+blockquote::before
+em
+    color: blue
+
+
+&.inverse
+&.section
+    color: white
+
+    h1
+        color: white
+
+    .remark-slide-number
+        color: white
+
+
+a:hover
+    color: orange
+
+
+// Thin font blocks
+h1
+ul
+blockquote
+blockquote + p
+    font-weight: 300
+
+
+// Fonts & borders
+h1
+    font-size:   45px
+
+    strong
+        font-weight: 400
+        font-family: Sinzano
+
+&.section h1
+    border:        3px solid white
+    border-radius: 6px
+    font-family:   Sinzano
+    text-shadow:   1px 1px 3px darkgrey, -1px -1px 2px textgrey
+
+&.single h1
+    font-size: 75px
+
+
+ul
+    font-size: 40px
+
+
+em
+    font-style: normal
+
+
+pre
+img
+    border:     3px solid lightgrey
+    box-shadow: 0 0 30px alpha(darkgrey, .4)
+
+
+blockquote::before
+    content:   '«'
+    font-size: 6em
+
+    // Consider the <p> that immediately follow a blockquote as a cite
+    & + p
+        font-size: 20px
+
+
+code
+    font-family: 'Source Code Pro'
+
+
+svg
+    fill: darkgrey
+
+    .accent
+        fill: blue
+
+&.inverse svg
+    fill: lightgrey
+
+    .accent
+        fill: white
+
+
+.remark-inline-code
+    border-radius:    3px
+    font-size:        .9em
+    color:            blue
+    background-color: lightgrey
+
+
+.breadcrumb
+    text-transform: uppercase
+    font-size:      16px
+    font-weight:    700

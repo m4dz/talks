@@ -1,0 +1,71 @@
+// main: index.styl
+
+#slide-thanks
+    static-reverse()
+    padding: 0
+
+    position:   absolute
+    top:        50%
+    left:       4em
+    right:      4em
+    transform:  translateY(-1.5em)
+    transition: transform 30s linear
+
+    &.scroll
+        transform: translateY(-97%)
+
+
+    h1
+        margin: 0 0 50%
+
+    h2
+        margin-top: 20%
+
+    .licence
+        margin-top: 50%
+
+
+    h1
+        font-family: Sinzano
+        font-size:   60px
+
+
+    h2
+        font-size:  35px
+
+
+    ul
+        font-size: 20px
+
+
+    li
+        margin: 0
+
+
+    .licence
+        font-size:   18px
+        font-weight: 300
+
+        p
+            margin: 0
+
+        img
+            float:        left
+            position:     relative
+            top:          -4px
+            margin-right: 2em
+            width:        4em
+            box-shadow:   none
+            border:       none
+
+
+    .ref a
+        text-decoration: none
+        font-weight:     bold
+
+        &::before
+            content: '➤ '
+
+
+    .remark-slide-number
+        display: none

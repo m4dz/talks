@@ -1,27 +1,45 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>M4D'z Talks</title>
-  <meta name="author" content="MAD <code@m4dz.net>">
+  <title>m4dz's talks</title>
+  <meta charset="utf-8">
+
+  <link rel="stylesheet" href="./styles/remark-cozy.css" media="screen" charset="utf-8">
+
+  <script src="./vendor/svg-injector.min.js" defer></script>
+  <script src="./vendor/remark-dev.min.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      let query = {}
+      window.location.search.slice(1).split('&').forEach((search) => {
+        [key, value] = search.split('=')
+        query[key] = value
+      })
+
+      console.debug(query)
+
+      remark.macros.ref = function() {
+        return `<div class="ref"><a href="http://talks.m4dz.net/?deck=${query.deck}">talks.m4dz.net/?deck=${query.deck}</a></div>`
+      }
+
+      const slideshow = remark.create({
+        sourceUrl:      `./decks/${query.deck}.md`,
+        ratio:          (query.wide && JSON.parse(query.wide))? '16:9' : '4:3',
+        highlightStyle: 'github',
+        highlightLines: true,
+        highlightSpans: true
+      })
+
+      slideshow.on('afterShowSlide', (slide) => {
+        SVGInjector(document.querySelectorAll('.remark-visible [src*=icons]'))
+
+        if(slide.properties.name == 'thanks') {
+          setTimeout(() => {
+            document.getElementById('slide-thanks').classList.add('scroll')
+          }, 2000)
+        }
+      })
+    })
+  </script>
 </head>
-<body>
-  <ul>
-    <li><a href="./architecture_et_bonnes_pratiques_en_webapp.html">Architecture et bonnes pratiques en webapp</a></li>
-    <li><a href="./frameworks_mv__kikifekoi.html">Frameworks MV* : Kikifékoi ?</a></li>
-    <li><a href="./modular_js.html">Modular JS</a></li>
-    <li><a href="./soyez_responsables__construisez_votre_api.html">Soyez responsables : construisez votre API</a></li>
-    <li><a href="./web_interfaces_du_futur.html">Web Interfaces du Futur</a></li>
-    <li><a href="./ruby_rails_ugly.html">The Ruby, the Rails and the Ugly</a></li>
-    <li><a href="./js_tdd_become_a_webavenger.html">JS TDD : Become a WebAvenger</a></li>
-    <li><a href="./seo_rwd_dans_un_bateau.html">SEO &amp; RWD sont dans un bateau</a></li>
-    <li><a href="./js_est_il_soluble_dans_a11y.html">JavaScript est-il soluble dans l'Accessibilité (en comprimés effervescents)</a></li>
-    <li><a href="./pssst_tu_veux_voir_ma_stack.html">Pssst… tu veux voir ma stack ?</a></li>
-    <li><a href="./mon_browser_ma_vm_mon_amour.html">Mon Browser, ma VM, mon Amour…</a></li>
-    <li><a href="./bacon-for-your-breakfast/">Bacon for your Breakfast</a></li>
-    <li><a href="./crypto-pour-les-devs/">La Crypto pour les Devs</a></li>
-    <li><a href="./react-or-not-react/">Pourquoi React est cool, et pourquoi vous ne devriez pas l'utiliser</a></li>
-  </ul>
-</body>
 </html>
-<div></div>

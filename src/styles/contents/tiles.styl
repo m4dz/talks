@@ -1,0 +1,31 @@
+// main: ../index.styl
+
+&.tiles
+    ul
+        padding:         0
+        list-style-type: none
+        display:         flex
+        flex-wrap:       wrap
+        align-content:   space-around
+        justify-content: space-around
+
+
+    li
+        box-sizing:     border-box
+        position:       relative
+        margin:         2em 0
+        min-width:      30%
+        flex:           1
+        display:        flex
+        flex-direction: column
+        align-items:    center
+        highlight()
+
+
+    svg
+        z-index:       1
+        min-width:     3.8em
+        height:        auto
+        padding:       30px
+        margin-bottom: 1em
+        background:    embedurl("../../img/tile-bg.svg", "utf8")

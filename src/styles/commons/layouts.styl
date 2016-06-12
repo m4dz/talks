@@ -1,0 +1,57 @@
+// main: ../index.styl
+
+&
+    padding-top: 5em
+
+// Reset slide margins and positions for titles / stickit
+&.section
+&.single
+&.stickit
+    static-reverse()
+
+
+h1
+h2
+h3
+    margin: 0
+
+h1
+    // font-size: 45px
+    position: absolute
+    top: (40/45)em
+    left: (80/45)em
+
+&.section h1
+    display: inline-block
+    margin:  0
+    padding: .3em
+
+
+li
+    margin: .5em 0
+
+
+img
+iframe
+    width: 45vw
+
+
+blockquote
+    position: relative
+
+    &::before
+        position:    absolute
+        top:         0
+        left:        -.45em
+        display:     block
+        line-height: 0.3em
+
+pre
+    width: 100%
+
+
+.breadcrumb
+    // font-size: 16px
+    position: absolute
+    top:      (20/16)em
+    left:     (80/16)em
