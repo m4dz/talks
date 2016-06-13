@@ -12,7 +12,7 @@ Des astuces pour des interfaces aux poils soyeux
 name: speaker
 class: center
 
-![mad hatter](./img/mad-hatter.gif)
+![mad hatter](../img/mad-hatter.gif)
 
 # m4dz
 
@@ -24,7 +24,7 @@ class: center
 
 
 .org[
-## ![Cozy Cloud](./img/cozy.svg)
+## ![Cozy Cloud](../img/cozy.svg)
 
 .extras[
   [cozy.io](https://cozy.io)
@@ -41,7 +41,7 @@ class: single, center, middle, inverse
 ---
 class: punchline, bottom
 
-![web](./img/icons/linea/basic_world.svg)
+![web](../img/icons/linea/basic_world.svg)
 
 > Le Web est, et restera encore longtemps, un métier d'artisan passionné.
 
@@ -52,7 +52,7 @@ _Moi_, Paris Web, 2010 (je crois)
 
 ---
 class: section
-background-image: url(./img/placeholders/tools.jpg)
+background-image: url(../img/placeholders/tools.jpg)
 
 # CSS pour les braves
 
@@ -112,7 +112,7 @@ class: middle
 ---
 class: bottom-up, middle, center
 
-![codrops](./img/resources/codrops.png)
+![codrops](./codrops.png)
 
 # Codrops CSS Reference
 
@@ -146,7 +146,7 @@ class: bottom-up, middle
 ---
 layout: false
 class: section, middle
-background-image: url(./img/placeholders/toolbox.jpg)
+background-image: url(../img/placeholders/toolbox.jpg)
 
 # HTML5 tags, templates, et layouts
 
@@ -223,7 +223,7 @@ class: single, inverse, middle
 ---
 layout: false
 class: section, bottom
-background-image: url(./img/placeholders/one-ring-the-lord-of-the-rings-movie.jpg)
+background-image: url(../img/placeholders/one-ring-the-lord-of-the-rings-movie.jpg)
 
 # ARIA, pour les gouverner tous
 
@@ -326,7 +326,7 @@ Des rôles qui définissent des zones importantes, structurantes pour les layout
 ---
 layout: false
 class: section, bottom, right
-background-image: url(./img/placeholders/moulin-de-craca.jpg)
+background-image: url(../img/placeholders/moulin-de-craca.jpg)
 
 # Mix'em all!
 
@@ -454,9 +454,9 @@ class: tiles
 
 # EM : règle d'or du responsive
 
-- ![lock](./img/icons/linea/basic_lock.svg) On ne touche pas à la base font-size
-- ![verical expand](./img/icons/linea/arrows_expand_vertical1.svg) Spacer verticaux (top, bottom), line-height, font-size : tout EM
-- ![horizontal expand](./img/icons/linea/arrows_expand_horizontal1.svg) Spacers horizontaux : relatifs (em, %)
+- ![lock](../img/icons/linea/basic_lock.svg) On ne touche pas à la base font-size
+- ![verical expand](../img/icons/linea/arrows_expand_vertical1.svg) Spacer verticaux (top, bottom), line-height, font-size : tout EM
+- ![horizontal expand](../img/icons/linea/arrows_expand_horizontal1.svg) Spacers horizontaux : relatifs (em, %)
 
 [lamb.cc/typograph/](http://lamb.cc/typograph/) · [soqr.fr/vertical-rhythm/](http://soqr.fr/vertical-rhythm/)
 
@@ -466,7 +466,7 @@ class: tiles
 ---
 layout: false
 class: section, middle, center
-background-image: url(./img/placeholders/blueprint.jpg)
+background-image: url(../img/placeholders/blueprint.jpg)
 
 # Maintenance
 
@@ -482,9 +482,9 @@ class: tiles
 
 # Organisation
 
-- ![book](./img/icons/linea/basic_book.svg) Par corpus <small>layouts, fontes, couleurs…</small>
-- ![composants](./img/icons/linea/basic_webpage_multiple.svg) Par composant <small>drawer, searchbar, listes…</small>
-- ![layers](./img/icons/linea/software_layers2.svg) Groupé par domaine
+- ![book](../img/icons/linea/basic_book.svg) Par corpus <small>layouts, fontes, couleurs…</small>
+- ![composants](../img/icons/linea/basic_webpage_multiple.svg) Par composant <small>drawer, searchbar, listes…</small>
+- ![layers](../img/icons/linea/software_layers2.svg) Groupé par domaine
 
 
 ---
@@ -644,7 +644,7 @@ PostCSS + autoprefixer, cssnano, mqpacker, colorguard, calc…
 ---
 layout: false
 class: section, bottom
-background-image: url(./img/placeholders/motor.jpg)
+background-image: url(../img/placeholders/motor.jpg)
 
 # Webapps ?
 
@@ -658,7 +658,7 @@ layout: true
 ---
 class: punchline, bottom
 
-![lego minecraft](./img/resources/minelego4.jpg)
+![lego minecraft](./minelego4.jpg)
 
 # Faites du déclaratif
 
@@ -724,7 +724,7 @@ body
 ---
 class: bottom-up, middle, center, inverse
 
-![trafic signs](./img/icons/linea/basic_signs.svg)
+![trafic signs](../img/icons/linea/basic_signs.svg)
 
 # Utilisez des libs accessibles
 
@@ -794,7 +794,7 @@ class: single, inverse, middle
 ---
 layout: false
 class: section, bottom
-background-image: url('./img/placeholders/collaborate.jpg')
+background-image: url('../img/placeholders/collaborate.jpg')
 
 # Questions ?
 
@@ -804,10 +804,9 @@ name: thanks
 
 # Merci !
 
+## Iconographie / Médias
 
-## Icones :
-
-- [Linear Icons](https://linearicons.com) by Perxis https://perxis.com - [CC BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0/)
+- Icônes : [Linea](http://linea.io/) - [CC BY 4.0](http://creativecommons.org/licenses/by/4.0/)
 
 ## Fontes :
 
@@ -815,8 +814,14 @@ name: thanks
 - Intertitres & labeur : [Source Sans Pro](https://github.com/adobe-fonts/source-sans-pro) by Adobe https://github.com/adobe-fonts - [Open Font Licence](https://raw.githubusercontent.com/adobe-fonts/source-sans-pro/master/LICENSE.txt)
 - Monospace : [Source Code Pro](https://github.com/adobe-fonts/source-code-pro) by Adobe https://github.com/adobe-fonts - [Open Font Licence](https://raw.githubusercontent.com/adobe-fonts/source-code-pro/master/LICENSE.txt)
 
+## Outils
+
+- Moteur de présentation : [Remark](https://github.com/gnab/remark)
+
 .licence[
-.ref[[talks.m4dz.net/webapps-protips/](http://talks.m4dz.net/webapps-protips/)]
+![Cozy Cloud](../img/cozy.svg)
+
+![:ref]
 
 disponible sous licence [CC BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0/)
 ]

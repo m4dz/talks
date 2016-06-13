@@ -19,7 +19,7 @@ Should contains a `.ref` link that point to online version.
 name: speaker
 class: center
 
-![mad hatter](./img/mad-hatter.gif)
+![mad hatter](../img/mad-hatter.gif)
 
 # m4dz
 
@@ -31,7 +31,7 @@ class: center
 
 
 .org[
-## ![Cozy Cloud](./img/cozy.svg)
+## ![Cozy Cloud](../img/cozy.svg)
 
 .extras[
   [cozy.io](https://cozy.io)
@@ -59,7 +59,7 @@ layout: true
 
 ---
 class: section, middle, center
-background-image: url(./img/placeholders/moulin-de-craca.jpg)
+background-image: url(../img/placeholders/moulin-de-craca.jpg)
 
 # A new main section
 
@@ -67,7 +67,7 @@ background-image: url(./img/placeholders/moulin-de-craca.jpg)
 ```
 layout: false
 class: section
-background-image: url(./img/placeholders/<background>.jpg)
+background-image: url(../img/placeholders/<background>.jpg)
 ```
 
 Uses a 1280x850 black and white background for main section title.
@@ -173,7 +173,7 @@ class: middle, center
 
 # Using an image content
 
-![with an image](./img/resources/rabbit-eating.gif)
+![with an image](./rabbit-eating.gif)
 
 --
 
@@ -230,21 +230,21 @@ class: tiles
 
 # A bullets list, w/ icons
 
-- ![#1](./img/icons/linea/basic_book.svg) Book
-- ![#2](./img/icons/linea/basic_clock.svg) Simple Clock
-- ![#3](./img/icons/linea/basic_globe.svg) Around the world
+- ![#1](../img/icons/linea/basic_book.svg) Book
+- ![#2](../img/icons/linea/basic_clock.svg) Simple Clock
+- ![#3](../img/icons/linea/basic_globe.svg) Around the world
 
 ???
 Icons can be "accented" (multi-coloured) by adding `accent` on svg's paths you want to accentuate.
 
 --
-- ![#4](./img/icons/linea/basic_usb.svg) USB Key
+- ![#4](../img/icons/linea/basic_usb.svg) USB Key
 
 --
-- ![#5](./img/icons/linea/ecommerce_sales.svg) Tags
+- ![#5](../img/icons/linea/ecommerce_sales.svg) Tags
 
 --
-- ![#6](./img/icons/linea/software_eyedropper.svg) Picker
+- ![#6](../img/icons/linea/software_eyedropper.svg) Picker
 
 
 ---
@@ -273,7 +273,7 @@ layout: true
 ---
 class: bottom-up, middle, center
 
-![Info](./img/icons/linea/arrows_info.svg)
+![Info](../img/icons/linea/arrows_info.svg)
 
 # A bottom-up slide
 
@@ -286,7 +286,7 @@ A _bottom-up_ slide minor h1 in favor of associated caption. It generally comes 
 ---
 class: punchline, bottom
 
-![Heart](./img/icons/linea/basic_heart.svg)
+![Heart](../img/icons/linea/basic_heart.svg)
 
 # A punchline slide
 
@@ -299,7 +299,7 @@ A punchline is an expressive slide with a minored title and an associated captio
 ---
 layout: false
 class: section, bottom
-background-image: url('./img/placeholders/collaborate.jpg')
+background-image: url('../img/placeholders/collaborate.jpg')
 
 # Questions ?
 
@@ -311,7 +311,7 @@ name: thanks
 
 ## Iconographie / Médias :
 
-- [Linear Icons](https://linearicons.com) by Perxis https://perxis.com - [CC BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0/)
+- Icônes : [Linea](http://linea.io/) - [CC BY 4.0](http://creativecommons.org/licenses/by/4.0/)
 - Algorisme : by [Laurent Chemla](https://www.youtube.com/channel/UCFjaRSCKJix-SfsS_hIn6Hw)
 
 ## Fontes :
@@ -325,7 +325,7 @@ name: thanks
 - Moteur de présentation : [Remark](https://github.com/gnab/remark)
 
 .licence[
-![Cozy Cloud](./img/cozy.svg)
+![Cozy Cloud](../img/cozy.svg)
 
 ![:ref]
 
