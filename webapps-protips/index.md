@@ -140,7 +140,7 @@ class: bottom-up, middle
 
 # Specificity CSS
 
-[cssspecificity.com](http://cssspecificity.com) · Calulcator : [specificity.keegan.st](http://specificity.keegan.st)
+[cssspecificity.com](http://cssspecificity.com) · Calculator : [specificity.keegan.st](http://specificity.keegan.st)
 
 
 ---
