@@ -3,6 +3,8 @@ class: middle
 
 # La Crypto pour les Devs
 
+Késako?
+
 ![:ref]
 
 
@@ -31,8 +33,8 @@ class: center
 
 
 ---
-class: section
-background-image:
+class: section, bottom, center
+background-image: url(../img/placeholders/walking-path-way-tunnel.jpeg)
 
 # La responsabilité du developpeur
 
@@ -44,44 +46,48 @@ layout: true
 
 
 ---
+class: single, middle, inverse
 # La limite des mots de passe : l'interface CC
 
 [The Scary Truth About Your Passwords](https://blog.lastpass.com/2014/09/the-scary-truth-about-your-passwords-an-analysis-of-the-gmail-leak.html/)
 
 
 ---
+class: middle, center, stickit
 # m'en fous, on n'héberge pas de données sensibles
 
-`(╯°□°)╯︵ ┻━┻`
+![WTF](./wtf.gif)
 
 
 ---
-class: inverse
+class: single, middle, inverse
 # Une seule solution
 
 
 ---
+class: middle, center, stickit
 # Chiffrer
-
-(ou crypter, troll detected)
 
 ![deal with it](./deal-with-it.gif)
 
+(ou crypter, troll detected)
 
 ---
+class: middle
 - guerre de l'information
 - tracking et recroisement
 - identité numérique
 
 
 ---
+class: single, inverse, middle
 # **Aucune donnée sensible ne devrait circuler ou être stockée en clair**
 
 
 ---
 layout: false
-class: section
-background-image:
+class: section, right
+background-image: url(../img/placeholders/castles-fence-love-symbol.jpeg)
 
 # Chiffrer ?
 
@@ -93,22 +99,26 @@ layout: true
 
 
 ---
+class: middle, center
 # Chiffrement
 
 ![manga fear](./manga-fear.gif)
 
 
 ---
+class: single, middle, center
 # Plus question de reculer
 
 
 ---
+class: center, middle
 # NSA / Prism / Loi Renseignement
 
-![NSA](./nsa.jpg)
+.small[![NSA](./nsa.jpg)]
 
 
 ---
+class: middle
 # La crypto, ça n'est pas…
 
 - l'authentification
@@ -117,13 +127,15 @@ layout: true
 
 
 ---
+class: center, middle
 # Objectif : Protéger des informations sensibles
 
 ![Batman](./batman.gif)
 
 
 ---
-# La crypto, c'est…
+class: middle
+# La crypto, c'est :
 
 - Hash
 - Encryption
@@ -132,6 +144,7 @@ layout: true
 
 
 ---
+class: middle, center
 # Seule la clé est importante
 
 <iframe data-autoplay width="640" height="360" data-src="https://www.youtube.com/embed/WT8tOpjTPtA?start=12&end=29" frameborder="0" allowfullscreen></iframe>
@@ -141,8 +154,8 @@ layout: true
 
 ---
 layout: false
-class: section
-background-image:
+class: section, bottom
+background-image: url(../img/placeholders/construction-work-carpenter-tools.jpg)
 
 # Cryptographie & Cryptanalyse
 
@@ -154,21 +167,24 @@ layout: true
 
 
 ---
+class: center, middle
 # Il était une fois…
 
-[Alice's whie rabbit](./alice-rabbit.gif)
+![Alice's white rabbit](./alice-rabbit.gif)
 
 
 ---
+class: center, middle
 # Le Code César
 
 ![Jules César, Astérix](./juliuscaesar.jpg)
 
 
 ---
+class: center, middle
 # Le chiffre de Vigenère
 
-![carré de Vigenère](./vigenere_square_shading.svg)
+.small[![carré de Vigenère](./vigenere_square_shading.svg)]
 
 ```txt
 Plaintext:  ATTACKATDAWN
@@ -178,7 +194,7 @@ Ciphertext: LXFOPVEFRNHR
 
 
 ---
-class: bottom-up
+class: bottom-up, middle, inverse
 
 # La faille : les répétitions
 
@@ -186,17 +202,21 @@ L'analyse des fréquences rend caduques toutes protections qui utiliseraient un 
 
 
 ---
+class: center, middle
+
 # Enigma
 
 ![Enigma](./enigma.jpg)
 
 
 ---
+class: single, middle
+
 # Le chiffrement numérique
 
 
 ---
-class: bottom-up
+class: bottom-up, middle, inverse
 
 # La faille : l'espionnage et l'attaque par force brute
 
@@ -204,36 +224,40 @@ Aucun système ne peut être suffisamment robuste pour résister éternellement 
 
 
 ---
+class: middle
 # La protection des clés est essentielle
 
-![XKCD:538](./xkcd-security.png)
+.large[![XKCD:538](./xkcd-security.png)]
 
 
 ---
 layout: false
-class: section
-background-image:
+class: section, bottom
+background-image: url(../img/placeholders/sea-nature-art-animals.jpg)
 
 # Hachage, salage & entropie
 
- ---
- layout: true
+
+---
+layout: true
 
 .breadcrumb[Hachage, salage & entropie]
 
 
 ---
+class: single, middle
 # Hachage : obfuscation des données 👍
 
 
 ---
-class: bottom-up
+class: bottom-up, middle, inverse
 # Problème
 
 les rainbow / lookup / reverse-lookup tables
 
 
 ---
+class: middle
 # Saler
 
 - ajoute de l'entropie
@@ -242,6 +266,7 @@ les rainbow / lookup / reverse-lookup tables
 
 
 ---
+class: middle
 # On ne fait pas…
 
 ```txt
@@ -254,27 +279,26 @@ md5(sha1(md5(md5(password) + sha1(password)) + md5(password)))
 
 
 ---
+class: middle
 # On fait :
 
-- génération d'un pseudo-aléatoire <abbr title="Cryptographically secure pseudorandom number generator">CSPRNG</abbr> : le salt
-- application une dérivation PBKDF2 (SHA256) / Bcrypt / Scrypt sur `[salt+pasword]` avec une forte entropie
-- stockage du résultat et des paramètres de génération
+- pseudo-aléatoire <abbr title="Cryptographically secure pseudorandom number generator">CSPRNG</abbr> : le salt
+- dérivation PBKDF2 (SHA256) / Bcrypt / Scrypt sur `[salt+pasword]` (+ entropie)
+- stockage du résultat et des paramètres
 
 [Salted Password Hashing - Doing it Right](https://crackstation.net/hashing-security.htm)
 
 
 ---
-class: bottom-up
+class: single, middle, inverse
 
-# Défendez-vous
-
-Un hachage sans répétition et en exécution lente limite sa surface d'attaque
+# **Un hachage sans répétition et en exécution lente limite sa surface d'attaque**
 
 
 ---
 layout: false
-class: section
-background-image:
+class: section, bottom, right
+background-image: url(../img/placeholders/reflection-chess-mirror-confident.jpeg)
 
 # Symétrique vs Asymétrique
 
@@ -285,6 +309,7 @@ layout: true
 .breadcrumb[Symétrique vs Asymétrique]
 
 ---
+class: middle
 # Chiffrement par bloc
 
 - ~~DES (Data Encryption Standard)~~
@@ -295,6 +320,7 @@ layout: true
 
 
 ---
+class: middle
 # Padding & Random
 
 - ~~ECB (Electronic Code Book)~~
@@ -302,7 +328,7 @@ layout: true
 
 
 ---
-class: bottom-up
+class: bottom-up, middle, inverse
 
 # Problème
 
@@ -310,17 +336,18 @@ Les machines ne sont pas aléatoires
 
 
 ---
+class: middle
 - besoin de données imprévisibles
 
 --
-- méthodes crypto <abbr title="Cryptographically secure pseudorandom number generator">CSPRNG</abbr> <small>(**pas** [`/dev/urandom`](http://www.2uo.de/myths-about-urandom/) directement, utilisez les méthodes des libs crypto)</small>
+- méthodes crypto <abbr title="Cryptographically secure pseudorandom number generator">CSPRNG</abbr><br><small>(pas [`/dev/urandom`](http://www.2uo.de/myths-about-urandom/) directement, utilisez les méthodes des libs crypto)</small>
 
 --
-- IV (Vecteur d'Initialisation) <small>(bytes-block utilisés en initialisation d'un algo de chiffrement pour assurer son caractère unique)</small>
+- IV (Vecteur d'Initialisation)<br><small>(bytes-block utilisés en initialisation d'un algo de chiffrement pour assurer son caractère unique)</small>
 
 
 ---
-class: bottom-up
+class: bottom-up, middle, inverse
 
 # Problème
 
@@ -328,6 +355,7 @@ Une clé peut être compromise : une clé symétrique doit nécessairement circu
 
 
 ---
+class: center, middle
 # Bob & Alice échangent leurs clés
 
 ![letter](./letter.gif)
@@ -335,8 +363,8 @@ Une clé peut être compromise : une clé symétrique doit nécessairement circu
 
 ---
 layout: false
-class: section
-background-image:
+class: section, right
+background-image: url(../img/placeholders/keys-unlock.jpg)
 
 # Clés, Certificats, Signatures & Chiffrement
 
@@ -348,6 +376,7 @@ layout: true
 
 
 ---
+class: middle
 # Clé symétrique
 
 - clé unique pour toutes les opérations
@@ -356,16 +385,18 @@ layout: true
 
 
 ---
+class: middle
 # Diffie-Hellman
 
 - sécurité supplémentaire sur les échanges
 - clé publique commune
 - secret partagé
 
-![Diffie-Hellman key exchange](./Diffie-Hellman_Key_Exchange.jpg)
+.small.center[![Diffie-Hellman key exchange](./Diffie-Hellman_Key_Exchange.jpg)]
 
 
 ---
+class: middle
 # PGP / GnuPG
 
 - clés asymétriques (RSA) sur clé symétrique (IDEA)
@@ -373,10 +404,11 @@ layout: true
 - utilise l'entropie fournie par l'utilisateur
 
 --
-- la Crypto pour tous
+- **la Crypto pour tous**
 
 
 ---
+class: middle
 # Signature
 
 - asymétrique inversée
@@ -387,6 +419,7 @@ layout: true
 
 
 ---
+class: middle
 # Certificats
 
 - authentifie un client auprès d'un tiers de confiance
@@ -397,6 +430,7 @@ layout: true
 
 
 ---
+class: middle
 # Les standards
 
 - [X.509](http://www.itu.int/rec/T-REC-X.509/en)
@@ -419,17 +453,20 @@ layout: true
 
 
 ---
-# La réseau
+class: middle
+# Le réseau
 
 - ~~SSL~~ / TLS ![SSL Diagram](./learn_ssl_diagram.gif)
 - Confidentialité persistante
 
 
 ---
+class: single, inverse, middle
 # Les accès : Password Hash
 
 
 ---
+class: middle
 # Les données
 
 - RSA
@@ -439,8 +476,8 @@ layout: true
 
 ---
 layout: false
-class: section
-background-image:
+class: section, middle, right
+background-image: url(../img/placeholders/strength-strong-toy-action-figure.jpg)
 
 # WebCrypto à la rescousse (?)
 
@@ -452,6 +489,7 @@ layout: true
 
 
 ---
+class: middle, center
 # The WG Spec
 
 ![flamingo](./flamingo.gif)
@@ -460,6 +498,7 @@ _before reading_
 
 
 ---
+class: middle, center
 # The WG Spec
 
 ![Stitch Crying](./stitch-crying.gif)
@@ -468,6 +507,7 @@ _after reading_
 
 
 ---
+class: middle
 # Current Status
 
 - Working Draft
@@ -475,12 +515,14 @@ _after reading_
 
 
 ---
+class: middle
 ```js
 window.crypto
 ```
 
 
 ---
+class: middle, center
 ```js
 window.crypto.subtle
 ```
@@ -489,12 +531,14 @@ window.crypto.subtle
 
 
 ---
+class: middle
 ```js
 window.crypto.subtle.encrypt
 ```
 
 
 ---
+class: middle
 ```js
 window.crypto.subtle.encrypt(/* ... */)
 .then(function(encrypted){
@@ -508,6 +552,7 @@ window.crypto.subtle.encrypt(/* ... */)
 
 
 ---
+class: middle
 # WebCrypto API
 
 - n'utilise que des Promises
@@ -515,6 +560,7 @@ window.crypto.subtle.encrypt(/* ... */)
 
 
 ---
+class: middle
 # Point Bonus
 
 Comme avec [`canPlayType`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/canPlayType)
@@ -529,8 +575,8 @@ Comme avec [`canPlayType`](https://developer.mozilla.org/en-US/docs/Web/API/HTML
 
 ---
 layout: false
-class: section
-background-image:
+class: section, bottom, center
+background-image: url(../img/placeholders/person-looking-searching-clean.jpg)
 
 # Alors, on fait quoi ?
 
@@ -542,12 +588,14 @@ layout: true
 
 
 ---
+class: middle, center, stickit
 # Ne jouez pas les apprentis sorciers
 
 ![Neveeeeer](./harry-never.gif)
 
 
 ---
+class: middle
 # N'oubliez jamais que :
 
 - la sécurité est inversement proportionelle à la simplicité d'utilisation
@@ -555,9 +603,10 @@ layout: true
 
 
 ---
+class: middle, inverse
 # On arrête d'avoir peur, et on protège
 
-[![Reddit Gaydeath](./reddit.jpg)](https://www.reddit.com/r/legaladvice/comments/3edf1s/im_a_gay_single_man_from_a_country_where_gaydeath/)
+.large[[![Reddit Gaydeath](./reddit.jpg)](https://www.reddit.com/r/legaladvice/comments/3edf1s/im_a_gay_single_man_from_a_country_where_gaydeath/)]
 
 
 ---
