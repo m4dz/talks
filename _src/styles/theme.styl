@@ -1,0 +1,25 @@
+// out: ../../styles/remark-cozy.css, compress: true, sourcemap: true
+
+@import "base/palette.styl"
+@import "base/utils.styl"
+@import "base/fonts.styl"
+
+// Defines Remark's containers styles
+@import "base/remark.styl"
+
+// Base styles and commons content classes are applied inside the
+// `remark-slide-content` namespace
+.remark-slide-content
+    @import "commons/layouts.styl"
+    @import "commons/backgrounds.styl"
+    @import "commons/foregrounds.styl"
+
+    @import "contents/tiles.styl"
+    @import "contents/bottom-up.styl"
+    @import "contents/punchline.styl"
+
+// Specials styles (for specific slides) are under `ID` top elements, they're so
+// loaded after common styles
+@import "cover.styl"
+@import "speaker.styl"
+@import "thanks.styl"

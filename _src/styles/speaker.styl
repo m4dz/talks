@@ -1,4 +1,4 @@
-// main: index.styl
+// main: theme.styl
 
 #slide-speaker
     font-weight: 300
@@ -16,14 +16,15 @@
         transform: translateX(-50%)
 
 
-    & > p > img
+    img
         width:         10em
         border-radius: 50%
 
     .org img
-        width:      1.6em
-        box-shadow: none
-        border:     none
+        width:         1.6em
+        box-shadow:    none
+        border:        none
+        border-radius: 0
 
 
     a
@@ -41,3 +42,10 @@
         font-family: Sinzano
         font-size:   60px
         font-weight: 400
+
+
+    &.speakers
+        display: flex
+
+    .speaker
+        flex 1 0 50%

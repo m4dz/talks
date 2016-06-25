@@ -1,4 +1,4 @@
-// main: ../index.styl
+// main: ../theme.styl
 
 // Colours
 h1
@@ -62,13 +62,15 @@ img
     box-shadow: 0 0 30px alpha(darkgrey, .4)
 
 
-blockquote::before
-    content:   '«'
-    font-size: 6em
+blockquote
+
+    &::before
+        content:   '«'
+        font-size: 6em
 
     // Consider the <p> that immediately follow a blockquote as a cite
     & + p
-        font-size: 20px
+        font-size: 20px !important
 
 
 code
@@ -99,3 +101,7 @@ svg
     text-transform: uppercase
     font-size:      16px
     font-weight:    700
+
+
+.round img
+    border-radius: 50%
