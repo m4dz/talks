@@ -408,7 +408,7 @@ class: single, middle, inverse, sp-m4dz
 ---
 class: single, middle, sp-m4dz
 
-# Open-sourcer le Design ?
+# Open-sourcer le Design&nbsp;?
 
 [Mozilla open-sourcing brand]()
 
