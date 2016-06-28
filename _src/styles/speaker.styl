@@ -49,3 +49,26 @@
 
     .speaker
         flex 1 0 50%
+
+
+.sp-m4dz
+.sp-luc
+    position: relative
+
+    &::after
+        content:         ''
+        display:         block
+        position:        absolute
+        bottom:          1em
+        left:            1em
+        width:           48px
+        height:          48px
+        border-radius:   50%
+        background-size: cover
+        border:          2px solid lightgrey
+
+.sp-m4dz::after
+    background-image: url(../img/m4dz.jpg)
+
+.sp-luc::after
+    background-image: url(https://pbs.twimg.com/profile_images/725975577954541568/p8tvpOik.jpg)

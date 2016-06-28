@@ -45,25 +45,25 @@ class: center speakers
 
 
 ---
-class: middle, center, single, inverse
+class: middle, center, single, inverse, sp-m4dz
 
 .large[![Gnome 2](./gnome.png.en_GB.png)]
 
 ???
-Le vieux bureau Gnome
+Le vieux bureau Gnome - 2002
 
 
 ---
-class: middle, center, single, inverse
+class: middle, center, single, inverse, sp-m4dz
 
 .large[![Gnome 3](./overview-3-0.png.en.png)]
 
 ???
-Le nouveau bureau Gnome
+Le nouveau bureau Gnome - 2011
 
 
 ---
-class: inverse, single, middle
+class: inverse, single, middle, sp-luc
 
 # **L'adoption de masse passe par une évolution des produits pour les rendre accessibles**
 
@@ -72,7 +72,7 @@ class: inverse, single, middle
 class: section
 background-image: url(../img/placeholders/rails-man-person-walking.jpg)
 
-# L'Ergo, l'Open-Source & le Designer
+# L'Open-Source, l'Ergo & le Designer
 
 
 ---
@@ -82,50 +82,56 @@ layout: true
 
 
 ---
-class: single, middle
-# Statut de la relation : c'est compliqué
+class: single, middle, sp-m4dz
+
+# Statut de la relation :
+--
+ c'est compliqué
 
 
 ---
-class: middle, center, bottom-up
-
-![Challenge Accepted](./challenge_accepted.gif)
-
-# Des outils difficiles à digérer
-
-???
--> À reformuler dans le sens "d'une relation"
-
-
----
-class: middle, center, bottom-up
-
-![Facepalm](./star_trek_facepalm.gif)
+class: middle, center, stickit, sp-luc
 
 # Des process d'install compliqués
 
+![Facepalm](./star_trek_facepalm.gif)
+
 ???
 -> À reformuler dans le sens "d'une relation"
 
----
-class: middle, center, bottom-up
 
-![I don't trust myself with you](./dont_trust_myself.gif)
+---
+class: middle, center, stickit, sp-luc
+
+# Des outils difficiles à digérer
+
+![Rainbow flu](./rainbow-flu.gif)
+
+???
+-> À reformuler dans le sens "d'une relation"
+
+
+---
+class: middle, center, stickit, sp-m4dz
 
 # Un manque de confiance
 
+![I don't trust myself with you](./dont_trust_myself.gif)
+
 
 ---
-class: single, middle, m4dz
+class: stickit, middle, center, sp-m4dz
 
 # Une relation égosexuelle
+
+![Eggplant](./eggplant-emoji.jpg)
 
 ???
 Challenge : ça se pignole tout seul
 
 
 ---
-class: single, inverse, middle
+class: single, inverse, middle, sp-m4dz
 # Apprenons à _vivre_ ensemble
 
 ???
@@ -134,7 +140,7 @@ class: single, inverse, middle
 
 
 ---
-class: single, inverse, middle
+class: single, inverse, middle, sp-luc
 
 # Apprenons à _travailler_ ensemble
 
@@ -148,9 +154,13 @@ class: single, inverse, middle
 
 
 ---
-class: punchline, bottom
+class: punchline, bottom, sp-m4dz
+
+.round[![RMS](./Richard_Stallman_-_Fête_de_l'Humanité_2014_-_010.jpg)]
 
 > Si l'Open-Source ne parvient en fin de compte qu'à libérer du code source, alors tout ça aura été vain.
+
+RMS <small>_(à peu près, et je sais plus où ; si quelqu'un retrouve, j'offre les câlins…)_</small>
 
 ???
 Retrouver la source
@@ -171,7 +181,7 @@ layout: true
 
 
 ---
-class: middle
+class: middle, sp-luc
 
 # UX: Définition
 
@@ -179,15 +189,17 @@ class: middle
 * usage sans friction
 * se concentrer sur la solution, pas sur le fonctionnement
 
+
 ---
-class: stickit, center, middle, inverse
+class: stickit, center, middle, inverse, sp-luc
 
 ![BADASS](https://media.giphy.com/media/l41lVCaNfN7zjhFsc/giphy.gif)
 
 # making users badass
 
+
 ---
-class: middle
+class: middle, sp-m4dz
 
 # C'est qui l'utilisateur ?
 
@@ -196,7 +208,7 @@ class: middle
 
 
 ---
-class: middle
+class: middle, sp-m4dz
 
 # Un parcours utilisateur, c'est quoi ?
 
@@ -206,7 +218,7 @@ class: middle
 
 
 ---
-class: middle, tiles, center
+class: middle, tiles, center, sp-luc
 
 # Design vs Ergo
 
@@ -219,7 +231,7 @@ class: middle, tiles, center
 
 
 ---
-class: middle, tiles, center
+class: middle, tiles, center, sp-luc
 
 # Bullshit or not?
 
@@ -229,7 +241,7 @@ class: middle, tiles, center
 
 
 ---
-class: single, middle
+class: single, middle, sp-luc
 
 # **une solution sur mesure pour vos utilisateurs**
 
@@ -249,7 +261,7 @@ layout: true
 
 
 ---
-class: middle
+class: middle, sp-m4dz
 
 # User Centric Design
 
@@ -260,7 +272,7 @@ class: middle
 
 
 ---
-class: middle
+class: middle, sp-m4dz
 
 # Trouvez vos _adeptes_
 
@@ -271,7 +283,7 @@ class: middle
 
 
 ---
-class: middle
+class: middle, sp-m4dz
 
 # Interviewez
 
@@ -286,7 +298,7 @@ class: middle
 
 
 ---
-class: middle
+class: middle, sp-luc
 
 # Analysez le Feedback
 
@@ -296,7 +308,7 @@ class: middle
 * apprendre
 
 ---
-class: middle
+class: middle, sp-luc
 
 # Designez / Prototypez
 
@@ -309,7 +321,7 @@ class: middle
 
 
 ---
-class: middle
+class: middle, sp-luc
 
 # GOTO: Feedback
 
@@ -325,15 +337,15 @@ class: middle
 * répéter
 
 ---
-class: stickit, middle, center, inverse
+class: middle, center, inverse, sp-luc
 
-![Cycle lean]()
+![Cycle lean](./lean-cycle.jpg)
 
 # Cycle lean
 
 
 ---
-class: punchline, bottom
+class: punchline, bottom, sp-m4dz
 
 .round[![Henry Ford](./376px-Henry_ford_1919.jpg)]
 
@@ -346,7 +358,7 @@ Henry Ford
 
 
 ---
-class: middle
+class: middle, sp-m4dz
 
 # Pour faire simple…
 
@@ -373,7 +385,7 @@ layout: true
 
 
 ---
-class: single, middle
+class: single, middle, sp-luc
 
 # Nothing personal
 
@@ -384,7 +396,7 @@ class: single, middle
 
 
 ---
-class: single, middle, inverse
+class: single, middle, inverse, sp-m4dz
 
 # **Ergo n'est pas Design**
 
@@ -394,7 +406,7 @@ class: single, middle, inverse
 
 
 ---
-class: single, middle
+class: single, middle, sp-m4dz
 
 # Open-sourcer le Design ?
 
@@ -420,7 +432,7 @@ name: thanks
 
 - Icônes : [Linea](http://linea.io/) - [CC BY 4.0](http://creativecommons.org/licenses/by/4.0/)
 - Gnome desktop screenshots : [Gnome Project Release Notes](https://help.gnome.org/misc/release-notes)
-- Portrait Hnery Ford: Wikimédia
+- Portraits [Henry Ford](https://en.wikipedia.org/wiki/File:Henry_ford_1919.jpg) & [Richard Stallman](https://en.wikipedia.org/wiki/File:Richard_Stallman_-_F%C3%AAte_de_l%27Humanit%C3%A9_2014_-_010.jpg): Wikimédia
 
 ## Fontes :
 
