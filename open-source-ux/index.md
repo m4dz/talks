@@ -71,6 +71,14 @@ class: inverse, single, middle, sp-luc
 - e.g. google, le mechant
 
 ---
+class: middle, center, sp-luc
+
+![Google](./google_logo.jpg)
+
+.small[![Know Your Enemy](./know-your-enemy-o.gif)]
+
+
+---
 class: section
 background-image: url(../img/placeholders/rails-man-person-walking.jpg)
 
@@ -261,7 +269,7 @@ class: single, middle, sp-luc
 ---
 layout: false
 class: section
-background-image: url(../img/placeholders/firefighters-training-live-fire.jpeg)
+background-image: url(./c_est_pas_sorcier.jpg)
 
 # Komenkonfé ?
 
