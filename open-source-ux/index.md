@@ -67,6 +67,8 @@ class: inverse, single, middle, sp-luc
 
 # **L'adoption de masse passe par une évolution des produits pour les rendre accessibles**
 
+???
+- e.g. google, le mechant
 
 ---
 class: section
@@ -97,7 +99,8 @@ class: middle, center, stickit, sp-luc
 ![Facepalm](./star_trek_facepalm.gif)
 
 ???
--> À reformuler dans le sens "d'une relation"
+- bac + 15
+- commun des mortels abandonne
 
 
 ---
@@ -108,7 +111,9 @@ class: middle, center, stickit, sp-luc
 ![Rainbow flu](./rainbow-flu.gif)
 
 ???
--> À reformuler dans le sens "d'une relation"
+- interface incomprehemsible
+- logique pour ingenieur
+- non utilisable
 
 
 ---
@@ -197,6 +202,9 @@ class: stickit, center, middle, inverse, sp-luc
 
 # making users badass
 
+???
+- comprendre la valeur ajoutée de votre solution à la 1ere utilisation
+
 
 ---
 class: middle, sp-m4dz
@@ -245,6 +253,10 @@ class: single, middle, sp-luc
 
 # **une solution sur mesure pour vos utilisateurs**
 
+???
+- plus de supposition
+- des donnees pour valider
+
 
 ---
 layout: false
@@ -290,7 +302,8 @@ class: middle, sp-m4dz
 * face à face / visionconf
 * definir un objectif
 * rester neutre
-* noter
+* parler de l'usage (pas de solution)
+* prendre des notes
 
 ???
 - commencer par des banalités
@@ -307,6 +320,11 @@ class: middle, sp-luc
 * croiser
 * apprendre
 
+???
+- extraire -> demande VS besoin
+- apprendre -> challenger ses hypotheses
+
+
 ---
 class: middle, sp-luc
 
@@ -317,7 +335,7 @@ class: middle, sp-luc
 * tester rapidement sans developpement
 
 ???
-- outils comme Marvel ou Invision
+- proto -> outils comme Marvel ou Invision
 
 
 ---
