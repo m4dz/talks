@@ -190,9 +190,9 @@ class: middle, sp-luc
 
 # UX: Définition
 
-* experience des utilisateurs au sein de votre solution
-* usage sans friction
-* se concentrer sur la solution, pas sur le fonctionnement
+* Experience des utilisateurs au sein de votre solution
+* Usage sans friction
+* Se concentrer sur la solution, pas sur le fonctionnement
 
 
 ---
@@ -200,7 +200,7 @@ class: stickit, center, middle, inverse, sp-luc
 
 ![BADASS](https://media.giphy.com/media/l41lVCaNfN7zjhFsc/giphy.gif)
 
-# making users badass
+# MAKING USERS BADASS
 
 ???
 - comprendre la valeur ajoutée de votre solution à la 1ere utilisation
@@ -212,7 +212,7 @@ class: middle, sp-m4dz
 # C'est qui l'utilisateur ?
 
 * Bien connaître son marché
-* moi parmi tant d'autres
+* Moi parmi tant d'autres
 
 
 ---
@@ -221,8 +221,8 @@ class: middle, sp-m4dz
 # Un parcours utilisateur, c'est quoi ?
 
 * The killer feature
-* comment on y accède ?
-* comment on l'utilise ?
+* Comment on y accède ?
+* Comment on l'utilise ?
 
 
 ---
@@ -234,14 +234,14 @@ class: middle, tiles, center, sp-luc
 * ![UX](../img/icons/linea/basic_mixer2.svg) Ergo (UX) la partie comportementale
 
 ???
-- UI : ce bouton est bleu, parce que le bleu renvoie à…
+- UI : bouton bleu, parce que le bleu renvoie à…
 - UX : ce bouton sera placé à cet endroit sur cette page, parce que c'est l'action primordiale
 
 
 ---
 class: middle, tiles, center, sp-luc
 
-# Bullshit or not?
+# Bullshit or Not?
 
 * ![satisfaction](../img/icons/linea/ecommerce_diamond.svg) améliore la satisfaction
 * ![rétention](../img/icons/linea/basic_cup.svg) augmente la rétention
@@ -251,7 +251,7 @@ class: middle, tiles, center, sp-luc
 ---
 class: single, middle, sp-luc
 
-# **une solution sur mesure pour vos utilisateurs**
+# **Une solution sur mesure pour vos utilisateurs**
 
 ???
 - plus de supposition
@@ -299,11 +299,11 @@ class: middle, sp-m4dz
 
 # Interviewez
 
-* face à face / visionconf
-* definir un objectif
-* rester neutre
-* parler de l'usage (pas de solution)
-* prendre des notes
+* Face à face / visionconf
+* Définir un objectif
+* Rester neutre
+* Parler de l'usage (pas de solution)
+* Prendre des notes
 
 ???
 - commencer par des banalités
@@ -315,10 +315,10 @@ class: middle, sp-luc
 
 # Analysez le Feedback
 
-* collecter
-* extraire
-* croiser
-* apprendre
+* Collecter
+* Extraire
+* Croiser
+* Apprendre
 
 ???
 - extraire -> demande VS besoin
@@ -330,9 +330,9 @@ class: middle, sp-luc
 
 # Designez / Prototypez
 
-* concrétiser les concepts
-* utiliser des prototypes dynamiques
-* tester rapidement sans developpement
+* Concrétiser les concepts
+* Utiliser des prototypes dynamiques
+* Tester rapidement sans développement
 
 ???
 - proto -> outils comme Marvel ou Invision
@@ -343,23 +343,23 @@ class: middle, sp-luc
 
 # GOTO: Feedback
 
-* collecter
-* extraire
-* croiser
-* apprendre
+* Collecter
+* Extraire
+* Croiser
+* Apprendre
 
 --
-* itérer / améliorer / réparer / développer
+* Itérer / Améliorer / Réparer / Développer
 
 --
-* répéter
+* Répéter
 
 ---
 class: middle, center, inverse, sp-luc
 
 ![Cycle lean](./lean-cycle.jpg)
 
-# Cycle lean
+# Cycle Lean
 
 
 ---
@@ -380,9 +380,9 @@ class: middle, sp-m4dz
 
 # Pour faire simple…
 
-- diversifiez les canaux
-- apprenez de vos utilisateurs
-- gardez le contrôle de votre solution
+- Diversifiez les canaux
+- Apprenez de vos utilisateurs
+- Gardez le contrôle de votre solution
 
 ???
 - Github / Forum / IRC…
