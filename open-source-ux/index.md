@@ -67,15 +67,17 @@ class: inverse, single, middle, sp-luc
 
 # **L'adoption de masse passe par une évolution des produits pour les rendre accessibles**
 
-???
-- e.g. google, le mechant
 
 ---
 class: middle, center, sp-luc
 
-![Google](./google_logo.jpg)
+# Know your enemy
 
-.small[![Know Your Enemy](./know-your-enemy-o.gif)]
+![Google](./google_logo.jpg)
+![Know Your Enemy](./know-your-enemy-o.gif)
+
+???
+- e.g. google, le mechant
 
 
 ---
