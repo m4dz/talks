@@ -73,8 +73,10 @@ class: middle, center, sp-luc
 
 # Know your enemy
 
+.small[
 ![Google](./google_logo.jpg)
 ![Know Your Enemy](./know-your-enemy-o.gif)
+]
 
 ???
 - e.g. google, le mechant
@@ -173,7 +175,7 @@ class: punchline, bottom, sp-m4dz
 
 .round[![RMS](./Richard_Stallman_-_Fête_de_l'Humanité_2014_-_010.jpg)]
 
-> Si l'Open-Source ne parvient en fin de compte qu'à libérer du code source, alors tout ça aura été vain.
+> Si le Libre ne parvient en fin de compte qu'à libérer du code source, alors tout ça aura été vain.
 
 RMS <small>_(à peu près, et je sais plus où ; si quelqu'un retrouve, j'offre les câlins…)_</small>
 
@@ -221,7 +223,7 @@ class: middle, sp-m4dz
 
 # C'est qui l'utilisateur ?
 
-* Bien connaître son marché
+* Savoir à qui on s'adresse
 * Moi parmi tant d'autres
 
 
