@@ -5,6 +5,10 @@ document.addEventListener('DOMContentLoaded', () => {
     query[key] = value
   })
 
+  if (query.wide) {
+    document.getElementsByTagName('html')[0].classList.add('wide')
+  }
+
   let canonical
   document.getElementsByTagName('link').forEach((tag) => {
     if (tag.getAttribute('rel') != 'canonical') return
