@@ -193,6 +193,8 @@ class: hello, budies
 count: false
 
 # Ma slide de couverture =]
+
+Le contenu qui va bien dedans !
 ```
 
 
@@ -322,6 +324,8 @@ class: middle
 - Mode mobile
 - Export PDF
 - Macro de licensing
+- Documentation du README
+- Intégration d'[asciinema](https://asciinema.org/)
 
 ---
 layout: false
@@ -342,9 +346,9 @@ class: middle
 
 # ProTips
 
-- Un mode présentateur : `[p]`
-- Un mode miroir : `[c]`
-- Un timer **réinitialisable** : `[t]`
+- Un mode présentateur : **ⓟ**
+- Un mode miroir : **ⓒ**
+- Un timer **réinitialisable** : **ⓣ**
 
 
 ---
