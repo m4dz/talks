@@ -85,7 +85,7 @@ class: stickit, middle, center, inverse
 
 ---
 
-# React problems
+# React problems <small>(imho)</small>
 
 - not truly reactive
 - desperately bloated
@@ -219,6 +219,9 @@ class: tiles, logos
 class: single, middle, inverse
 
 # Most.js
+
+[github://cujojs/most](https://github.com/cujojs/most)
+
 
 ---
 
