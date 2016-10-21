@@ -141,17 +141,43 @@ class: middle, center
 
 - _What?_ All about functions
 
+```js
+function foo(x, y, z) {
+  y = y * x
+  z = z * x
+  return [y, z]
+}
+```
+
 ???
 
 - Functional programming is about using functions as units of abstraction and composing them to build a system
 
---
 
+---
+
+# Functional programming
+
+- _What?_ All about functions
 - _How?_ All about composition
 
---
+```js
+function sum(x, y) { return x + y }
+function mult(x, y) { return x * y }
+var multAndSum = compose(mult, sum)
+// 5 + (3 * 4)
+multAndSum(3, 4, 5)
+```
 
+
+---
+# Functional programming
+
+- _What?_ All about functions
+- _How?_ All about composition
 - _Why?_ Immutability, Closure, Recursion…
+
+(basically, it's all about `map` and `reduce`)
 
 
 ---
@@ -292,6 +318,7 @@ class: tiles, logos
 - JS Views display data
 - HTML stores Ui states (ARIA)
 - CSS power animations and transitions
+- WebAnimation and WebGL for high demand refresh rendering
 
 
 ---
