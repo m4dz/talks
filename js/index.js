@@ -9,6 +9,11 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementsByTagName('html')[0].classList.add('wide')
   }
 
+  let source = 'index.md'
+  if (query.lang) {
+    source = `index.${query.lang}.md`
+  }
+
   let canonical
   document.getElementsByTagName('link').forEach((tag) => {
     if (tag.getAttribute('rel') != 'canonical') return
@@ -24,11 +29,12 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   remark.macros.ref = function() {
-    return `<div class="ref"><a href="${canonical}">${canonical}</a></div>`
+    url = query.lang? `${canonical}?lang=${query.lang}` : canonical
+    return `<div class="ref"><a href="${url}">${url}</a></div>`
   }
 
   const slideshow = remark.create({
-    sourceUrl:      './index.md',
+    sourceUrl:      `./${source}`,
     ratio:          (query.wide && JSON.parse(query.wide))? '16:9' : '4:3',
     highlightStyle: 'github',
     highlightLines: true,
