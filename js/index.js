@@ -15,10 +15,13 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   let canonical
-  document.getElementsByTagName('link').forEach((tag) => {
-    if (tag.getAttribute('rel') != 'canonical') return
-    canonical = tag.getAttribute('href')
-  })
+  const links = document.getElementsByTagName('link')
+  for (let i = 0, tag; i < links.length; i++) {
+    tag = links[i]
+    if (tag.getAttribute('rel') == 'canonical') {
+      canonical = tag.getAttribute('href')
+    }
+  }
 
   if (canonical == null) {
     canonical = `http://talks.m4dz.net${window.location.pathname}`
