@@ -276,7 +276,7 @@ layout: true
 ---
 class: tiles middle sp-lapalice
 
-# Des solution libres
+# Des solutions libres
 
 - ![](../img/icons/linearicons/paw.svg) confiance
 - ![](../img/icons/linearicons/rocket.svg) construire ensemble
@@ -288,7 +288,7 @@ class: middle sp-m4dz
 # De la décentralisation
 
 - pour une régulation autonome
-- pour palier le tiers de confiance
+- pour pallier le tiers de confiance
 - pour éviter la monoculture
 
 ???
@@ -299,9 +299,9 @@ class: middle sp-m4dz
 ---
 class: middle sp-m4dz
 
-# Du partage et et de l'interopérabilité
+# Du partage et de l'interopérabilité
 
-- des standards (des vrais [#927](https://xkcd.com/927/))
+- des standards (des vrais [xkcd://#927](https://xkcd.com/927/))
 - des solutions pair à pair (XMPP, WebRTC, Matrix…)
 - une adoption massive
 
@@ -346,7 +346,7 @@ class: stickit middle sp-lapalice
 
 --
 
-- privilégier des modèles non-gratuits
+- privilégier des modèles responsables
 
 --
 
@@ -378,7 +378,7 @@ class: stickit middle sp-m4dz
 
 --
 
-- aider le développeurs à formuler les Ui
+- aider les développeurs à formuler les Ui
 
 --
 
@@ -406,9 +406,9 @@ class: stickit middle sp-m4dz
 ---
 class: stickit middle sp-lapalice
 
-# Je suis le·a seul·e tech de mon entourage
+# Je suis le/la seul·e tech de mon entourage
 
-(le DSI de ma famille ou de mon groupe d'amis)
+(le/la DSI de ma famille ou de mon groupe d'amis)
 
 --
 
@@ -416,7 +416,7 @@ class: stickit middle sp-lapalice
 
 --
 
-- Nextcloud et boite mail familiale
+- Nextcloud et boîte mail familiale
 
 --
 
@@ -428,7 +428,7 @@ layout: false
 class: section right middle sp-m4dz
 background-image: url(../img/placeholders/portrait-bird-nature-wild.jpg)
 
-# Y'a du taf !
+# Y a du taf !
 
 
 ---
