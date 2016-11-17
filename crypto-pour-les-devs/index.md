@@ -210,17 +210,17 @@ class: center, middle
 
 
 ---
-class: single, middle
-
-# Le chiffrement numérique
-
-
----
 class: bottom-up, middle, inverse
 
 # La faille : l'espionnage et l'attaque par force brute
 
 Aucun système ne peut être suffisamment robuste pour résister éternellement à une attaque
+
+
+---
+class: single, middle
+
+# Le chiffrement numérique
 
 
 ---
