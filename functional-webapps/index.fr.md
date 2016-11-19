@@ -122,9 +122,13 @@ layout: true
 
 
 ---
-class: single, inverse, middle
+class: punchline, inverse, bottom
 
 # Permaculture
+
+> La permaculture est un mode de production d'agriculture qui prend en compte les entrants et les sortants[…]. La philosophie est très proche de la manière dont on travaille avec les programmes et les données.
+
+Thomas Parisot<br>[Design d'architecture modulaire à la BBC](https://www.youtube.com/watch?v=unv-G5RlWkg)
 
 
 ---

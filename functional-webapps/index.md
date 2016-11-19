@@ -123,10 +123,13 @@ layout: true
 
 
 ---
-class: single, inverse, middle
+class: punchline, inverse, bottom
 
 # Permaculture
 
+> Permaculture is an agriculture production mode that takes care of inputs and outputs […]. Its philosophy is very close to the way we work with programs and datas.
+
+Thomas Parisot<br>[Design d'architecture modulaire à la BBC <sup>[fr]</sup>](https://www.youtube.com/watch?v=unv-G5RlWkg)
 
 ---
 class: middle, center
