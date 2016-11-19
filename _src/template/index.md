@@ -31,10 +31,19 @@ class: center
 
 
 ---
-class: section, middle, center
-background-image:
+layout: false
+class: section
+background-image: url(../img/placeholders/)
 
 #
+
+
+---
+layout: true
+
+.breadcrumb[]
+
+
 
 ---
 layout: false
@@ -49,11 +58,11 @@ name: thanks
 
 # Merci !
 
-## Iconographie / Médias :
+## Iconographie / Médias
 
 - Icônes : [Linea](http://linea.io/) - [CC BY 4.0](http://creativecommons.org/licenses/by/4.0/)
 
-## Fontes :
+## Fontes
 
 - Titrage : [Sinzano](http://typodermicfonts.com/sinzano/) by Typodermic http://typodermicfonts.com - [Fontspring webfont EULA](https://www.fontspring.com/licenses_text/lv4e5lv2k2)
 - Intertitres & labeur : [Source Sans Pro](https://github.com/adobe-fonts/source-sans-pro) by Adobe https://github.com/adobe-fonts - [Open Font Licence](https://raw.githubusercontent.com/adobe-fonts/source-sans-pro/master/LICENSE.txt)

@@ -468,12 +468,12 @@ name: thanks
 
 # Merci !
 
-## Iconographie / Médias :
+## Iconographie / Médias
 
 - Icônes : [Linearicons Free Version](https://linearicons.com/free) - [CC BY 4.0](http://creativecommons.org/licenses/by/4.0/)
 - Cartons titre : [Pexels](http://pexels.com/)
 
-## Fontes :
+## Fontes
 
 - Titrage : [Sinzano](http://typodermicfonts.com/sinzano/) by Typodermic http://typodermicfonts.com - [Fontspring webfont EULA](https://www.fontspring.com/licenses_text/lv4e5lv2k2)
 - Intertitres & labeur : [Source Sans Pro](https://github.com/adobe-fonts/source-sans-pro) by Adobe https://github.com/adobe-fonts - [Open Font Licence](https://raw.githubusercontent.com/adobe-fonts/source-sans-pro/master/LICENSE.txt)
