@@ -19,7 +19,7 @@ class: center
 **Happy Dev UI & Quality defender**
 
 .extras[
-[m4dz.net](https://m4dz.net) | [@m4d_z](https://twitter.com/m4d_z) | PGP [7D969710](http://m4dz.net/7D969710.asc)
+[m4dz.net](https://m4dz.net) | [@m4d_z](https://twitter.com/m4d_z) | PGP [0xD4627C417D969710](http://m4dz.net/0xD4627C417D969710.asc)
 ]
 
 
@@ -55,14 +55,12 @@ class: middle, center
 
 ---
 
+class: middle
+
+# Libs & Frameworks
+
 - jQuery
-
---
-
 - Backbone, Aurelia, Ampersand…
-
---
-
 - Angular, Ember…
 
 .center.small[![sad guy](./sad.gif)]
@@ -84,6 +82,7 @@ class: stickit, middle, center, inverse
 ![Happy dance](./dance.gif)
 
 ---
+class: middle
 
 # React problems <small>(imho)</small>
 
@@ -97,6 +96,7 @@ class: stickit, middle, center, inverse
 
 
 ---
+class: middle
 
 # The long tail
 
@@ -177,7 +177,7 @@ multAndSum(3, 4, 5)
 - _How?_ All about composition
 - _Why?_ Immutability, Closure, Recursion…
 
-(basically, it's all about `map` and `reduce`)
+(basically, it's all about `map/reduce`)
 
 
 ---
@@ -195,13 +195,13 @@ class: single, middle, inverse
 ---
 class: single, middle, inverse
 
-# Predictable
+# Predictability
 
 
 ---
 class: single, middle, inverse
 
-# Testable
+# Testability
 
 
 ---
@@ -229,13 +229,14 @@ class: middle
 
 
 ---
-class: middle, center
+class: single, middle, center
+
 # We need libs!
 
 ![Toy soldier looking](./toy-soldier-toystory.gif)
 
 ---
-class: tiles, logos
+class: tiles, logos, middle
 
 - ![](./Kefir.svg) Kefir (Ramda)
 - ![](./rxjs.png) RxJS
@@ -250,6 +251,7 @@ class: single, middle, inverse
 
 
 ---
+class: middle
 
 # Go behind the DOM
 
@@ -305,7 +307,7 @@ class: single, middle
 
 
 ---
-class: tiles, logos
+class: tiles, logos, middle
 
 - ![](./vue-js.png) Vue.js
 - ![](./riotjs.png) Riot
@@ -316,8 +318,17 @@ class: tiles, logos
 # Back to dedicated concerns
 
 - JS Views display data
+
+--
+
 - HTML stores Ui states (ARIA)
+
+--
+
 - CSS power animations and transitions
+
+--
+
 - WebAnimation and WebGL for high demand refresh rendering
 
 
@@ -361,7 +372,7 @@ or Cycle.js? Or any full-integrated framework/solution?
 ---
 class: single, middle, inverse
 
-# Be small and agnostic
+# Be small and agnostic <sup>(<abbr title="Keep It Simply Simple">KISS</abbr>)</sup>
 
 
 ---
@@ -377,27 +388,27 @@ layout: false
 class: section, bottom
 background-image: url('../img/placeholders/collaborate.jpg')
 
-# Questions ?
+# Questions?
 
 
 ---
 name: thanks
 
-# Thanks !
+# Thanks!
 
-## Iconography / Medias :
+## Iconography / Medias
 
-- Icons : [Linea](http://linea.io/) - [CC BY 4.0](http://creativecommons.org/licenses/by/4.0/)
+- Icons: [Linea](http://linea.io/) - [CC BY 4.0](http://creativecommons.org/licenses/by/4.0/)
 
-## Fonts :
+## Fonts
 
-- Titles : [Sinzano](http://typodermicfonts.com/sinzano/) by Typodermic http://typodermicfonts.com - [Fontspring webfont EULA](https://www.fontspring.com/licenses_text/lv4e5lv2k2)
-- Subtitles & labor : [Source Sans Pro](https://github.com/adobe-fonts/source-sans-pro) by Adobe https://github.com/adobe-fonts - [Open Font Licence](https://raw.githubusercontent.com/adobe-fonts/source-sans-pro/master/LICENSE.txt)
-- Monospace : [Source Code Pro](https://github.com/adobe-fonts/source-code-pro) by Adobe https://github.com/adobe-fonts - [Open Font Licence](https://raw.githubusercontent.com/adobe-fonts/source-code-pro/master/LICENSE.txt)
+- Titles: [Sinzano](http://typodermicfonts.com/sinzano/) by Typodermic http://typodermicfonts.com - [Fontspring webfont EULA](https://www.fontspring.com/licenses_text/lv4e5lv2k2)
+- Subtitles & labor: [Source Sans Pro](https://github.com/adobe-fonts/source-sans-pro) by Adobe https://github.com/adobe-fonts - [Open Font Licence](https://raw.githubusercontent.com/adobe-fonts/source-sans-pro/master/LICENSE.txt)
+- Monospace: [Source Code Pro](https://github.com/adobe-fonts/source-code-pro) by Adobe https://github.com/adobe-fonts - [Open Font Licence](https://raw.githubusercontent.com/adobe-fonts/source-code-pro/master/LICENSE.txt)
 
 ## Tools
 
-- Presentation engine : [Remark](https://github.com/gnab/remark)
+- Presentation engine: [Remark](https://github.com/gnab/remark)
 
 .licence[
 ![Cozy Cloud](../img/cozy.svg)
