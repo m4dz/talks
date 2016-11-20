@@ -144,12 +144,12 @@ class: middle
 
 
 ---
-class: middle, center
+class: center, video
 # Seule la clé est importante
 
-<iframe data-autoplay width="640" height="360" data-src="https://www.youtube.com/embed/WT8tOpjTPtA?start=12&end=29" frameborder="0" allowfullscreen></iframe>
-
-(l'algo on s'en fout)
+.large[
+<video src="./algorisme-WT8tOpjTPtA.mp4">
+]
 
 
 ---
@@ -571,6 +571,14 @@ Comme avec [`canPlayType`](https://developer.mozilla.org/en-US/docs/Web/API/HTML
 - SHA-256 / SHA-384 / SHA-512
 
 <small>les navigateurs n'implémentent que les algos qu'ils estiment nécessaires</small>
+
+
+---
+class: video
+
+# Démo
+
+.large[<video src="./proxy_authkeys_demo.ogg">]
 
 
 ---
