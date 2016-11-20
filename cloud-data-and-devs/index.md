@@ -105,7 +105,7 @@ class: single middle sp-lapalice
 ---
 class: single middle sp-lapalice
 
-# Étre confiant dans la pérénnité de sa solution
+# Être confiant·e dans la pérennité de sa solution
 
 
 ---
@@ -168,7 +168,7 @@ class: single middle sp-m4dz
 ---
 class: single middle sp-m4dz
 
-# Déposession de nos données propres
+# Dépossession de nos données propres
 
 
 ---
@@ -194,7 +194,7 @@ layout: true
 ---
 class: single middle sp-lapalice
 
-# On utilise tous du Cloud aujourd'hui
+# On utilise tou·te·s du Cloud aujourd'hui
 
 
 ---
@@ -212,7 +212,7 @@ class: stickit middle sp-lapalice
 ---
 class: single middle sp-lapalice
 
-# En ouvrant plein de comptes sur des SaaS
+# En ouvrant plein de comptes sur des <abbr title="software as a service">SaaS</abbr>
 
 (souvent en OAuth sur des services café-croissant)
 
@@ -309,9 +309,9 @@ class: middle sp-m4dz
 ---
 class: tiles middle sp-lapalice
 
-# De l'accessiblité
+# De l'accessibilité
 
-- ![](../img/icons/linearicons/wheelchair.svg) utilisable par tous
+- ![](../img/icons/linearicons/wheelchair.svg) utilisable par tou·te·s
 - ![](../img/icons/linearicons/bug.svg) ticket d'entrée à bas-coût
 
 
@@ -340,20 +340,9 @@ class: stickit middle sp-lapalice
 
 # Je suis un·e utilisateurice
 
---
-
 - dégoogliser
-
---
-
 - privilégier des modèles responsables
-
---
-
 - expliquer & évangéliser
-
---
-
 - participer à la conception et améliorer
 
 ???
@@ -368,20 +357,9 @@ class: stickit middle sp-m4dz
 
 # Je suis un·e traducteurice
 
---
-
 - faire de localisation
-
---
-
 - améliorer les traductions
-
---
-
 - aider les développeurs à formuler les Ui
-
---
-
 - aider à supporter les spécificités d'une langue
 
 
@@ -390,16 +368,8 @@ class: stickit middle sp-m4dz
 
 # Je suis un·e développeureuse
 
---
-
 - contribuer aux plateformes
-
---
-
 - tester
-
---
-
 - concevoir des apps pour enrichir les usages
 
 
@@ -410,16 +380,8 @@ class: stickit middle sp-lapalice
 
 (le/la DSI de ma famille ou de mon groupe d'amis)
 
---
-
-- deviens le CHATON de ton entourage
-
---
-
+- deviens le <abbr title="Collectif d'Hébergeurs Alternatifs Transparents Ouverts Neutres et Solidaires">CHATONS</abbr> de ton entourage
 - Nextcloud et boîte mail familiale
-
---
-
 - évangélise aussi et **propose** des solutions au lieu de faire peur
 
 
@@ -440,7 +402,7 @@ layout: true
 ---
 class: single, middle, sp-m4dz
 
-# La souveraineté c'est important, et on a tous notre rôle à jouer
+# La souveraineté c'est important, et on a tou·te·s notre rôle à jouer
 
 
 ---
