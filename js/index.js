@@ -52,5 +52,17 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('slide-thanks').classList.add('scroll')
       }, 2000)
     }
+
+    if (/video/.test(slide.properties.class)) {
+      let vid = document.querySelector('.remark-visible video')
+      setTimeout( () => { vid.play() }, 200)
+    }
+  })
+
+  slideshow.on('beforeHideSlide', (slide) => {
+    if (/video/.test(slide.properties.class)) {
+      let vid = document.querySelector('.remark-visible video')
+      vid.pause()
+    }
   })
 })
