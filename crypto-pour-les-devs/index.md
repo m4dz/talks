@@ -114,7 +114,7 @@ class: single, middle, center
 class: center, middle
 # NSA / Prism / Loi Renseignement
 
-.small[![NSA](./nsa.jpg)]
+.small.round[![NSA](./nsa.jpg)]
 
 
 ---
@@ -127,10 +127,10 @@ class: middle
 
 
 ---
-class: center, middle
-# Objectif : Protéger des informations sensibles
+class: middle
+# Objectif :<br>Protéger des informations sensibles
 
-![Batman](./batman.gif)
+.center[![Batman](./batman.gif)]
 
 
 ---
@@ -218,16 +218,16 @@ Aucun système ne peut être suffisamment robuste pour résister éternellement 
 
 
 ---
-class: single, middle
-
-# Le chiffrement numérique
-
-
----
 class: middle
 # La protection des clés est essentielle
 
 .large[![XKCD:538](./xkcd-security.png)]
+
+
+---
+class: single, middle, inverse
+
+# Le chiffrement numérique :<br>**token unique**
 
 
 ---
@@ -310,13 +310,19 @@ layout: true
 
 ---
 class: middle
+
 # Chiffrement par bloc
 
 - ~~DES (Data Encryption Standard)~~
 - AES (Advanced Encryption Standard)
 
---
-- Stream Cipher ![badass](./badass.gif)
+
+---
+class: center, middle
+
+# Chiffrement par flux (Stream Cipher)
+
+![badass](./badass.gif)
 
 
 ---
@@ -337,12 +343,9 @@ Les machines ne sont pas aléatoires
 
 ---
 class: middle
+
 - besoin de données imprévisibles
-
---
 - méthodes crypto <abbr title="Cryptographically secure pseudorandom number generator">CSPRNG</abbr><br><small>(pas [`/dev/urandom`](http://www.2uo.de/myths-about-urandom/) directement, utilisez les méthodes des libs crypto)</small>
-
---
 - IV (Vecteur d'Initialisation)<br><small>(bytes-block utilisés en initialisation d'un algo de chiffrement pour assurer son caractère unique)</small>
 
 
@@ -415,7 +418,7 @@ class: middle
 - pas de sécurisation
 
 --
-- identification
+- **identification**
 
 
 ---
@@ -426,7 +429,7 @@ class: middle
 - assure la révocation
 
 --
-- [Let's Encrypt](https://letsencrypt.org/)
+- **[Let's Encrypt](https://letsencrypt.org/)**
 
 
 ---
@@ -439,9 +442,9 @@ class: middle
 
 
 ---
-layout: true
-class: section
-background-image:
+layout: false
+class: section, middle
+background-image: url(../img/placeholders/flowers-teddy-bear-toy.jpeg)
 
 # Protéger
 
@@ -453,7 +456,7 @@ layout: true
 
 
 ---
-class: middle
+class: stickit, middle
 # Le réseau
 
 - ~~SSL~~ / TLS ![SSL Diagram](./learn_ssl_diagram.gif)
@@ -461,12 +464,12 @@ class: middle
 
 
 ---
-class: single, inverse, middle
-# Les accès : Password Hash
+class: single, middle
+# Les accès :<br>Password Hash
 
 
 ---
-class: middle
+class: stickit, middle
 # Les données
 
 - RSA
@@ -576,7 +579,7 @@ Comme avec [`canPlayType`](https://developer.mozilla.org/en-US/docs/Web/API/HTML
 ---
 class: video
 
-# Démo
+# Démo : password less
 
 .large[<video src="./proxy_authkeys_demo.ogg">]
 
