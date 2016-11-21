@@ -83,11 +83,11 @@ class: stickit, middle, center, inverse
 ---
 class: middle
 
-# React problems <small>(imho)</small>
+# Les soucis de React <small>(amha)</small>
 
-- not truly reactive
-- desperately bloated
-- monocultural
+- pas réellement réactif
+- désespérément
+- **monoculture**
 
 --
 
