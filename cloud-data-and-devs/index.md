@@ -1,7 +1,7 @@
 name: cover
 class: middle
 
-# Le Cloud, la Data & le Développeur
+# Le Cloud, la Data & le/la Développeureuse
 
 ![:ref]
 
