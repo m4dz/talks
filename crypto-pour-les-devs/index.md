@@ -330,7 +330,10 @@ class: middle
 # Padding & Random
 
 - ~~ECB (Electronic Code Book)~~
-- CBC (Cipher Block Chaining)
+- ~~CBC (Cipher Block Chaining)~~
+- AEAD (Authenticated Encryption with Associated Data)
+
+https://blog.cloudflare.com/padding-oracles-and-the-decline-of-cbc-mode-ciphersuites/
 
 
 ---
@@ -402,12 +405,12 @@ class: middle
 class: middle
 # PGP / GnuPG
 
-- clés asymétriques (RSA) sur clé symétrique (IDEA)
+- clés asymétriques (RSA) sur clé symétrique (~~IDEA~~ AES)
 - chiffre (clé publique) et signe (clé privée)
 - utilise l'entropie fournie par l'utilisateur
 
 --
-- **la Crypto pour tous**
+- **la Crypto pour tous** (https://ssd.eff.org/fr)
 
 
 ---
@@ -632,6 +635,9 @@ background-image: url('../img/placeholders/collaborate.jpg')
 name: thanks
 
 # Merci !
+
+Un grand merci à [@aeris22](https://twitter.com/aeris22/) et [@OpenPony](https://twitter.com/OpenPony) pour leurs relectures pertinentes, leurs conseils, et leurs ressources.
+
 
 ## Iconographie / Médias
 
