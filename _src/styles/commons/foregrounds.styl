@@ -20,9 +20,17 @@ em
         color: white
 
 
-a:hover
-    color: orange
+a
+    text-decoration: none
 
+    &::before
+        content: "🔗 "
+        font-size: .5em
+        vertical-align: middle
+        white-space: nowrap
+
+    &:hover
+        color: orange
 
 // Thin font blocks
 h1
@@ -42,8 +50,9 @@ h1
         font-family: Sinzano
 
 &.section h1
-    border:        3px solid white
-    border-radius: 6px
+    border-top:    3px solid shallow-white
+    border-bottom: 3px solid shallow-white
+    font-size:     65px
     font-family:   Sinzano
     text-shadow:   1px 1px 3px darkgrey, -1px -1px 2px textgrey
 
@@ -103,6 +112,7 @@ svg
 
 
 .remark-inline-code
+    white-space:      nowrap
     border-radius:    3px
     font-size:        .9em
     color:            blue
@@ -118,3 +128,14 @@ svg
 
 .round img
     border-radius: 50%
+
+
+// &.display-links a[href^=http]
+//     position: relative
+//
+//     &::after
+//         position: absolute
+//         bottom: -1em
+//         left: 0
+//         content: " [" attr(href) "]"
+//         font-size: .55em
