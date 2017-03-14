@@ -32,8 +32,8 @@ class: center
 
 ---
 layout: false
-class: section
-background-image: url(../img/placeholders/)
+class: section bottom
+background-image: url(../img/placeholders/bulb.jpeg)
 
 # Petit rappel
 
@@ -45,13 +45,16 @@ layout: true
 
 
 ---
+class: middle center
 
-???
+# JavaScript tooling : c'est compliqué…
 
-messy GIF
-
+![panda crisis](./panda-crisis.gif)
 
 ---
+class: middle
+
+# … et je n'ai que 15' ⏰
 
 - on va parler des apps uniquement
 - le tour n'est pas exhaustif
@@ -59,16 +62,25 @@ messy GIF
 
 
 ---
+class: single middle center
+
+# 🚀
+
+## Fonctionnalité à venir
 
 
-???
-expliquer la rocket
+---
+class: single middle center
+
+# ☢
+
+## Dans les cartons, à explorer
 
 
 ---
 layout: false
-class: section
-background-image: url(../img/placeholders/)
+class: section bottom
+background-image: url(../img/placeholders/pencil-eraser-and-ruler.jpeg)
 
 # Concevoir de l'applicatif web
 
@@ -80,23 +92,29 @@ layout: true
 
 
 ---
+class: middle
 
 # Une codebase mutualisée
 
 - utilisée par les applis web
 - packagée pour le mobile
-- 🚀 en appli desktop (electron…) ?
+- ☢ en appli desktop (electron…)
 
 
 ---
+class: middle
 
 # Librairies internes
 
-- cozy-client-js
-- cozy-bar
-- cozy-ui
+- [cozy-client-js](https://github.com/cozy/cozy-client-js) : interface vers la stack<br>`cozy.{client,files,photos…}`
+- [cozy-bar](https://github.com/cozy/cozy-bar)
+
+.small.center[![Cozy Bar](./cozy-bar-preview.png)]
+
+- [cozy-ui](https://github.com/cozy/cozy-ui/) : styles et composants distribués
 
 ---
+class: middle
 
 # Les choix techniques front
 
@@ -108,18 +126,19 @@ layout: true
 
 
 ---
+class: tiles, middle
 
 # Distribuer pour le web
 
-1. build
-2. bundle
-3. package
+- ![#1](../img/icons/linea/basic_hammer.svg) build
+- ![#2](../img/icons/linea/basic_folder_multiple.svg) bundle
+- ![#3](../img/icons/linea/basic_archive_full.svg) package
 
 
 ---
 layout: false
-class: section
-background-image: url(../img/placeholders/)
+class: section bottom
+background-image: url(../img/placeholders/flowers-teddy-bear-toy.jpeg)
 
 # Partager un socle commun
 
@@ -131,15 +150,49 @@ layout: true
 
 
 ---
+class: middle
 
-# Le build : Webpack
+# Le build : Webpack configs
 
 - fichiers de config modulaires
+```txt
+config
+├── webpack.config.base.js
+├── webpack.config.cozy-ui.js
+├── webpack.config.dev.js
+├── webpack.config.preact.js
+└── webpack.config.prod.js
+```
 - définitions de targets
-- flip sur les variables d'environnement
+```txt
+config
+├── webpack.target.browser.js
+└── webpack.target.mobile.js
+```
 
 
 ---
+class: middle
+
+# Le build : environnements
+
+- export des variables
+```txt
+config
+└── webpack.vars.js
+```
+- flip sur les variables d'environnement
+```js
+const production = /:production$/.test(process.env.NODE_ENV)
+const target = process.env.NODE_ENV.match(/^(\w+):/)[1]
+```
+```sh
+$ NODE_ENV=browser:production npm run commons:build
+```
+
+
+---
+class: middle
 
 # Les dépendances : Yarn
 
@@ -149,6 +202,30 @@ layout: true
 
 
 ---
+class: middle
+
+# La transpilation : Babel
+
+- cible précisément les navigateurs
+- polyfill automatique
+- complexe à optimiser en build
+
+```json
+  "presets": [
+    ["env", {
+      "targets": {
+        "chrome": 42,
+        "browsers": ["last 2 versions"]
+      },
+      "useBuiltIns": true
+    }],
+    "react"
+  ]
+```
+
+
+---
+class: middle
 
 # L'optim CSS : PostCSS
 
@@ -159,23 +236,20 @@ layout: true
 
 
 ---
+class: middle
 
-# _One ring to rule them all_ : Cozy-template
+# _One ring to rule them all_ : [Cozy-template](https://github.com/cozy/cozy-template/tree/preact)
 
-- configs de base (webpack, yarn, postcss…)
+- configs de base (webpack, yarn, babel, postcss…)
 - frameworks (preact, jest, polyglot…)
 - docs (readme, contributing…)
-- _hello world_
-
-???
-
-Ajouter le lien
+- [_hello world_](https://github.com/cozy/cozy-template/tree/preact/src)
 
 
 ---
 layout: false
-class: section
-background-image: url(../img/placeholders/)
+class: section middle
+background-image: url(../img/placeholders/construction-work-carpenter-tools.jpg)
 
 # Local DevTools
 
@@ -187,6 +261,7 @@ layout: true
 
 
 ---
+class: middle
 
 # Les scripts Yarn / NPM
 
@@ -197,15 +272,17 @@ layout: true
 
 
 ---
+class: middle
 
 # Common tasks
 
-- `build` / `build:<target>` (`browser` par défaut)
+- `build` / `build:<target>`<br><small>(`browser` par défaut)</small>
 - `watch` / `watch:standalone`
 - `test`
 
 
 ---
+class: middle
 
 # Cas du watch
 
@@ -215,8 +292,8 @@ layout: true
 
 ---
 layout: false
-class: section
-background-image: url(../img/placeholders/)
+class: section middle
+background-image: url(../img/placeholders/industry-grinder-steel-no-person.jpg)
 
 # Outils externes
 
@@ -228,41 +305,38 @@ layout: true
 
 
 ---
+class: middle
 
 # Code
 
-- Github
+- [Github](https://github.cm/cozy)
 - 🚀 Gitlab / Framagit
 
 
 ---
+class: middle
 
 # i18n
 
-- Transifex
-- Polyglot
-- date.fns
+- [Transifex](transifex.com/cozy)
+- [Polyglot](http://airbnb.io/polyglot.js/)
+- [date.fns](https://date-fns.org/)
 
 
 ---
+class: middle
 
 # Intégration Continue
 
-- Travis
-- 🚀 Browserstack
-
-
----
-
-# Dépendances
-
-- Greenkeeper
+- [Travis](https://travis-ci.org/cozy)
+- [🚀 Browserstack](https://www.browserstack.com/)
+- [🚀 Greenkeeper](https://greenkeeper.io/)
 
 
 ---
 layout: false
 class: section
-background-image: url(../img/placeholders/)
+background-image: url(../img/placeholders/man-on-bench.jpeg)
 
 # 🚀 McFly
 
@@ -274,8 +348,9 @@ layout: true
 
 
 ---
+class: middle
 
-# HMR
+# Hot Module Reload (**HMR**)
 
 - uniquement disponible en `standalone`
 - à intégrer à la stack
@@ -283,48 +358,60 @@ layout: true
 
 
 ---
+class: middle
 
 # Sourcemaps
 
 - inconsistences à résoudre
 - temps de (re)build à améliorer
-- support des CSS Modules
+- support correct des [CSS Modules](https://github.com/css-modules/css-modules)
 
 
 ---
+class: middle
 
 # Webpack@2.x
 
 - webpack@1.x est maintenant _deprecated_
 - expérimentation en cours sur la cozy-bar
-- ☢ essais sur Roll-up
+- ☢ essais sur [rollup.js](http://rollupjs.org/)
 
 
 ---
+class: middle
 
 # Générateur de templates / configs
 
 - distribuer les configs externes dans des modules
 - (re)générer `package.json` à la volée
 - scaffold / boostrap d'application
+- ☢ supports d'autres frameworks
 
 
 ---
+class: middle
 
 # Documentations
 
-???
-
-À compléter w/ GoOz
+- 🚀 KSS automatique + template
+- Demo app
+- ☢ Storybook
 
 
 ---
 layout: false
-class: section
-background-image: url(../img/placeholders/)
+class: section right
+background-image: url(./simpson-help-me.gif)
 
 # Aidez-nous =] !
 
+
+---
+class: center
+
+.large[![Cozy template repository](./gh-cozy-template.png)]
+
+_Ouvrez des issues et contribuez au template_
 
 ---
 layout: false
