@@ -68,23 +68,23 @@ class: middle stickit inverse
 
 - équiper les devs d'apps en interne
 - faciliter le bootstrap d'applications v3
-- choisir la bonne toolbox
+- choisir la bonne boite à outils
 
 
 ---
 class: single middle center
 
+.left[
 # 🚀
 
 ## Fonctionnalité à venir
+]
 
-
----
-class: single middle center
-
+.right[
 # ☢
 
 ## Dans les cartons, à explorer
+]
 
 
 ---
