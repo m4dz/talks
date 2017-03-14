@@ -62,6 +62,16 @@ class: middle
 
 
 ---
+class: middle stickit inverse
+
+# Objectif
+
+- équiper les devs d'apps en interne
+- faciliter le bootstrap d'applications v3
+- choisir la bonne toolbox
+
+
+---
 class: single middle center
 
 # 🚀
@@ -236,9 +246,11 @@ class: middle
 
 
 ---
-class: middle
+class: middle inverse
 
-# _One ring to rule them all_ : [Cozy-template](https://github.com/cozy/cozy-template/tree/preact)
+# **One ring to rule them all**
+
+## [Cozy-template](https://github.com/cozy/cozy-template/tree/preact)
 
 - configs de base (webpack, yarn, babel, postcss…)
 - frameworks (preact, jest, polyglot…)
@@ -345,6 +357,17 @@ background-image: url(../img/placeholders/man-on-bench.jpeg)
 layout: true
 
 .breadcrumb[🚀 McFly]
+
+
+---
+class: middle stickit inverse
+
+# Objectif
+
+- abaisser la marche d'entrée
+- améliorer la maintenance / évolution
+- faciliter les contributions
+- s'ouvrir aux communautées
 
 
 ---
