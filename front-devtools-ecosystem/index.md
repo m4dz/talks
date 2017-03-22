@@ -474,7 +474,7 @@ class: middle
 
 # Code
 
-- [Github](https://github.cm/cozy)
+- [Github](https://github.com/cozy)
 - [Framagit](https://framagit.org) / Gitlab
 - [Bitbucket](https://bitbucket.org/)
 
