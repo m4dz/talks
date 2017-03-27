@@ -61,6 +61,7 @@ class: middle stickit
 
 - [Git SCM](https://git-scm.com/docs)
 - [Git Interactive Cheatsheet](http://www.ndpsoftware.com/git-cheatsheet.html)
+- [Learn Git Branching](http://learngitbranching.js.org/)
 
 
 ---
