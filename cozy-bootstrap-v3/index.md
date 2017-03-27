@@ -125,10 +125,10 @@ class: middle
 - `install` : <small>install project (dev)dependencies</small>
 - `test`&nbsp;<sup>[1]</sup> : <small>run tests against your codebase</small>
 - `build`&nbsp;<sup>[1]</sup> : <small>package sources for production use</small>
-- `watch` : <small>dev mode, that rebuild on-the-fly the package</small>
+- `watch` : <small>dev mode, that rebuilds on-the-fly the package</small>
 - `watch:standalone` : <small>dev mode through webpack-server, ideal for an integration only process</small>
 
-<sup>[1]</sup> those tasks triggers a linting task before they run
+<sup>[1]</sup> those tasks trigger a linting task before they run
 
 
 ---
@@ -137,14 +137,14 @@ class: middle
 # Configs
 
 - webpack: configs used by the bundler are split in `/config/Webpack.{config,target}.*` files
-- babel: the transpiler use `presets-env` to target last browsers versions, as configured in `/.babelrc`
+- babel: the transpiler uses `presets-env` to target last browsers versions, as configured in `/.babelrc`
 - postcss config is integrated to `/config/webpack.config.base`
 
 
 ---
 class: middle
 
-# Technologies involved (but _optionnals_)
+# Technologies involved (but _optionals_)
 
 - _Preact_: a react-like framework that make UI components easy to build ([getting started](https://preactjs.com/guide/getting-started))
 - _Stylus_: a CSS preprocessor that make the use of Cozy-UI simple ([documentation](http://stylus-lang.com/))
