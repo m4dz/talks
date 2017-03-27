@@ -182,17 +182,13 @@ $ git clone \
 
 <small>(we later refer to the current developped app as `my-app`)</small>
 
-then update the `package.json` file:
+then copy the files in the `.templates` dir (except the `.transifexrc` file) and update the variables in `<>`, like:
 
-```json
-{
-  "name": "my-app",
-  "version": "3.0.0"
-}
-```
+- `<APP_NAME>`: the application name
+- `<SLUG_GH>`: Github repository slug
+- `<USERNAME_GH>`: Github username
 
-don't forget to update the `author` entry, and replace the `{github_username}` and `{github_slug}` pattern with yours.
-
+see the README file for a whole list.
 
 ---
 class: middle
@@ -223,7 +219,7 @@ $ cd my-app
 $ yarn watch:standalone
 ```
 
-Point your browser to http://localhost:8082 and see Cozy Dev team saying _Hello_ to you 🚀
+Point your browser to http://localhost:8282 and see Cozy Dev team saying _Hello_ to you 🚀
 
 You can now start tweaking the code in the `my-app/src` directory and see the app rebuild automagically.
 
@@ -231,9 +227,9 @@ You can now start tweaking the code in the `my-app/src` directory and see the ap
 ---
 class: middle
 
-# Step 4
+# Step 4a
 
-## Run the docker stack
+## Run the docker stack: pre-requisites
 
 You now need to run it through the stack to access the cozy's data.
 
@@ -243,17 +239,32 @@ First, tweak your `/etc/hosts` file to add the following entry:
 127.0.0.1	app.cozy.local cozy.local
 ```
 
+
+---
+class: middle
+
+# Step 4b
+
+## Run the docker stack: launch
+
+Reload your watcher in standard mode:
+
+```sh
+$ cd my-app
+$ yarn watch
+```
+
 Then run a Docker container, that is the simplest way to access a stack:
 
 ```sh
 $ cd my-app
 $ docker run --rm -it \
     -p 8080:8080 \
-    -v "myapp/build":/data/cozy-app \
+    -v "$(pwd)/build":/data/cozy-app \
     cozy/cozy-app-dev
 ```
 
-and point your browser to http://cozy.local:8080, you app is now served through a stack.
+and point your browser to http://app.cozy.local:8080, you app is now served through a stack.
 
 
 ---
@@ -367,7 +378,7 @@ class: middle longlist
 
 We provide in our template a [Travis](https://travis-ci.org/) configuration file that allows to build and publish your app on Travis. To enable it, some few steps:
 
-1. We suggest to use [Transifex](https://www.transifex.com/) to translate your app. Update the `my-app/.transifexrc.tpl` username entry with yours
+1. We suggest to use [Transifex](https://www.transifex.com/) to translate your app. Update the `my-app/.templates/.transifexrc` username entry with yours
 2. Go to https://travis-ci.org/profile to enable your `my-app` repository in Travis
 3. Generate a new token in https://github.com/settings/tokens/new to auto-deploy your app on the `build` branch in your Github app repository
 4. Enable the _Build only if .travis.yml is present_ option
