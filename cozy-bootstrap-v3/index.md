@@ -182,17 +182,13 @@ $ git clone \
 
 <small>(we later refer to the current developped app as `my-app`)</small>
 
-then update the `package.json` file:
+then copy the files in the `.templates` dir (except the `.transifexrc` file) and update the variables in `<>`, like:
 
-```json
-{
-  "name": "my-app",
-  "version": "3.0.0"
-}
-```
+- `<APP_NAME>`: the application name
+- `<SLUG_GH>`: Github repository slug
+- `<USERNAME_GH>`: Github username
 
-don't forget tu update the `author` entry, and replace the `{github_username}` and `{github_slug}` pattern with yours.
-
+see the README file for a whole list.
 
 ---
 class: middle
@@ -223,7 +219,7 @@ $ cd my-app
 $ yarn watch:standalone
 ```
 
-Point your browser to http://localhost:8082 and see Cozy Dev team saying _Hello_ to you 🚀
+Point your browser to http://localhost:8282 and see Cozy Dev team saying _Hello_ to you 🚀
 
 You can now start tweaking the code in the `my-app/src` directory ans see the app rebuild automagically.
 
@@ -367,7 +363,7 @@ class: middle longlist
 
 We provides in our template a [Travis](https://travis-ci.org/) configuration file that allow to build and publish your app on Travis. To enable it, some few steps:
 
-1. We suggest to use [Transifex](https://www.transifex.com/) to translate your app. Update the `my-app/.transifexrc.tpl` username entry with yours
+1. We suggest to use [Transifex](https://www.transifex.com/) to translate your app. Update the `my-app/.templates/.transifexrc` username entry with yours
 2. Go to https://travis-ci.org/profile to enable your `my-app` repository in Travis
 3. Generate a new token in https://github.com/settings/tokens/new to auto-deploy your app on the `build` branch in your Github app repository
 4. Enable the _Build only if .travis.yml is present_ option
