@@ -227,9 +227,9 @@ You can now start tweaking the code in the `my-app/src` directory ans see the ap
 ---
 class: middle
 
-# Step 4
+# Step 4a
 
-## Run the docker stack
+## Run the docker stack: pre-requisites
 
 You now need to run it through the stack to access the cozy's data.
 
@@ -239,13 +239,28 @@ First, tweak your `/etc/hosts` file to add the following entry:
 127.0.0.1	app.cozy.local cozy.local
 ```
 
+
+---
+class: middle
+
+# Step 4b
+
+## Run the docker stack: launch
+
+Reload your watcher in standard mode:
+
+```sh
+$ cd my-app
+$ yarn watch
+```
+
 Then run a Docker container, that is the simplest way to access a stack:
 
 ```sh
 $ cd my-app
 $ docker run --rm -it \
     -p 8080:8080 \
-    -v "myapp/build":/data/cozy-app \
+    -v "$(pwd)/build":/data/cozy-app \
     cozy/cozy-app-dev
 ```
 
