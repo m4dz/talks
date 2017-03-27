@@ -137,7 +137,7 @@ class: middle
 # Configs
 
 - webpack: configs used by the bundler are split in `/config/Webpack.{config,target}.*` files
-- babel: the transpiler uses `presets-env` to target last browsers versions, as configured in `/.babelrc`
+- babel: the transpiler uses `presets-env` to target last browsers' versions, as configured in `/.babelrc`
 - postcss config is integrated to `/config/webpack.config.base`
 
 
@@ -146,9 +146,9 @@ class: middle
 
 # Technologies involved (but _optionals_)
 
-- _Preact_: a react-like framework that make UI components easy to build ([getting started](https://preactjs.com/guide/getting-started))
-- _Stylus_: a CSS preprocessor that make the use of Cozy-UI simple ([documentation](http://stylus-lang.com/))
-- There's many views frameworks alternatives, usable in Cozy ([Vue.js](https://vuejs.org/), [Angular](https://angularjs.org/), [Marionette](http://marionettejs.com/), [Cycle.js](https://cycle.js.org/), [Svelte](https://svelte.technology/), [Riot.js](http://riotjs.com/), etc)
+- _Preact_: a react-like framework that makes UI components easy to build ([getting started](https://preactjs.com/guide/getting-started))
+- _Stylus_: a CSS preprocessor that makes the use of Cozy-UI simple ([documentation](http://stylus-lang.com/))
+- There are many views frameworks alternatives, usable in Cozy ([Vue.js](https://vuejs.org/), [Angular](https://angularjs.org/), [Marionette](http://marionettejs.com/), [Cycle.js](https://cycle.js.org/), [Svelte](https://svelte.technology/), [Riot.js](http://riotjs.com/), etc.)
 
 
 ---
@@ -191,7 +191,7 @@ then update the `package.json` file:
 }
 ```
 
-don't forget tu update the `author` entry, and replace the `{github_username}` and `{github_slug}` pattern with yours.
+don't forget to update the `author` entry, and replace the `{github_username}` and `{github_slug}` pattern with yours.
 
 
 ---
@@ -225,7 +225,7 @@ $ yarn watch:standalone
 
 Point your browser to http://localhost:8082 and see Cozy Dev team saying _Hello_ to you 🚀
 
-You can now start tweaking the code in the `my-app/src` directory ans see the app rebuild automagically.
+You can now start tweaking the code in the `my-app/src` directory and see the app rebuild automagically.
 
 
 ---
@@ -253,7 +253,7 @@ $ docker run --rm -it \
     cozy/cozy-app-dev
 ```
 
-and point your browser to http://localhost:8080, you app is now served through a stack.
+and point your browser to http://cozy.local:8080, you app is now served through a stack.
 
 
 ---
@@ -261,7 +261,7 @@ and point your browser to http://localhost:8080, you app is now served through a
 
 ## Publish it
 
-Now you may need to publish your app (or, at least, version it to prevent any lost on your codebase). We'll configure the new repository for your app. Go to https://github.com/new to create a new app on Github (if not already done) and configure it:
+Now you may need to publish your app (or, at least, version it to prevent any loss on your codebase). We'll configure the new repository for your app. Go to https://github.com/new to create a new app on Github (if not already done) and configure it:
 
 ```sh
 $ git remote add \
@@ -293,7 +293,7 @@ class: middle
 
 # Access the data
 
-When your app is served through the stack, a JS script is injected. It contains a client that allow you to access data inside the stack. it declares a `cozy.client` namespace you can call into your codebase.
+When your app is served through the stack, a JS script is injected. It contains a client that allows you to access data inside the stack. it declares a `cozy.client` namespace you can call into your codebase.
 
 First, you need to initialize the _cozy-client_ to communicate with your stack:
 
@@ -321,19 +321,19 @@ to create a new `book` entry in your Cozy's data. See the [cozy-client-js docume
 ---
 # Interface: Cozy-ui and Components
 
-To simplifies the creation of interfaces, we intensively develop a frontend CSS framework called [Cozy-ui](https://github.com/cozy/cozy-ui/). It allows you to re-use and extend styles prepared to have a Cozy looked app.
+To simplify the creation of interfaces, we intensively develop a frontend CSS framework called [Cozy-ui](https://github.com/cozy/cozy-ui/). It allows you to re-use and extend styles prepared to have a Cozy looked app.
 
-Despites its lack of documentation at this time, there's a heavily maintained [changelog](https://github.com/cozy/cozy-ui/blob/master/CHANGELOG.md), and you can deeply browse the [stylus repository](https://github.com/cozy/cozy-ui/tree/master/stylus) to find styles you need.
+Despite its lack of documentation at this time, there's a heavily maintained [changelog](https://github.com/cozy/cozy-ui/blob/master/CHANGELOG.md), and you can deeply browse the [stylus repository](https://github.com/cozy/cozy-ui/tree/master/stylus) to find styles you need.
 
-If you choose to use a React-like framework to build your views, there's also a [components repository](https://github.com/cozy/cozy-ui/tree/master/react) we fill along time with our shared frontend components.
+If you choose to use a React-like framework to build your views, there's also a [components' repository](https://github.com/cozy/cozy-ui/tree/master/react) we fill along time with our shared frontend components.
 
 
 ---
 # Envrironment: Cozy-bar
 
-To let users browse across the stack apps, we provide a Bar element that takes place in top of your app viewport and contains the app switcher and the settings access.
+To let users browse across the stack apps, we provide a `Bar` element that takes place in top of your app viewport and contains the apps switcher and the settings access.
 
-The stack inject the relevant script, so you just need to initialize it into your app and let the magic happens.
+The stack injects the relevant script, so you just need to initialize it into your app and let the magic happen.
 
 ```js
 document.addEventListener('DOMContentLoaded', () => {
@@ -365,7 +365,7 @@ class: middle longlist
 
 # Plug Travis to automate builds
 
-We provides in our template a [Travis](https://travis-ci.org/) configuration file that allow to build and publish your app on Travis. To enable it, some few steps:
+We provide in our template a [Travis](https://travis-ci.org/) configuration file that allows to build and publish your app on Travis. To enable it, some few steps:
 
 1. We suggest to use [Transifex](https://www.transifex.com/) to translate your app. Update the `my-app/.transifexrc.tpl` username entry with yours
 2. Go to https://travis-ci.org/profile to enable your `my-app` repository in Travis
@@ -375,7 +375,7 @@ We provides in our template a [Travis](https://travis-ci.org/) configuration fil
   - `GITHUB_TOKEN`: the token generated in 3.
   - `TX_PASSWD`: your transifex password
 
-Congrats! There's now an autobuild on your app. Commiting/merging on the `master` branch trigger a build on Travis, and create/update the `build` branch with the result of the build.
+Congrats! There's now an autobuild on your app. Commiting/merging on the `master` branch triggers a build on Travis, and creates/updates the `build` branch with the result of the build.
 
 
 ---
@@ -383,7 +383,7 @@ class: middle
 
 # Install in a Cozy
 
-We provide with any instance of cozy a `cozy-stack` utility that allow you interact in CLI with your instance (you can also build your own by following instructions in [Building a cozy-stack via Docker](https://cozy.github.io/cozy-stack/docker.html#building-a-cozy-stack-via-docker)).
+We provide with any instance of cozy a `cozy-stack` utility that allows you to interact in a CLI with your instance (you can also build your own by following instructions in [Building a cozy-stack via Docker](https://cozy.github.io/cozy-stack/docker.html#building-a-cozy-stack-via-docker)).
 
 To install your previously built application, simply SSH to your instance, and run:
 
