@@ -182,7 +182,7 @@ $ git clone \
 
 <small>(we later refer to the current developped app as `my-app`)</small>
 
-then copy the files in the `.templates` dir (except the `.transifexrc` file) and update the variables in `<>`, like:
+then copy the files from the `.templates` dir (except the `.transifexrc` file) in the root folder and update the variables in `<>`, like:
 
 - `<APP_NAME>`: the application name
 - `<SLUG_GH>`: Github repository slug
