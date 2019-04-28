@@ -28,7 +28,7 @@ Server
 
 ===
 
-### Key Concepts
+### Core Concepts
 
 - _Zero Knowledge Proof_ Authentication {.fragment}
 - End to End Encryption {.fragment}
@@ -38,13 +38,13 @@ Server
 
 ===
 
-### How does it works together?
+### Meld them!
 
 @[giphy]({"token": "26u4lOMA8JKSnL9Uk", "className":"medium"})
 
 ===
 
-#### Zero Knowledge
+#### The Crypto Part
 
 1. :fas-fingerprint: Password
 2. :fas-id-card: Intermediate Certificate, signed with the app CER available on the server {.fragment .fade-up}
@@ -71,7 +71,7 @@ The Cave {.large}
 
 ===
 
-Manage the Keys {.x-large}
+Registering a Service {.x-large}
 
 - :fas-id-card: One Intermediate Certificate per Service {.fragment .fade-up}
 - :fas-key: Two Keys-pairs per Service {.fragment .fade-up}
@@ -83,10 +83,10 @@ Manage the Keys {.x-large}
 
 Zero Knowledge Proof {.x-large}
 
-1. Service: ask the Server for a token {.fragment .fade-up}
-2. Server: challenge on the Service signature {.fragment .fade-up}
-3. Server: stores the token {.fragment .fade-up}
-4. Clients: use the validated token {.fragment .fade-up}
+1. Service: Ask the Server for a new Client token {.fragment .fade-up}
+2. Server: Pass the Token to the Service and the Client {.fragment .fade-up}
+3. Service: Sign the Token and send it to the Client {.fragment .fade-up}
+4. Client: Both check the signature and the Token {.fragment .fade-up}
 {.medium}
 
 ===
@@ -95,7 +95,7 @@ Zero Knowledge Proof {.x-large}
 **Security Concerns** {.large}
 
 - No password exchanges
-- keys can be revoked using the Intermediate Certificates
+- Keys can be revoked using the Intermediate Certificates
 
 ===
 <!--{.punchline}-->
@@ -145,8 +145,6 @@ Document: a Tree Structure
 **Security Concerns** {.x-large}
 
 - Never share all the doc
-- A Data Blob per Service/with a unique Key
 - Smallest amount of Data possible
-- Stored in an encrypted form
 - Forbidden resources stay safe
 {.medium}
