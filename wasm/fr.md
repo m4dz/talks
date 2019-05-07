@@ -35,11 +35,11 @@ Petit rappel historique {.large}
 - 2018: ::PWA !::{.fragment}
 - 2019: ::Sinon, ça se passe bien, la RAM, chez vous ?::{.fragment}
 
-+[section](./sections/fr/what-is.md)
++[section](fr/what-is.md)
 
-+[section](./sections/fr/basics.md)
++[section](fr/basics.md)
 
-+[section](./sections/fr/prod.md)
++[section](fr/prod.md)
 
 <!--{ .large }-->
 ### Know The Web!

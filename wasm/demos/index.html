@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>WASM Blockchain Mining</title>
+    <script type="module" src="index.js"></script>
+</head>
+<body>
+    <h1>WASM Blockchain Mining</h1>
+
+    <section>
+        <h1>Nodes</h1>
+        <ul class="nodes"></ul>
+    </section>
+
+    <ul>
+        <li>
+            <select id="limit">
+                <option value="1">1</option>
+                <option value="2" selected>2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </li>
+        <li>
+            <button id="comp_js">Compute w/ JS</button>
+            <p class="time"></p>
+        </li>
+        <li>
+            <button id="comp_rust">Compute w/ WASM</button>
+            <p class="time"></p>
+        </li>
+    </ul>
+
+    <template id="node">
+        <li class="node">
+            <h2></h2>
+            <p class="parent_id"></p>
+            <p class="nonce"></p>
+            <ul></ul>
+        </li>
+    </template>
+</body>
+</html>

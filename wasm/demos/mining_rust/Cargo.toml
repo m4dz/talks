@@ -1,0 +1,11 @@
+[package]
+name = "mining_rust"
+version = "0.1.0"
+authors = ["m4dz <m4dz@alwaysdata.com>"]
+edition = "2018"
+
+[dependencies]
+wasm-bindgen = "0.2"
+
+[lib]
+crate-type = ["cdylib"]
