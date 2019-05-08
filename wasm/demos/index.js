@@ -9,15 +9,21 @@ const NODES = [0, 1, 2]
 const loadNode = (idx) => fetch(`node_${idx}.json`)
   .then(res => res.json())
   .then(records => ({
-    id: idx,
-    parent: idx > 0 ? idx - 1 : 0,
-    nonce: '*****',
+    id: idx.toString(),
+    parent: idx > 0 ? (idx - 1).toString() : '-',
+    nonce: '*',
     records
   }))
 
 const loadNodes = (nodes, $) => Promise
   .all(nodes.map(loadNode))
   .then(values => $._state = values)
+
+const resetState = (nodes) => nodes.forEach((node, idx) => {
+  node.id = idx.toString()
+  node.nonce = '*'
+  node.parent = idx > 0 ? (idx - 1).toString() : '-'
+})
 
 /**
  * UI THREAD RENDERING
@@ -82,17 +88,26 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 document.querySelector('#comp_js').addEventListener('click', async () => {
-  const start = Date.now()
+  resetState(document._state)
   const time = document.querySelector('#comp_js + .time')
 
+  const start = Date.now()
   const stop = await js.compute(document._state, +document.querySelector('#limit').value)
   time.textContent = `${(stop - start) / 1000}s`
 })
 
 document.querySelector('#comp_rust').addEventListener('click', async () => {
-  const start = Date.now()
-  const time = document.querySelector('#comp_wasm + .time')
+  resetState(document._state)
+  const time = document.querySelector('#comp_rust + .time')
 
-  await rust.default('./mining_rust_bg.wasm')
-  rust.greet('World!')
+  const compute = async () => rust.default('./mining_rust_bg.wasm')
+    .then(() => rust.compute(document._state, +document.querySelector('#limit').value))
+    .then(state => {
+      document._state = state
+      return Date.now()
+    })
+
+  const start = Date.now()
+  const stop = await compute()
+  time.textContent = `${(stop - start) / 1000}s`
 })

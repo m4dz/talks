@@ -29,7 +29,7 @@ export async function compute (state, limit) {
       node.nonce = nonce()
       node.id = await crypto.subtle.digest('SHA-256', encoder.encode(`
         ${node.parent};${node.nonce};
-        ${Object.values(node).join(';')}
+        ${node.records.map(record => Object.values(record).join(';')).join(';')}
       `))
       .then(value => tohex(value))
 
