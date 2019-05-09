@@ -4,16 +4,12 @@
     <meta charset="utf-8">
     <title>WASM Blockchain Mining</title>
     <script type="module" src="index.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <h1>WASM Blockchain Mining</h1>
+    <ul class="nodes"></ul>
 
-    <section>
-        <h1>Nodes</h1>
-        <ul class="nodes"></ul>
-    </section>
-
-    <ul>
+    <ul class="controls">
         <li>
             <select id="limit">
                 <option value="1">1</option>
@@ -28,15 +24,15 @@
             <p class="time"></p>
         </li>
         <li>
-            <button id="comp_rust">Mining w/ WASM</button>
+            <button id="comp_rust">Mining w/ Rust</button>
             <p class="time"></p>
         </li>
     </ul>
 
     <template id="node">
         <li class="node">
-            <h2></h2>
             <p class="parent_id"></p>
+            <h2></h2>
             <p class="nonce"></p>
             <ul></ul>
         </li>

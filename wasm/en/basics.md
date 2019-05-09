@@ -3,7 +3,7 @@
 <!--{.interleaf data-background-image="/img/unsplash/kasya-shahovskaya-737394-unsplash.jpg"}-->
 <!-- Photo by Kasya Shahovskaya on Unsplash -->
 
-## Back to Basics: It's not that easy
+## <svg class="icon"><use xlink:href="/img/icons.svg#dots-two-vertical"></svg> Back to Basics: It's not that easy
 
 ===
 <!--{ .left.xx-large }-->
@@ -50,7 +50,7 @@ Instructions: `1.`{.fragment}`2.`{.fragment}`3.MUL.`{.fragment}`ADD.`{.fragment}
 
 ???
 
-Notation polonaise inversée
+Reverse Polish notation
 
 ===
 
@@ -90,11 +90,11 @@ At start:{.large}
 - Compiler JIT
 
 ===
-<!--{ .punchline }-->
+<!--{ .left.xx-large }-->
 
 JIT Compiler produces
 machine code instructions
-fast, but limited
+fastly, but is limited
 
 ===
 <!--{ .large }-->
@@ -109,8 +109,12 @@ WASM uses the same ==Engine== {.large}
 - [Calls between JavaScript and WebAssembly are finally fast 🎉](https://hacks.mozilla.org/2018/10/calls-between-javascript-and-webassembly-are-finally-fast-%f0%9f%8e%89/)
 {.linkrolls}
 
+???
+
+Monomorphic call: fn to fn call w/ the same args types to prevent boxing
+
 ===
-<!--{ .left.xx-large}-->
+<!--{ .left.xx-large }-->
 
 Execution Engine able to
 run **all** logic languages

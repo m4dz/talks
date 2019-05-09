@@ -1,25 +1,10 @@
-// extern crate console_error_panic_hook;
 extern crate serde_json;
 extern crate wasm_bindgen;
-// extern crate web_sys;
-// extern crate bincode;
-// extern crate crypto;
 
-// use std::panic;
 use wasm_bindgen::prelude::*;
-// use crypto::digest::Digest;
-// use crypto::sha2::Sha256;
 use sha2::{Sha256, Digest};
 use rand::prelude::*;
 use rand::thread_rng;
-// use rand::seq::SliceRandom;
-// use itertools::join;
-
-// macro_rules! log {
-//     ( $( $t:tt )* ) => {
-//         web_sys::console::log_1(&format!( $( $t )* ).into());
-//     }
-// }
 
 #[macro_use]
 extern crate serde_derive;
@@ -63,7 +48,6 @@ pub struct Node {
 
 #[wasm_bindgen]
 pub fn compute(js_objects: &JsValue, js_limit: &JsValue) -> JsValue {
-    // panic::set_hook(Box::new(console_error_panic_hook::hook));
 
     let _limit: usize = js_limit.into_serde().unwrap();
     let _prefix: String = (0.._limit).map(|_| "0").collect();

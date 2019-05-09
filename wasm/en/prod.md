@@ -3,18 +3,18 @@
 <!--{.interleaf data-background-image="/img/unsplash/patrick-fore-381200-unsplash.jpg"}-->
 <!-- Photo by Patrick Fore on Unsplash -->
 
-## Production‽
+## <svg class="icon"><use xlink:href="/img/icons.svg#dots-two-vertical"></svg> Production‽
 
 ===
 
 Fantastic Four! {.large}
 
-![](../img/firefox.svg){.xx-small .no-borders} ![](../img/chrome.svg){.xx-small .no-borders} ![](../img/safari.svg){.xx-small .no-borders} ![](../img/edge.svg){.xx-small .no-borders}
+![](../img/firefox.svg){.xx-small .no-borders .no-background} ![](../img/chrome.svg){.xx-small .no-borders .no-background} ![](../img/safari.svg){.xx-small .no-borders .no-background} ![](../img/edge.svg){.xx-small .no-borders .no-background}
 
 ===
 <!--{ .punchline }-->
 
-Open Stardard
+Open Standard
 
 - [WebAssembly.org](https://webassembly.org/)
 {.linkrolls}
@@ -134,7 +134,7 @@ pub fn greet(name: &str) {
 
 ```js
 const wasm = import("./js_hello_world")
-wasm.then(wasm => wasm.greet("Hello World")
+wasm.then(wasm => wasm.greet("Hello World"))
 ```
 
 ===
@@ -154,7 +154,19 @@ wasm.then(wasm => wasm.greet("Hello World")
 
 ===
 <!--{ .punchline }-->
-Distribute? ::wasm-pack!::{.fragment}
+Compiling? ::wasm-pack!::{.fragment}
+
+===
+
+```sh
+$ curl https://sh.rustup.rs -sSf | sh
+$ rustup install nightly
+$ rustup target add wasm32-unknown-unknown --toolchain nightly
+```
+
+```sh
+$ wasm-pack build hello_world --target web --out-dir ./pkg
+```
 
 ===
 
@@ -168,21 +180,88 @@ Distribute? ::wasm-pack!::{.fragment}
 ### A State of WASM
 
 ===
-<!--{ .large }-->
-Status: {.large}
-- Compile
-- Fast
-- Lightweight
-- linear Memory through TypedArray
+
+```ts
+interface Record {
+  id: Sha256,
+  ...
+}
+
+interface Block {
+  id: Sha256,
+  parent: Sha256,
+  nonce: number,
+  records: Array&lt;Record>
+}
+
+let blockchain: Array&lt;Block>
+```
+
+===
+
+```js
+while (true) {
+  node.nonce = nonce()
+  node.id = await crypto.subtle.digest('SHA-256', encoder.encode(`
+    ${node.parent};${node.nonce};
+    ${node.records.map(record => Object.values(record).join(';')).join(';')}
+  `))
+  .then(value => tohex(value))
+
+  if (node.id.substr(0, limit) == prefix) {
+    break
+  } else {
+    node.records = shuffle(node.records)
+  }
+}
+```
+
+===
+
+```rust
+loop {
+    let mut rng = thread_rng();
+    _nonce = (0..32)
+        .map(|_| rng.gen_range(0, 9).to_string())
+        .collect();
+    &mut node.records.shuffle(&mut rng);
+    let _values: String = node.records.iter_mut().map(|r| r.join()).collect();
+
+    let sha = Sha256::new()
+        .chain(&_parent)
+        .chain(&_nonce)
+        .chain(&_values)
+        .result();
+
+    _id = format!("{:x}", sha);
+    if _id[.._limit] == _prefix {
+        break;
+    }
+}
+```
+
+===
+
+Let's Try It!
+
+<iframe src="../demos/" scrolling="no"></iframe>
 
 ===
 <!--{ .large }-->
-Comming: {.large}
+Status {.large}
+- Compile
+- Fast
+- Lightweight
+- Linear Memory w/ `TypedArray`
+
+===
+<!--{ .large }-->
+Comming Soon {.large}
 - Multi-threading
-- Streaming compilation / Tiered Compiler
-- JS Modules exchange / Garbage Collector
-- Portability / Runtime / IoT
-- WASI
+- Streaming compilation/Tiered Compiler
+- JS Modules exchange/Garbage Collector
+- Portability/Runtime/IoT
+- WASI {.fragment}
 
 <!-- -->
 - [WebAssembly’s post-MVP future: A cartoon skill tree](https://hacks.mozilla.org/2018/10/webassemblys-post-mvp-future/)

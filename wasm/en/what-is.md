@@ -1,9 +1,9 @@
 <!--{section^1:data-breadcrumb="WASM, What's that?"}-->
 
-<!--{.interleaf data-background-image="/img/unsplash/bryan-minear-317365-unsplash.jpg"}-->
-<!-- Photo by Bryan Minear on Unsplash -->
+<!--{.interleaf data-background-image="/img/unsplash/jorge-zapata-44723-unsplash.jpg"}-->
+<!-- Photo by Jorge Zapata on Unsplash -->
 
-## WASM, What's that?
+## <svg class="icon"><use xlink:href="/img/icons.svg#dots-two-vertical"></svg> WASM, What's that?
 
 ===
 <!--{ .punchline }-->
@@ -49,11 +49,11 @@ WebWorker, ServiceWorkers
 
 ===
 
-@[giphy]({"token":"cnqbWwFsnRcGs", "className":"medium", "caption": "We want more performances!"})
+@[giphy]({"token":"cnqbWwFsnRcGs", "className":"medium", "caption": "We want more perfs!"})
 
 ===
 
-> **WebAssembly**, is a new language, close to a machine codes instructions (an _Assembly_ language) which allow pretty good, close to native parformances, right in the Web Browser.
+> **WebAssembly**, is a new language, close to a machine codes instructions (an _Assembly_ language) which allow pretty good, close to native performances, in the Web Browser.
 
 ===
 
@@ -77,6 +77,8 @@ WebWorker, ServiceWorkers
 <!--{ .punchline }-->
 
 This is ::not::{.fragment .stabilo} a language!
+
+<!-- ![](/img/pear.png){.pear} -->
 
 ===
 
@@ -116,9 +118,9 @@ This is ::not::{.fragment .stabilo} a language!
 ===
 <!--{ .punchline }-->
 
-- JS can't address all use-cases
-- We sometimes need to share codebase between projects
-<!--{ul: .small} -->
+JS can't address all use-cases.
+We sometimes need to share a codebase between projects.
+<!--{p: .small} -->
 
 ===
 <!--{ .x-large }-->

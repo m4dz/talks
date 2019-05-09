@@ -18,7 +18,7 @@ Why WASM?
 
 ===
 
-@[giphy]({"token":"tIeCLkB8geYtW", "className":"medium"})
+@[giphy]({"token":"tIeCLkB8geYtW", "className":"medium", "caption": "Because it's sooooo cool!"})
 
 ???
 
