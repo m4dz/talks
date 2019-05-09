@@ -15,7 +15,7 @@ Emscripten
 
 ===
 
-@[giphy]({"token":"3o6MbnqLhX5tJ5wNQQ", "className":"medium", "caption": "Performances, on y est presque"})
+@[giphy]({"token":"3o6MbnqLhX5tJ5wNQQ", "className":"medium", "caption": "Performances on Emscripten, a metaphor"})
 
 ???
 
@@ -76,9 +76,9 @@ WebWorker, ServiceWorkers
 ===
 <!--{ .punchline }-->
 
-This is ::not::{.fragment .stabilo} a language!
+This is ::not::{.fragment .stabilo data-fragment-index=1} a language!
 
-<!-- ![](/img/pear.png){.pear} -->
+![](/img/pear.png){.pear .fragment data-fragment-index=1}
 
 ===
 
@@ -116,11 +116,9 @@ This is ::not::{.fragment .stabilo} a language!
 ::Because::{.fragment .fade-up} ::We::{.fragment .fade-up} ::==CAN==!::{.fragment .fade-up}
 
 ===
-<!--{ .punchline }-->
 
-JS can't address all use-cases.
-We sometimes need to share a codebase between projects.
-<!--{p: .small} -->
+> JS can't address all use-cases.
+> We sometimes need to share a codebase between projects.
 
 ===
 <!--{ .x-large }-->

@@ -144,7 +144,7 @@ wasm.then(wasm => wasm.greet("Hello World"))
   - JS-types {.small}
   - Boxes {.small}
   - Catch {.small}
-  - Getter / setter {.small}
+  - Getter / Setter {.small}
   - Namespaces {.small}
 - Web-sys
   - DOM {.small}
@@ -184,7 +184,7 @@ $ wasm-pack build hello_world --target web --out-dir ./pkg
 ```ts
 interface Record {
   id: Sha256,
-  ...
+  payload: object
 }
 
 interface Block {

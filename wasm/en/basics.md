@@ -71,7 +71,7 @@ DIV
 
 ===
 <!--{ .left.xx-large }-->
-### Logical ~~JS~~ Engine
+### Logic ~~JS~~ Engine
 
 ===
 <!--{ .x-large }-->
