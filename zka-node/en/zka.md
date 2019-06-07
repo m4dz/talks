@@ -20,8 +20,7 @@ E2E Encryption
 <!-- {.punchline} -->
 
 Asymetric Keys
-at each Ends
-<small>(for sharing)</small>
+at each Ends ::(for sharing)::{.x-small}
 
 ===
 <!-- {.punchline} -->
@@ -43,7 +42,7 @@ Backend Roles {.large}
 
 Client ←→ Server Workflow {.large}
 
-1. Client **Registers**, _GET_ ting its Certificate {.fragment .fade-up}
+1. Client **Registers**, _GET_ ting the ROOT CA {.fragment .fade-up}
 2. Client **Generates** Keys-pairs, _POST_ ing Pubkeys and Hashes {.fragment .fade-up}
 3. Client **Encrypts** Data w/ wrapped Key and **Signs** it, _PUT_ ing it on the Server {.fragment .fade-up}
 4. Server **Validates** timestamped signature before returning the payload {.fragment .fade-up}

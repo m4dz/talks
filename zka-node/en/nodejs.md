@@ -29,6 +29,11 @@ Server Part: restify {.large}
 - Versioned
 - Smart at failing
 
+<!--  -->
+
+- [restify](http://restify.com/)
+<!-- {ul:.linkrolls} -->
+
 ===
 
 **restify** setup 
@@ -36,18 +41,51 @@ Server Part: restify {.large}
 ```js
 const restify = require('restify')
 
-const server = restify.createServer()
+<span class="fragment">const server = restify.createServer()</span>
 
-server.post('/users', (req, res, next) => {
-    // CREATE USER
-})
-server.post('/users/:name/login', (req, res, next) => {
-    // AUTHORIZE USER
-})
+<span class="fragment">server.get('/', (req, res) => {
+  res.send(200)
+})</span>
 
-server.listen(8080, () => {
+<span class="fragment">server.listen(8080, () => {
   console.log('%s listening at %s', server.name, server.url)
-})
+})</span>
+```
+
+===
+<!-- {.large} -->
+
+Security: node-forge {.large}
+
+- Full TLS native implementation
+- X.509 compatible
+
+<!--  -->
+
+- [Forge](https://www.npmjs.com/package/node-forge)
+<!-- {ul:.linkrolls} -->
+
+===
+
+```js
+const { pki } = require('node-forge')
+
+const caStore = pki.createCaStore([ AppRootCertPEM ])
+
+<span class="fragment">server.post('/users', (req, res, next) => {
+    // CREATE USER
+    // 
+    res.send(201, { cert: pki.certificateToPen(caStore[0]), uuid })
+})</span>
+
+<span class="fragment">server.put('/users/:uuid', (req, res) => {
+  const { uuid } = req.params
+  const { pubkey, certHash, privkeyhash,
+          salt, iterations, digest } = req.body
+  // UPDATE USER
+  //
+  res.send(204)
+})</span>
 ```
 
 ===
@@ -58,6 +96,7 @@ Storage {.large}
 MongoDB/CouchDB
 
 ===
+<!-- {.small} -->
 
 Document Tree Structure {.large}
 
@@ -74,6 +113,7 @@ Document Tree Structure {.large}
     - Recipient UUID
 
 ===
+<!-- {.small} -->
 
 Auth {.large}
 
@@ -94,23 +134,23 @@ Auth {.large}
 ===
 
 ```js
-const users = db.collection('users')
+<span class="fragment" data-fragment-index=3>const users = db.collection('users')</span>
 
-passport.use(new LocalStrategy((username, password, done) => {
+<span class="fragment" data-fragment-index=2>passport.use(new <span class="fragment" data-fragment-index=3>LocalStrategy((username, password, done) => {
   users.find({ username }, (err, user) => {
-    if (!user) return done(null, false)
-    if (!user.verifyPassword(password)) return done(null, false)
-    return done(null, user)
+    <span class="fragment" data-fragment-index=4>if (!user) return done(null, false)</span>
+    <span class="fragment" data-fragment-index=4>if (!user.verifyPassword(password)) return done(null, false)</span>
+    <span class="fragment" data-fragment-index=5>return done(null, user)</span>
   })
-}))
+})</span>)</span>
 
-server.post('/users/:name/login', passport.authenticate('local'), (req, res) => {
+<span class="fragment" data-fragment-index=1>server.post('/users/:name/login', <span class="fragment" data-fragment-index=6>passport.authenticate('local')</span>, (req, res) => {
     res.redirect(`/users/${req.params.name}`)
-})
+})</span>
 
-server.get('/users/:name', passport.authenticate('local'), (req, res) => {
+<span class="fragment" data-fragment-index=1>server.get('/users/:name', <span class="fragment" data-fragment-index=6>passport.authenticate('local')</span>, (req, res) => {
   // RETURN JWT
-})
+})</span>
 ```
 
 ===
@@ -135,11 +175,11 @@ const restifyCors = require('restify-cors')
  
 const cors = restifyCors({
   origins: [
-    'https://api.example.org',
-    'https://web.example.org'
+    <span class="fragment" data-fragment-index=1>'https://api.example.org',
+    'https://web.example.org'</span>
   ],
-  allowHeaders: ['API-Token', 'Authorization'],
-  exposeHeaders: ['API-Token-Expiry']
+  allowHeaders: [<span class="fragment" data-fragment-index=2>'API-Token', 'Authorization'</span>],
+  exposeHeaders: [<span class="fragment" data-fragment-index=2>'API-Token-Expiry'</span>]
 })
  
 server.pre(cors.preflight)
@@ -161,8 +201,8 @@ const secret = server.token
 
 server.use(restify.authorizationParser())
 
-server.get('/items', jwt({ secret }), (req, res) => {
-  if (!req.user.admin) return { res.send(401) }
+server.get('/items', <span class="fragment" data-fragment-index=1>jwt({ secret })</span>, (req, res) => {
+  <span class="fragment" data-fragment-index=2>if (!req.user.admin) return { res.send(401) }</span>
   res.send(200)
 })
 ```
@@ -171,7 +211,6 @@ server.get('/items', jwt({ secret }), (req, res) => {
 <!-- {ul:.linkrolls} -->
 
 ===
-<!-- {.large} -->
 
 POST Item {.large}
 
@@ -200,7 +239,7 @@ server.post('/items', jwt({ secret }), (req, res) => {
 
 ===
 
-PUT Data Chunk
+PUT Data Chunk {.large}
 
 - Payload
     - encrypted data
@@ -212,19 +251,19 @@ PUT Data Chunk
 ===
 
 ```js
-const crypto = require('crypto')
+<span class="fragment" data-fragment-index=3>const crypto = require('crypto')</span>
 const items = db.collection('items')
 
 server.put('/items/:uuid', jwt({ secret }), (req, res) => {
   const { uuid } = req.params
   const item = items.find({ uuid })
-  const { timestamp, signature, data } = req.body
-  const verify = crypto.createVerify('sha256')
-  verify.update(data + '.' + timestamp)
+  const { <span class="fragment" data-fragment-index=2>timestamp, signature,</span> data } = req.body
+  <span class="fragment" data-fragment-index=3>const verify = crypto.createVerify('sha256')
+  verify.update(data + '.' + timestamp)</span>
 
-  if (item.data) return res.send(new ConflictError())
-  if (!verify.verify(req.user.pubkey, signature, 'base64'))
-    return res.send(new PreconditionFailedError())
+  <span class="fragment" data-fragment-index=1>if (item.data) return res.send(new ConflictError())</span>
+  <span class="fragment" data-fragment-index=4>if (!verify.verify(req.user.pubkey, signature, 'base64'))
+    return res.send(new PreconditionFailedError())</span>
 
   // SAVE DATA, SIGNATURE, TIMESTAMP
   res.send(204)
@@ -245,22 +284,22 @@ GET User {.large}
 ===
 
 ```js
-const jwt = require('jsonwebtoken')
+<span class="fragment" data-fragment-index=3>const jwt = require('jsonwebtoken')</span>
 
-server.get('/users/:name', passport.authenticate('local'), (req, res) => {
+server.get('/users/:name', <span class="fragment" data-fragment-index=1>passport.authenticate('local')</span>, (req, res) => {
   const { name } = req.params
   const user = users.find({ name })
 
-  let token = jwt.sign({
+  <span class="fragment" data-fragment-index=3>let token = jwt.sign({
     uuid: user.uuid,
     admin: user.admin
-  }, secret, { expiresIn: '1m' })
+  }, secret, { expiresIn: '1m' })</span>
 
   res.send({
-    token,
+    <span class="fragment" data-fragment-index=3>token,</span>
     username: user.name,
     pubkey: user.pubkey,
-    items: user.items.map(item => server.router.render('items', { uuid: item.uuid }))
+    items: user.items.map(item => <span class="fragment" data-fragment-index=2>server.router.render('items', { uuid:</span> item<span class="fragment" data-fragment-index=2>.uuid</span> }))
   })
 })
 ```
@@ -278,19 +317,19 @@ GET Data Chunk {.large}
 
 ```js
 const items = db.collection('items')
-server.get('/items/:uuid', jwt({ secret }), (req, res) => {
+server.get('/items/:uuid', <span class="fragment" data-fragment-index=2>jwt({ secret })</span>, (req, res) => {
   const { uuid } = req.params
   const item = items.find({ uuid })
-  const verify = crypto.createVerify('sha256')
-  verify.update(item.data + '.' + item.timestamp)
+  <span class="fragment" data-fragment-index=4>const verify = crypto.createVerify('sha256')
+  verify.update(item.data + '.' + item.timestamp)</span>
 
-  if (!item) return res.send(new NotFoundError())
-  if (item.recipient.uuid !== req.user.uuid)
-    return res.send(new UnauthorizedError())
-  if (item.expire < Date.now())
-    return res.send(new PreconditionFailedError())
-  if (!verify.verify(req.user.pubkey, item.signature, 'base64'))
-    return res.send(new PreconditionFailedError())
+  <span class="fragment" data-fragment-index=1>if (!item) return res.send(new NotFoundError())</span>
+  <span class="fragment" data-fragment-index=2>if (item.recipient.uuid !== req.user.uuid)
+    return res.send(new UnauthorizedError())</span>
+  <span class="fragment" data-fragment-index=3>if (item.expire < Date.now())
+    return res.send(new PreconditionFailedError())</span>
+  <span class="fragment" data-fragment-index=4>if (!verify.verify(req.user.pubkey, item.signature, 'base64'))
+    return res.send(new PreconditionFailedError())</span>
 
   res.send(item)
 })
