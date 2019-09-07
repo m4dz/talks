@@ -244,7 +244,7 @@ loop {
 
 Let's Try It!
 
-<iframe src="../demos/" scrolling="no"></iframe>
+<iframe src="../demo/" scrolling="no"></iframe>
 
 ===
 <!--{ .large }-->

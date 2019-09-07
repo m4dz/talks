@@ -1,17 +1,17 @@
-import * as js from './mining_js.js'
-import * as rust from './mining_rust.js'
+import * as js from './mining_js/index.js'
+import * as rust from './mining_rust/pkg/index.js'
 
 const NODES = [0, 1, 2]
 
 /**
- * NODES BUFFERING
+ * NODES BUFFERING
  */
-const loadNode = (idx) => fetch(`node_${idx}.json`)
+const loadNode = (idx) => fetch(`data/node_${idx}.json`)
   .then(res => res.json())
   .then(records => ({
     id: idx.toString(),
     parent: idx > 0 ? (idx - 1).toString() : '-',
-    nonce: '*',
+    nonce: '0',
     records
   }))
 
@@ -21,17 +21,17 @@ const loadNodes = (nodes, $) => Promise
 
 const resetState = (nodes) => nodes.forEach((node, idx) => {
   node.id = idx.toString()
-  node.nonce = '*'
+  node.nonce = '0'
   node.parent = idx > 0 ? (idx - 1).toString() : '-'
 })
 
 /**
- * UI THREAD RENDERING
+ * UI THREAD RENDERING
  */
 const renderRecord = (record) => new Promise((resolve, reject) => {
-    const {id, first_name, last_name, email} = record
+    const {id, email} = record
     const $el = document.createElement('li')
-    $el.textContent = JSON.stringify({id, first_name, last_name, email})
+    $el.textContent = `${id.substr(0,6)} - ${email}`
     resolve($el)
   })
 
@@ -72,6 +72,10 @@ function renderTemplate (nodes, $) {
   renderTemplate.done = true
 }
 
+function renderResult (p, r) {
+  return `${((p) / 1000).toFixed(3)}s / ${r} rounds<br>(~${Math.round(p / r)}ms per round)`
+}
+
 function render (nodes, $) {
   renderTemplate.apply(this, arguments)
   $._state
@@ -81,33 +85,37 @@ function render (nodes, $) {
 }
 
 /**
- * EVENTS LOOP
+ * EVENTS LOOP
  */
 document.addEventListener('DOMContentLoaded', () => {
   loadNodes(NODES, document).then(() => render(NODES, document))
 })
 
-document.querySelector('#comp_js').addEventListener('click', async () => {
-  resetState(document._state)
+document.querySelector('#comp_js').addEventListener('click', () => {
   const time = document.querySelector('#comp_js + .time')
+  
+  resetState(document._state)
+  time.innerHTML = ""
 
-  const start = Date.now()
-  const stop = await js.compute(document._state, +document.querySelector('#limit').value)
-  time.textContent = `${(stop - start) / 1000}s`
+  setTimeout(async () => {
+    const [p, r] = await js.compute(document._state, +document.querySelector('#limit').value)
+    time.innerHTML = renderResult(p, r)
+  }, 50)
 })
 
-document.querySelector('#comp_rust').addEventListener('click', async () => {
-  resetState(document._state)
-  const time = document.querySelector('#comp_rust + .time')
+rust.default('./mining_rust/pkg/index_bg.wasm').then(() => {
+  document.querySelector('#comp_rust').addEventListener('click', () => {  
+    const time = document.querySelector('#comp_rust + .time')
+    
+    resetState(document._state)
+    time.innerHTML = ""
 
-  const compute = async () => rust.default('./mining_rust_bg.wasm')
-    .then(() => rust.compute(document._state, +document.querySelector('#limit').value))
-    .then(state => {
-      document._state = state
-      return Date.now()
+    setTimeout(() => new Promise((resolve) => {
+      const res = rust.compute(document._state, +document.querySelector('#limit').value)
+      resolve(res)
     })
-
-  const start = Date.now()
-  const stop = await compute()
-  time.textContent = `${(stop - start) / 1000}s`
+    .then((res) => {
+      time.innerHTML = renderResult(res[0], res[1])
+    }), 50)
+  })
 })

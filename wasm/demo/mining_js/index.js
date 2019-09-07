@@ -17,8 +17,10 @@ const nonce = () => new Array(32)
 
 export async function compute (state, limit) {
   const encoder = new TextEncoder()
-  const decoder = new TextDecoder('utf-8')
   const prefix = new Array(limit).fill(0).join('')
+
+  const t = performance.now()
+  let rounds = 0
 
   let idx = 0
   while (idx < state.length) {
@@ -26,6 +28,7 @@ export async function compute (state, limit) {
     node.nonce = 0
 
     while (true) {
+      rounds++
       node.nonce = nonce()
       node.id = await crypto.subtle.digest('SHA-256', encoder.encode(`
         ${node.parent};${node.nonce};
@@ -45,5 +48,5 @@ export async function compute (state, limit) {
     }
   }
 
-  return Date.now()
+  return [performance.now() - t, rounds]
 }
