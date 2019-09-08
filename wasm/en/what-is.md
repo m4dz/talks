@@ -25,12 +25,13 @@ We are struggled with performance, we need more
 <!--{ .punchline }-->
 
 asm.js
-::(optimized JS sub-part)::{.xx-small}
+::(optimized JS sub-part)::{.xx-small}
 
 ===
 <!--{ .punchline }-->
 
-JS: event-driven
+JS:
+==async== && ==event==-driven
 
 ===
 <!--{ .x-large }-->
@@ -74,11 +75,12 @@ WebWorker, ServiceWorkers
 ```
 
 ===
-<!--{ .punchline }-->
 
-This is ::not::{.fragment .stabilo data-fragment-index=1} a language!
+> Wait, this is ::not::{.fragment .stabilo data-fragment-index=1} a language!
+>
+> <cite> Myself, some time back in the days
 
-![](/img/pear.png){.pear .fragment data-fragment-index=1}
+<!-- {section: .x-large} -->
 
 ===
 
@@ -107,18 +109,18 @@ This is ::not::{.fragment .stabilo data-fragment-index=1} a language!
 <!--{ .punchline }-->
 
 **LLVM** ::(die, GCC)::{.xx-small}
-::the best compiling toolchain::{.small}
+::modular compiler and toolchain technologies::{.x-small}
 
 ===
 <!--{ .punchline }-->
 
 ::Why?::{.large}
-::Because::{.fragment .fade-up} ::We::{.fragment .fade-up} ::==CAN==!::{.fragment .fade-up}
+::Because::{.fragment .fade-up} ::We::{.fragment .fade-up} ::==CAN== 😎 !::{.fragment .fade-up}
 
 ===
 
 > JS can't address all use-cases.
-> We sometimes need to share a codebase between projects.
+> We sometimes need to share a codebase between projects, a faster execution, or a more secured environment
 
 ===
 <!--{ .x-large }-->
@@ -127,7 +129,7 @@ The Browser ==is== a Virtual Machine
 - PWA
 - Electron
 - Cordova
-- etc.
+- ...
 
 <!-- -->
 - [The Birth & Death of JavaScript](https://www.destroyallsoftware.com/talks/the-birth-and-death-of-javascript)
@@ -137,10 +139,11 @@ The Browser ==is== a Virtual Machine
 <!--{ .large }-->
 
 WASM {.large}
-- Any language that compile
-- Compiled through LLVM to WASM
+- Compiled language
+- LLVM → WASM
 - Loaded using JS
 - Executed in the Browser {.fragment .fade-up}
+- Available on the Server {.fragment .fade-up}
 
 <!-- -->
 - [Lin Clark WebAssembly series](https://hacks.mozilla.org/author/lclarkmozilla-com/)

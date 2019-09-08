@@ -168,7 +168,7 @@ fn main() {
 Static Types & Iterators
 ```rust
 mod squares {
-    pub fn sum_from_zero( n<span class="fragment" data-fragment-index="1">: i32</span>) -> <span class="fragment" data-fragment-index="1">i32</span> {
+    pub fn sum_from_zero(n<span class="fragment" data-fragment-index="1">: i32</span>) -> <span class="fragment" data-fragment-index="1">i32</span> {
         (<span class="fragment" data-fragment-index="2">0 ..= n</span>).<span class="fragment" data-fragment-index="3">fold</span>(0, <span class="fragment" data-fragment-index="4">|a, b| a + b</span>)
     }
 }
