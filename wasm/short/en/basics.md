@@ -62,6 +62,7 @@ We need to
 ==compile== for the Web <!-- {.fragment .stabilo} -->
 
 - [Emscripten: An LLVM-to-Web Compiler](https://github.com/emscripten-core/emscripten)
+- [asm.js, low-level subset of JavaScript](http://asmjs.org/spec/latest/)
 <!-- {ul: .linkrolls} -->
 
 ===
