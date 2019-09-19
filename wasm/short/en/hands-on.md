@@ -102,15 +102,13 @@ $ tree
 ├── bridge.js
 ├── Cargo.toml
 ├── pkg
-│   ├── index_bg.wasm
-│   ├── index.js
-│   ├── mining_rust_bg.d.ts
-│   ├── mining_rust_bg.wasm
-│   ├── mining_rust.d.ts
-│   ├── mining_rust.js
+│   ├── my-module_bg.d.ts
+│   ├── my-module_bg.wasm
+│   ├── my-module.d.ts
+│   ├── my-module.js
 │   ├── package.json
 │   └── snippets
-│       └── mining_rust-91b01578bc1ce6c0
+│       └── my-module-91b01578bc1ce6c0
 │           └── bridge.js
 └── src
     └── lib.rs

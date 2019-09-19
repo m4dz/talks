@@ -24,7 +24,7 @@ We are developping ==apps==!
 
 ===
 
-![So...](../../img/what-do-we-want-meme.jpg)
+![](../../img/what-do-we-want-meme.jpg)
 
 ===
 <!-- {.large} -->
@@ -95,7 +95,6 @@ Current Status <!-- {.large} -->
 - Lightweight
 - Linear Memory w/ `TypedArray`
 
-
 ===
 
 Comming Soon <!-- {.large} -->
@@ -103,10 +102,9 @@ Comming Soon <!-- {.large} -->
 - Multi-threading
 - Streaming compilation/Tiered Compiler
 - JS Modules exchange/Garbage Collector
-- Portability/Runtime/into
+- Portability/Runtime/IoT
 - WASI/Interface Types
-- Binding Modules for any languages
-
+- Binding Modules for **any** languages
 
 <!--  -->
 
