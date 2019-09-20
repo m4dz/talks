@@ -183,4 +183,16 @@ impl Node {
 
 Let's Try It!
 
-<iframe src="../../demo/index.html" scrolling="no"></iframe>
+<iframe id="demo" src="../../demo/index.html" scrolling="no"></iframe>
+<span class="fragment" data-method="comp_js"></span>
+<span class="fragment" data-method="comp_rust"></span>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+    window.Reveal.addEventListener( 'fragmentshown', ({fragment: el}) => {
+        if (!el.dataset.method) { return }
+        const frame = document.getElementById('demo')
+        const btn = frame.contentDocument.getElementById(el.dataset.method)
+        btn.click()
+    })
+})
+</script>
