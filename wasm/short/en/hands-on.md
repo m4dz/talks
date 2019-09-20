@@ -188,6 +188,7 @@ Let's Try It!
 <span class="fragment" data-method="comp_rust"></span>
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', () => {
+    if (window.self != window.top) { return }
     window.Reveal.addEventListener( 'fragmentshown', ({fragment: el}) => {
         if (!el.dataset.method) { return }
         const frame = document.getElementById('demo')
